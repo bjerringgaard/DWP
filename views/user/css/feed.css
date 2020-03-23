@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #24252A;
+}
+
+.sideBar {
+  width: 20%;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 70px;
+  background: #191A1D;
+  color: black;
+  border-bottom: 1px solid #202125;
+  line-height: 70px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40vw;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul {
+  margin: 0;
+  height: 70px;
+  line-height: 70px;
+}
+
+nav ul li {
+  display: inline-block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+nav i {
+  margin: 5px;
+}
+
+#logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 40%;
+  color: #ffffff;
+}
+
+.menu-trigger {
+  display: none;
+  color: #fff;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100%;
+}
+
+.postFrame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: red;
+  background-color: #191A1D;
+  width: 25vw;
+  height: 35vw;
+  margin: 10px;
+  border-radius: 3%;
+}
+
+.postByUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+  height: 1.5vw;
+  width: 95%;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: .4vw;
+}
+
+.postByUser h3 {
+  margin: 0;
+}
+
+.postByUser i {
+  margin: 0;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.postImg {
+  width: 100%;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("http://placekitten.com/500/400");
+}
+/*# sourceMappingURL=feed.css.map */
