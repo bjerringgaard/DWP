@@ -1,0 +1,126 @@
+$navheight: 70px;
+
+body { 
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Inter', sans-serif;
+	background-color: #24252A;
+	
+	}
+
+	.sideBar{
+		width: 20%;
+	}
+	
+// Navigation 
+header{
+	display: flex;
+	flex-direction: row;
+	height: $navheight;
+	background: #191A1D;
+	color: black;
+	border-bottom: 1px solid #202125;
+	line-height: $navheight;
+	
+   }
+
+	nav{
+		display: flex;
+		width: 40vw;
+		justify-content: flex-end;
+
+			a{
+				color:#fff;
+				display:block;
+				text-decoration: none;
+				font-size: 14px;
+			}
+
+			ul {
+				margin: 0;
+				height: $navheight;
+				line-height: $navheight;
+			}
+
+			ul li {
+				display: inline-block;
+				align-items: center;
+					padding-left:15px;
+					padding-right: 15px;
+			}
+			
+			i{
+				margin: 5px;
+			}
+		}
+
+	#logo{
+		display: flex;
+		justify-content: flex-start;
+		width: 40%;
+		color: #ffffff;
+		}	
+
+	.menu-trigger {
+		display:none;
+		color:#fff;
+	  }
+
+
+// Main
+	#main {
+		display: flex;
+		justify-content: center;
+		width: 100vw;
+		height: 100%;
+	}
+
+// Post
+	.postFrame {
+		display: flex;
+		flex-direction: column;
+		background-color: red;
+		background-color: #191A1D;
+		width: 25vw;
+		height:	35vw;
+		margin: 10px;
+		border-radius: 3%;
+	}
+
+	.postByUser{
+		display: flex;
+		flex-direction: row;
+		color: white;
+		height: 1.5vw;
+		width: 95%;
+		padding: 10px; 
+			margin-left: 10px;
+			margin-top: .4vw;
+
+		h3{
+			margin: 0;
+		}
+
+		i {
+			margin: 0;
+			font-size: 25px;
+			margin-right: 10px;
+		}
+	}
+
+	.postImg{
+		width: 100%;
+		padding-top: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url("http://placekitten.com/500/400");
+	}
+
+	
+
+
+
+
+
+
