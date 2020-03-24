@@ -20,7 +20,7 @@
 		
 	<header>
 		<div class="sideBar"></div> 
-	<div id="logo">ShortCircuit</div>
+	<div id="logo"><a href="feed.php">ShortCircuit</a></div>
 		<nav>
 		<a href="#" class="menu-trigger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 		<ul>
