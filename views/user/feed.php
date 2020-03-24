@@ -43,7 +43,8 @@
 				<div id="timestamp"><p>23/3/2020</p></div>
 			</div>
 
-			<div class="postImg"></div>
+			<div class="postImg">
+			</div>
 
 			<div class="postAction">
 				<div id="likeComment">
@@ -58,7 +59,7 @@
 				<p id="postTitle">Hello world!</p>
 			</div>
 		</div>
-
+<!-- ---------------------------- TEST Image ----------------------->
 		<div class="postFrame">
 			<div class="postByUser">
 				<div id="profilePicName">
@@ -83,7 +84,11 @@
 				<p id="postTitle">Hello world!</p>
 			</div>
 		</div>
+<!-- ---------------------------- TEST Image End ----------------------->
 
+		<div id="uploadContent">
+			<button><i class="fas fa-plus"></i></button>
+		</div>
 	</section>
 </body>
 </html>
