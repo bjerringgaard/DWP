@@ -161,12 +161,19 @@ nav i {
   margin: 0;
 }
 
-.postImg {
-  width: 100%;
-  padding-top: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("http://placekitten.com/500/400");
+/*
+	.postImg{
+		width: 100%;
+		padding-top: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url("http://placekitten.com/500/400");
+	} */
+.postImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 25vw;
+  height: 25vw;
 }
 
 .postAction {
