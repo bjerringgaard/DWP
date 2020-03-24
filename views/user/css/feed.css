@@ -219,4 +219,23 @@ nav i {
   margin-right: 10px;
   font-weight: 700;
 }
+
+#uploadContent {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+#uploadContent button {
+  height: 70px;
+  width: 70px;
+  border-radius: 20%;
+  background-color: #7700FF;
+  border: none;
+  color: white;
+}
+
+#uploadContent button i {
+  font-size: 35px;
+}
 /*# sourceMappingURL=feed.css.map */

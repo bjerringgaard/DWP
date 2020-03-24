@@ -182,6 +182,25 @@ header{
 		}	
 	}
 
+	#uploadContent {
+		position: fixed;
+		right: 50px;
+		bottom: 50px;
+		
+		button {
+			height: 70px;
+			width: 70px;
+			border-radius: 20%;
+			background-color: #7700FF;
+			border: none;
+			color: white;
+
+			i {
+				font-size: 35px;
+			}
+		}
+		
+	}
 
 
 
