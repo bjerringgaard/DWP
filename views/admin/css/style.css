@@ -408,7 +408,7 @@ h2{
 
 /*MAIN */ 
     
-main { 
+#main { 
   display: grid;
     grid-area: main;
   grid-gap: 0;

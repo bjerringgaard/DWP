@@ -5,6 +5,7 @@ body {
 	height: 100%;
 	width: 100%;
 	font-family: 'Inter', sans-serif;
+	font-weight: 400;
 	background-color: #24252A;
 	
 	}
@@ -22,7 +23,6 @@ header{
 	color: black;
 	border-bottom: 1px solid #202125;
 	line-height: $navheight;
-	
    }
 
 	nav{
@@ -52,6 +52,7 @@ header{
 			
 			i{
 				margin: 5px;
+				font-size: 25px;
 			}
 		}
 
@@ -60,6 +61,7 @@ header{
 		justify-content: flex-start;
 		width: 40%;
 		color: #ffffff;
+		font-size: 25px;
 		}	
 
 	.menu-trigger {
@@ -71,7 +73,9 @@ header{
 // Main
 	#main {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		margin: 0 auto;
+		align-items: center;
 		width: 100vw;
 		height: 100%;
 	}
@@ -93,20 +97,38 @@ header{
 		flex-direction: row;
 		color: white;
 		height: 1.5vw;
-		width: 95%;
+		width: 94.5%;
 		padding: 10px; 
 			margin-left: 10px;
 			margin-top: .4vw;
 
-		h3{
-			margin: 0;
+		#profilePicName{
+			display: flex;
+			width: 80%;
+
+			h3{
+				margin: 0;
+			}
+	
+			i {
+				margin: 0;
+				font-size: 25px;
+				margin-right: 10px;
+			}
 		}
 
-		i {
+		#timestamp{
+			display: flex;
+			justify-content: flex-end;
+			width: 20%;
 			margin: 0;
-			font-size: 25px;
 			margin-right: 10px;
+
+			p{
+				margin: 0;
+			}
 		}
+		
 	}
 
 	.postImg{
@@ -117,7 +139,50 @@ header{
 		background-image: url("http://placekitten.com/500/400");
 	}
 
-	
+	.postAction{
+		display: flex;
+			margin-top: 5px;
+			margin-left: 10px;
+		padding: 10px;
+		width: 94.5%;
+
+		a {
+			width: 20%;
+			color: white;
+			font-size: 25px;
+			margin: 0;
+				margin-right: 15px;
+		}
+
+			#likeComment{
+				width: 80%;
+			}
+
+		#pin{
+			display: flex;
+			justify-content: flex-end;
+			width: 20%;
+			padding-right: 10px;
+
+			a{
+				margin: 0;
+			}
+		}
+	}
+
+	.postComments {
+		display: flex;
+		color: #FFFFFF;
+		width: 94.5%;
+		margin-left: 20px;
+
+		#postUsername {
+			margin-right: 10px;
+			font-weight: 700;
+		}	
+	}
+
+
 
 
 
