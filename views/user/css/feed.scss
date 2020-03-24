@@ -130,13 +130,21 @@ header{
 		}
 		
 	}
-
+/*
 	.postImg{
 		width: 100%;
 		padding-top: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-image: url("http://placekitten.com/500/400");
+	} */ 
+
+	.postImg{
+		img {
+			object-fit: cover;
+			width: 25vw;
+			height: 25vw;
+		}
 	}
 
 	.postAction{
