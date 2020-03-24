@@ -11,6 +11,14 @@ body {
   width: 20%;
 }
 
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 20px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,8 +83,121 @@ nav i {
   font-size: 25px;
 }
 
+#logo a {
+  text-decoration: none;
+  color: white;
+}
+
 .menu-trigger {
   display: none;
   color: #fff;
+}
+
+#main {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20vh auto 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main #profilePicture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main #profilePicture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 20%;
+}
+
+#main #userInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  margin-left: 50px;
+}
+
+#main #userInfo button {
+  background-color: #7700FF;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
+}
+
+#main #userInfo .bold {
+  font-weight: 700;
+}
+
+#main #userInfo #row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#main #userInfo #row1 h2 {
+  margin-bottom: 5px;
+}
+
+#main #userInfo #row2 {
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#main #userInfo #row2 p {
+  margin-top: 0;
+}
+
+#main #userInfo #row2 .normal {
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+#main #userInfo #row3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #userInfo #row3 .bold {
+  margin: 0;
+  margin-top: 20px;
+}
+
+#main #userInfo #row3 .normal {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=profile.css.map */
