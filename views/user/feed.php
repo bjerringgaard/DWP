@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Asap|Heebo|Quicksand|Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
 
-	<title>Feed</title>
+	<title>ShortCircuit | Feed</title>
 </head>
 <body>
 	<div id="wrapper"> 
