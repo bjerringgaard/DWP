@@ -44,6 +44,7 @@
 			</div>
 
 			<div class="postImg">
+			<img src="http://placekitten.com/500/500" alt="">
 			</div>
 
 			<div class="postAction">
@@ -69,7 +70,9 @@
 				<div id="timestamp"><p>23/3/2020</p></div>
 			</div>
 
-			<div class="postImg"></div>
+			<div class="postImg">
+				<img src="http://placekitten.com/500/400" alt="">
+			</div>
 
 			<div class="postAction">
 				<div id="likeComment">
