@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Asap|Heebo|Quicksand|Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
 
 	<title>Feed</title>
 </head>
@@ -24,10 +24,10 @@
 		<nav>
 		<a href="#" class="menu-trigger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
 		<ul>
-			<li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-			<li><a href="#categories"><i class="fas fa-compass"></i>Discover</a></li>
-			<li><a href="#profile"><i class="fas fa-user-circle"></i>Profile</a></li>
-			<li><a href="#settings"><i class="fas fa-cog"></i>Settings</a></li>
+			<li><a href="#"><i class="fas fa-home"></i></a></li>
+			<li><a href="#categories"><i class="fas fa-compass"></i></a></li>
+			<li><a href="profile.php"><i class="fas fa-user-circle"></i></a></li>
+			<li><a href="#settings"><i class="fas fa-cog"></i></a></li>
 		</ul>
 		</nav>
 		<div class="sideBar"></div> 
@@ -36,16 +36,54 @@
 	<section id="main">
 		<div class="postFrame">
 			<div class="postByUser">
-				<i class="fas fa-user-circle"></i>
-				<h3>username</h3>
+				<div id="profilePicName">
+					<i class="fas fa-user-circle"></i>
+					<h3>username</h3>
+				</div>
+				<div id="timestamp"><p>23/3/2020</p></div>
 			</div>
+
 			<div class="postImg"></div>
+
 			<div class="postAction">
-				<button id="like"><i class="fas fa-heart"></i></button>
-				<button id="comment"><i class="fas fa-comment"></i></button>
-				<button id="Pin"><i class="fas fa-thumbtack"></i></button>
+				<div id="likeComment">
+					<a href="#" id="like"><i class="fas fa-heart"></i></a>
+					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
+				</div>
+				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
+			</div>
+
+			<div class="postComments">
+				<p id="postUsername"><b>Username</b></p>
+				<p id="postTitle">Hello world!</p>
 			</div>
 		</div>
+
+		<div class="postFrame">
+			<div class="postByUser">
+				<div id="profilePicName">
+					<i class="fas fa-user-circle"></i>
+					<h3>username</h3>
+				</div>
+				<div id="timestamp"><p>23/3/2020</p></div>
+			</div>
+
+			<div class="postImg"></div>
+
+			<div class="postAction">
+				<div id="likeComment">
+					<a href="#" id="like"><i class="fas fa-heart"></i></a>
+					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
+				</div>
+				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
+			</div>
+
+			<div class="postComments">
+				<p id="postUsername"><b>Username</b></p>
+				<p id="postTitle">Hello world!</p>
+			</div>
+		</div>
+
 	</section>
 </body>
 </html>
