@@ -16,7 +16,7 @@ CREATE TABLE Post (
     PostID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     PostTitle varchar (255) NULL,
     PostDesc varchar (255) NULL,
-    PostLikes varchar (255) NULL,
+    PostLikes INT NULL,
     PostTime DATE NOT NULL,
     UserID varchar(255) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
@@ -30,10 +30,10 @@ CREATE TABLE MediaFile (
     FOREIGN KEY (PostID) REFERENCES Post (PostID)
 );
 
-CREATE TABLE Comments (
+CREATE TABLE Comment (
     CommentID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     CmtAttachement varchar (255),
-    CommentTimeStamp varchar (255),
+    CommentTimeStamp TIMESTAMP NOT NULL,
     CommentText varchar (255),
     CommentStyle varchar (255),
     UserID varchar(255) NOT NULL,
