@@ -111,31 +111,24 @@ h3{
 }
 
 
-.admin-btn{
-    display: inline-block;
-    position: relative;
-
-    width: 90px;
-    padding: .5rem;
-    margin-left: 15px;
-    margin-top: 0;
-    margin-bottom: 15px;
-    transition: all .15s ease-in-out;
-    border: 1px solid;
-    border-radius: 4px;
-    border-color: #6246ea;
-    color: #fff;
-    font-size: .875rem;
-    font-weight: 550;
-    line-height: 1.5;
-    text-align: center;
-    text-overflow: ellipsis;
-    user-select: none;
-    background: #6246ea;
+.button {
+  background-color: #7700FF;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  
 }
 
-.admin-btn a:hover{
-  background-color: red;
+.button:hover{
+  background-color: #24252A;
+  transform: ;
 }
 
 #main { 
