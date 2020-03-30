@@ -6,10 +6,12 @@ CREATE TABLE User (
     UserID varchar (20) PRIMARY KEY NOT NULL,
     UserFirstName varchar (50) NULL,
     UserLastName varchar (50) NULL,
-    UserEmail varchar (255) NULL,
-    UserPassword varchar (255) NULL,
+    UserEmail varchar (255) NOT NULL,
+    UserPassword varchar (255) NOT NULL,
     ProfileDesc varchar (255) NULL,
-    ProfilePic varchar(255) NULL
+    ProfilePic varchar(255) NULL,
+    IsAdmin boolean NOT NULL,
+    IsBanned boolean NOT NULL
 );
 
 CREATE TABLE Post (
@@ -43,7 +45,7 @@ CREATE TABLE Comment (
     FOREIGN KEY (UserID) REFERENCES User (UserID)
 );
 
-INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic)
+INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'Bbaggz',
     'Bilbo',
@@ -51,10 +53,12 @@ VALUES (
     'bilbo@backend.edu',
     'hunter2',
     'I eat dirt, and dance with my friends',
-    'https://i.pinimg.com/originals/2f/97/8e/2f978e10bc6c1e71316e586e05017a8e.jpg'
+    'https://i.pinimg.com/originals/2f/97/8e/2f978e10bc6c1e71316e586e05017a8e.jpg',
+    '1',
+    '0'
 );
 
-INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic)
+INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'HelloItIsMeJohnFaxe!',
     'John',
@@ -62,7 +66,9 @@ VALUES (
     'futbol@danmark.dk',
     'hunter2',
     'I am kick de ball. PC funny :)',
-    'https://pbs.twimg.com/media/CYnPUnkWcAAUBxK.jpg'
+    'https://pbs.twimg.com/media/CYnPUnkWcAAUBxK.jpg',
+    '0',
+    '1'
 );
 
 INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, UserID)
