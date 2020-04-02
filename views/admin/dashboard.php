@@ -1,3 +1,6 @@
+<?php
+require("includes/connection.php");
+?>
 <!DOCTYPE html>
 <html>
  <head>
@@ -26,38 +29,41 @@
 
 <section id="main">
 <div class="box1">
-  <h2>Latets Post</h2>
+  <h2>Latest Post</h2>
+
+
+
+
 <div class="overSkriftHeader">
-<h4>Overskift</h4>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Aliquam tincidunt mauris eu risus.
-Vestibulum auctor dapibus neque.
-Nunc dignissim risus id metus.
-</p>
-<button class="button">Read More</button>
+<?php
+$sql = "SELECT * FROM post";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "
+          <h4> " . $row["PostTitle"]. "</h4>
+          <p> " . $row["PostDesc"]. "</p>
+          <button class='button'>Read More</button>
+          <hr class='new1'>
+        ";
+        
+    }
+} else {
+    echo "0 results";
+}
+
+?>
+
 </div>
+
+
+
+
 <hr class="new1">
 
-<div class="overSkriftHeader">
-  <h4>Overskift</h4>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-  Aliquam tincidunt mauris eu risus.
-  Vestibulum auctor dapibus neque.
-  Nunc dignissim risus id metus.
 
-  </p>
-  <button class="button">Read More</button>
-  </div>
-  <hr class="new1">
-  <div class="overSkriftHeader">
-    <h4>Overskift</h4>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Aliquam tincidunt mauris eu risus.
-    Vestibulum auctor dapibus neque.
-    Nunc dignissim risus id metus.
-    </p>
-    <button class="button">Read More</button>
-    </div>
     
 </div>
 <div class="box2">
@@ -65,35 +71,43 @@ Nunc dignissim risus id metus.
 <div class="overSkriftHeader">
   <div class="grid2">
     <span>
-        <strong>ID</strong>
+    <strong>Username</strong>
     </span>
     <span>
-        <strong>UserName</strong>
+    <strong>First Name</strong>
     </span>
     <span>
-        <strong>Full Name</strong>
+    <strong>Last Name</strong>
     </span>
     <span>
-        <strong>Created at</strong>
+    <strong>Email</strong>
     </span>
     <span>
-        <strong>Email</strong>
+    <strong>Desc</strong>
     </span>
-    <span>0</span>
-    <span>Woet</span>
-    <span>Peter Wind</span>
-    <span>2020-03-05 19:51</span>
-    <span>peterschaadtwind@gmail.com</span>
-    <span>1</span>
-    <span>Marcus</span>
-    <span>Zoomer : D</span>
-    <span>2012-03-07T00:08:36</span>
-    <span>Marc@gmail.com</span>
-    <span>2</span>
-    <span>Vind</span>
-    <span>Niels</span>
-    <span>1985-03-10T20:13:04</span>
-    <span>Niel@Vind.dk</span>
+
+<?php
+$sql = "SELECT * FROM user";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "
+          <span> " . $row["UserID"]. "</span>
+          <span> " . $row["UserFirstName"]. "</span>
+          <span> " . $row["UserLastName"]. "</span>
+          <span> " . $row["UserEmail"]. "</span>
+          <span> " . $row["ProfileDesc"]. "</span>
+        ";
+        
+    }
+} else {
+    echo "0 results";
+}
+
+?>
+
 </div>
   </div>
 </div>
