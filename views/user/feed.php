@@ -1,3 +1,6 @@
+<?php
+require("../../Includes/connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,17 +37,26 @@
 	</header> 
 
 	<section id="main">
-		<div class="postFrame">
+
+	<?php
+	$sql = "SELECT * FROM post";
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_num_rows($result) > 0) {
+		// output data of each row
+		while($row = mysqli_fetch_assoc($result)) {
+			echo '
+			<div class="postFrame">
 			<div class="postByUser">
 				<div id="profilePicName">
 					<i class="fas fa-user-circle"></i>
-					<h3>username</h3>
+					<h3>' . $row["UserID"]. '</h3>
 				</div>
-				<div id="timestamp"><p>23/3/2020</p></div>
+				<div id="timestamp"><p>' . $row["PostTime"] . '</p></div>
 			</div>
 
 			<div class="postImg">
-			<img src="http://placekitten.com/500/500" alt="">
+			<img src="' . $row["PostImage"] . '" alt="">
 			</div>
 
 			<div class="postAction">
@@ -55,39 +67,21 @@
 				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
 			</div>
 
-			<div class="postComments">
-				<p id="postUsername"><b>Username</b></p>
-				<p id="postTitle">Hello world!</p>
-			</div>
-		</div>
-<!-- ---------------------------- TEST Image ----------------------->
-		<div class="postFrame">
-			<div class="postByUser">
-				<div id="profilePicName">
-					<i class="fas fa-user-circle"></i>
-					<h3>username</h3>
-				</div>
-				<div id="timestamp"><p>23/3/2020</p></div>
-			</div>
-
-			<div class="postImg">
-				<img src="http://placekitten.com/500/400" alt="">
-			</div>
-
-			<div class="postAction">
-				<div id="likeComment">
-					<a href="#" id="like"><i class="fas fa-heart"></i></a>
-					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-				</div>
-				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
+			<div class="postLikes">
+			<p>' . $row["PostLikes"] . ' Likes</p>
 			</div>
 
 			<div class="postComments">
-				<p id="postUsername"><b>Username</b></p>
-				<p id="postTitle">Hello world!</p>
+				<p id="postUsername"><b>' . $row["UserID"]. '</b></p>
+				<p id="postTitle">' . $row["PostTitle"] . '</p>
 			</div>
 		</div>
-<!-- ---------------------------- TEST Image End ----------------------->
+			';
+			
+		}
+	} else {
+		echo "0 results";
+	} ?>
 
 		<div id="uploadContent">
 			<button><i class="fas fa-plus"></i></button>

@@ -71,18 +71,22 @@ VALUES (
     '1'
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, UserID)
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID)
 VALUES (
     'My first build',
     'I just really like the golden color #precious #beginner',
     'https://i.ytimg.com/vi/V18eUOLW7Kk/maxresdefault.jpg',
     4,
+    '2020/05/03',
     'Bbaggz'
 );
 
-INSERT INTO Post (PostTitle, PostImage, UserID)
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID)
 VALUES (
     'Hello! How do I use this site? I\'m not good at PC',
+    'I just really like the golden color #precious #beginner',
     'https://i.imgur.com/0skJjHK.jpg',
+    3, 
+    '2020/04/03',
     'HelloItIsMeJohnFaxe!'
 )

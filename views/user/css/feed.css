@@ -166,14 +166,6 @@ nav i {
   margin: 0;
 }
 
-/*
-	.postImg{
-		width: 100%;
-		padding-top: 100%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-image: url("http://placekitten.com/500/400");
-	} */
 .postImg img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -187,7 +179,10 @@ nav i {
   display: flex;
   margin-top: 5px;
   margin-left: 10px;
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
   width: 94.5%;
 }
 
@@ -218,7 +213,18 @@ nav i {
   margin: 0;
 }
 
+.postLikes {
+  margin: 0;
+  margin-left: 20px;
+}
+
+.postLikes p {
+  margin: 0;
+  color: white;
+}
+
 .postComments {
+  margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,8 +234,13 @@ nav i {
 }
 
 .postComments #postUsername {
+  margin-top: 5px;
   margin-right: 10px;
   font-weight: 700;
+}
+
+.postComments #postTitle {
+  margin-top: 5px;
 }
 
 #uploadContent {
