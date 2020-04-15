@@ -21,34 +21,42 @@ require("../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-  <h2>Users</h2>
+<h2>Users</h2>
 
+<div class="overSkriftHeader">
+<?php
+$sql = "SELECT * FROM user";
+$result = mysqli_query($conn, $sql);
 
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo"
+          <p>Brugernavn: " . $row["UserID"]. "</p>
+          <p>Navn " . $row["UserFirstName"]. "</p>
+          <p>Efternavn " . $row["UserLastName"]. "</p>
+          <p>Profil: " . $row["ProfileDesc"]. "</p>
+        ";
+        // SLETTER BRUGEREN
+        echo'
+        <a href="editui.php?id='.$row['UserID'].'"'; ?>
+        onclick="return confirm('Delete User?');"
+        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
 
+        // UPDATER BRUGEREN
+        echo
+        '<a href="includes/editUser.php?id='.$row['UserID'].'"'; ?>
+        onclick="return confirm('Edit User?');"
+        <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>';
+        
+    }
+} else {
+    echo "0 results";
+}
 
-  <div class="manageMember">
-    <a href="create.php"><button type="button">Add Member</button></a>
-    <table border="1" cellspacing="0" cellpadding="0">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Contact</th>
-                <th>Option</th>
-            </tr>
-        </thead>
-        <tbody>
-             
-        </tbody>
-    </table>
+?>
+
 </div>
-
-</div>
-
-
-
-
-<hr class="new1">
 </div>
 
 
