@@ -39,8 +39,8 @@ if (mysqli_num_rows($result) > 0) {
         ";
         // SLETTER BRUGEREN
         echo'
-        <a href="editui.php?id='.$row['UserID'].'"'; ?>
-        onclick="return confirm('Delete User?');"
+        <a href="includes/deleteUser.php?id='.$row['UserID'].'"'; ?>
+        onclick="return confirm('Er du sikker på du vil slette denne bruger');"
         <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
 
         // UPDATER BRUGEREN
