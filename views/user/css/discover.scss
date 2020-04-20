@@ -1,10 +1,4 @@
-$navheight: 70px;
-
-$background: #23272A;
-$dark: #2C2F33;
-$grey: #99AAB5;
-$White: #FFFFFF;
-$color: #7700FF;
+@import "variables.scss";
 
 ::-webkit-scrollbar-track-piece{
 	background: transparent;
@@ -164,5 +158,69 @@ header{
 		#cardPinned{
 			color: #663399;
 		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		body { 
+			background-color: $ldark;
+			}
+			
+		// Navigation 
+		header{
+			background: $lbackground;
+		   }
+		
+			nav{
+				display: flex;
+				width: 40vw;
+				justify-content: flex-end;
+		
+					a{
+						color:$lWhite;
+					}
+				}
+		
+			#logo{
+				color: $lWhite;;
+		
+				a{
+					color: $lWhite;
+				}
+				}	
+		
+			.menu-trigger {
+				color:$lWhite;
+			  }
+		
+			h2{
+				color: $lWhite;
+			}
+		
+			p{
+				color: $lWhite;
+			}
+		
+			#discoverCards{
+				.card{
+					background-color: $lcolor;
+					color: $lWhite;
+				}
+		
+				#cardLike {
+					background-color: #d64541;
+					color: #96281b;
+				}
+		
+				#cardComment{
+					background-color: #446cb3;
+					color: #3a539b;
+				}
+		
+				#cardPinned{
+					color: #663399;
+				}
+			}
+
+
 	}
 

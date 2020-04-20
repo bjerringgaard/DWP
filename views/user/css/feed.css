@@ -459,4 +459,100 @@ nav i {
       align-self: center;
   padding-left: 5px;
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #F2F3F5;
+  }
+  header {
+    background: #FFFFFF;
+  }
+  nav a {
+    color: #23272A;
+  }
+  #logo {
+    color: #23272A;
+  }
+  #logo a {
+    color: #23272A;
+  }
+  .menu-trigger {
+    color: #23272A;
+  }
+  #post {
+    background-color: #FFFFFF;
+  }
+  #postFrame .postByUser {
+    color: #23272A;
+  }
+  #postFrame .postTitle {
+    padding: 0;
+    margin: 0;
+  }
+  #postFrame .postTitle h3 {
+    color: #23272A;
+  }
+  #postFrame .postInfo .postStats {
+    color: #23272A;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #postFrame .postInfo .postAction a {
+    color: #23272A;
+  }
+  #postFrame .postLikes p {
+    color: #23272A;
+  }
+  #postFrame .postUser i {
+    color: #23272A;
+  }
+  #postFrame .postUser div h3 {
+    color: #23272A;
+  }
+  #postFrame .postUser div p {
+    color: #23272A;
+  }
+  #postCommentFrame {
+    background-color: #FFFFFF;
+  }
+  #postCommentFrame #commentField {
+    background-color: #F2F3F5;
+  }
+  #postCommentFrame #commentField h3 {
+    color: #23272A;
+  }
+  #postCommentFrame #commentField .commentUser .theComment i {
+    color: #23272A;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div h3 {
+    color: #23272A;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div p {
+    color: #23272A;
+  }
+  #postCommentFrame #writeComment i {
+    color: #23272A;
+  }
+  #postCommentFrame #writeComment input {
+    background-color: #F2F3F5;
+    color: #23272A;
+  }
+  #postCommentFrame #writeComment button {
+    background-color: #F2F3F5;
+    color: #23272A;
+  }
+  #postCommentFrame #writeComment #paper-plane {
+    background-color: #7700FF;
+  }
+  #postCommentFrame #writeComment #paper-plane i {
+    color: #FFFFFF;
+  }
+  #uploadContent button {
+    color: #FFFFFF;
+  }
+}
 /*# sourceMappingURL=feed.css.map */
