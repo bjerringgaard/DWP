@@ -1,5 +1,5 @@
 <?php
-require("../../Includes/connection.php");
+require("../../../Includes/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ require("../../Includes/connection.php");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/feed.css">
+	<link rel="stylesheet" href="discoverPages.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
@@ -16,20 +16,23 @@ require("../../Includes/connection.php");
     <link href="https://fonts.googleapis.com/css?family=Asap|Heebo|Quicksand|Oswald" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
 
-	<title>ShortCircuit | Feed</title>
+	<title>ShortCircuit | IsPinned</title>
 </head>
 <body>		
 	<header>
-		<?php include 'userIncludes/navigation.php';?>
-	</header> 
-
+		<?php include '../userIncludes/navigationDiscover.php';?>
+	</header>
+	
 	<section id="main">
-
+		<div class="card" id="cardComment">
+			<i class="fas fa-comment"></i>
+			<h3>Most Commented</h3>
+		</div>
 	<?php
 	$sql = "SELECT * 
 			FROM post p, User u
 			WHERE p.UserID = u.UserID
-			ORDER BY p.postTime DESC
+			AND p.IsPinned = 1
 			";
 	$result = mysqli_query($conn, $sql);
 
@@ -130,12 +133,4 @@ require("../../Includes/connection.php");
 	} else {
 		echo "0 results";
 	} ?>
-
-		<div id="uploadContent">
-			<button><i class="fas fa-plus"></i></button>
-		</div>
 	</section>
-</body>
-</html>
-
-

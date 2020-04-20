@@ -26,13 +26,13 @@ require("../../Includes/connection.php");
 	<section id="main">
 		<h2>Hot Stuff</h2>
 		<div id="discoverCards">
-			<a href="">
+			<a href="discoverPages/MostLikes.php">
 			<div class="card" id="cardLike">
 				<i class="fas fa-heart"></i>
 				<h3>Most Liked</h3>
 			</div>
 			</a>
-			<a href="">
+			<a href="discoverPages/MostCommented.php">
 			<div class="card" id="cardComment">
 				<i class="fas fa-comment"></i>
 				<h3>Most Commented</h3>
