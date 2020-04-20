@@ -26,7 +26,10 @@ require("../../Includes/connection.php");
 	<section id="main">
 
 	<?php
-	$sql = "SELECT * FROM post";
+	$sql = "SELECT * 
+			FROM post p, User u
+			WHERE p.UserID = u.UserID
+			";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
@@ -54,7 +57,7 @@ require("../../Includes/connection.php");
 						</div>
 
 						<div class="postUser">
-							<i class="fas fa-user-circle"></i>
+						<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 							<div>
 								<h3>' . $row["UserID"]. '</h3>
 								<p>' . $row["PostDesc"] . '</p>
@@ -69,42 +72,42 @@ require("../../Includes/connection.php");
 							
 								<div class="commentUser">
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
 											</div>
 									</div>
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
 											</div>
 									</div>
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
 											</div>
 									</div>
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
 											</div>
 									</div>
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
 											</div>
 									</div>
 									<div class="theComment">
-										<i class="fas fa-user-circle"></i>
+										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 											<div>
 												<h3>' . $row["UserID"]. '</h3>
 												<p>' . $row["PostDesc"] . '</p>
@@ -114,7 +117,7 @@ require("../../Includes/connection.php");
 								
 							</div>
 							<div id="writeComment">
-								<i class="fas fa-user-circle"></i>
+								<div class="profilePic" id="writing"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 								<input type="text">
 								<button><i class="fas fa-paperclip"></i></button>
 								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
