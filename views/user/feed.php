@@ -71,61 +71,42 @@ require("../../Includes/connection.php");
 							<div id="commentField">
 								<h3>100 Comments</h3>
 							
-								<div class="commentUser">
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-									<div class="theComment">
-										<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-											<div>
-												<h3>' . $row["UserID"]. '</h3>
-												<p>' . $row["PostDesc"] . '</p>
-											</div>
-									</div>
-								</div>
-								
+								<div class="commentUser"> ';
+
+								$csql = "SELECT * 
+								FROM Post p, Comment c, User u
+								WHERE c.PostID = p.PostID
+								AND c.UserID = u.UserID
+								";
+
+								$cresult = mysqli_query($conn, $csql);
+
+								if (mysqli_num_rows($cresult) > 0) {
+								// output data of each row
+									while($row = mysqli_fetch_assoc($cresult)) {
+										echo '
+											<div class="theComment">
+												<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
+													<div>
+														<h3>' . $row["UserID"]. '</h3>
+														<p>' . $row["CommentText"] . '</p>
+													</div>
+											</div> '; 
+									} 
+								}
+
+
+							echo '	</div>	
 							</div>
+
 							<div id="writeComment">
-								<div class="profilePic" id="writing"><img src="' . $row["ProfilePic"] . '" alt=""></div>
 								<input type="text">
 								<button><i class="fas fa-paperclip"></i></button>
 								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
 							</div>
 						</div>
-				</div>	
-			';
+				</div>	';
+			
 		}
 	} else {
 		echo "0 results";

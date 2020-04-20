@@ -263,7 +263,7 @@ header{
 			.commentUser {
 				display: flex;
 				flex-direction: column;
-				align-items: center;
+				align-items: left;
 				padding: 20px;
 				padding-top: 0;
 				overflow: auto;
@@ -307,9 +307,6 @@ header{
 			height: 50px;
 			margin-top: 20px;
 			display: flex;
-			background-color: $dark;
-			border-top-left-radius: 10px;
-			border-bottom-left-radius: 10px;
 
 			i {
 				margin-right: 10px;
@@ -322,6 +319,10 @@ header{
 
 			input {
 				width: 75%;
+				padding-left: 10px;
+
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
 				
 				background-color: $dark;
 				border: none;

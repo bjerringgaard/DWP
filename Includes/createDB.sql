@@ -88,8 +88,32 @@ VALUES (
     'Hello! How do I use this site? I\'m not good at PC',
     'I just really like the golden color #precious #beginner',
     'https://i.imgur.com/0skJjHK.jpg',
-    3, 
+    5, 
     '2020/04/03',
     'HelloItIsMeJohnFaxe!',
     0
-)
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/03',
+    'I really Like this post!!!',
+    1
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/05',
+    'This is amazing',
+    1
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/05',
+    'Awesome',
+    2
+);

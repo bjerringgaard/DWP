@@ -297,9 +297,9 @@ nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   padding: 20px;
   padding-top: 0;
   overflow: auto;
@@ -345,9 +345,6 @@ nav i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #2C2F33;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 #postCommentFrame #writeComment i {
@@ -363,6 +360,9 @@ nav i {
 
 #postCommentFrame #writeComment input {
   width: 75%;
+  padding-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   background-color: #2C2F33;
   border: none;
   color: #FFFFFF;
