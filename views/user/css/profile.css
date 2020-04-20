@@ -4,11 +4,22 @@ body {
   width: 100%;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  background-color: #24252A;
+  background-color: #2C2F33;
 }
 
 .sideBar {
   width: 20%;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 h2 {
@@ -28,8 +39,7 @@ header {
       -ms-flex-direction: row;
           flex-direction: row;
   height: 70px;
-  background: #191A1D;
-  color: black;
+  background: #23272A;
   border-bottom: 1px solid #202125;
   line-height: 70px;
 }

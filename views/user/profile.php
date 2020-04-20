@@ -17,22 +17,9 @@
 
 	<title>ShortCircuit | Profile</title>
 </head>
-<body>
-	<div id="wrapper"> 
-		
+<body>	
 	<header>
-		<div class="sideBar"></div> 
-	<div id="logo"><a href="feed.php">ShortCircuit</a></div>
-		<nav>
-		<a href="#" class="menu-trigger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
-		<ul>
-			<li><a href="feed.php"><i class="fas fa-home"></i></a></li>
-			<li><a href="#categories"><i class="fas fa-compass"></i></a></li>
-			<li><a href="profile.php"><i class="fas fa-user-circle"></i></a></li>
-			<li><a href="#settings"><i class="fas fa-cog"></i></a></li>
-		</ul>
-		</nav>
-		<div class="sideBar"></div> 
+		<?php include 'userIncludes/navigation.php';?>
 	</header> 
 
 	<section id="main">

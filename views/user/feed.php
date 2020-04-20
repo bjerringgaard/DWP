@@ -18,22 +18,9 @@ require("../../Includes/connection.php");
 
 	<title>ShortCircuit | Feed</title>
 </head>
-<body>
-	<div id="wrapper"> 
-		
+<body>		
 	<header>
-		<div class="sideBar"></div> 
-	<div id="logo"><a href="feed.php">ShortCircuit</a></div>
-		<nav>
-		<a href="#" class="menu-trigger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
-		<ul>
-			<li><a href="#"><i class="fas fa-home"></i></a></li>
-			<li><a href="#categories"><i class="fas fa-compass"></i></a></li>
-			<li><a href="profile.php"><i class="fas fa-user-circle"></i></a></li>
-			<li><a href="#settings"><i class="fas fa-cog"></i></a></li>
-		</ul>
-		</nav>
-		<div class="sideBar"></div> 
+		<?php include 'userIncludes/navigation.php';?>
 	</header> 
 
 	<section id="main">
@@ -41,109 +28,110 @@ require("../../Includes/connection.php");
 	<?php
 	$sql = "SELECT * FROM post";
 	$result = mysqli_query($conn, $sql);
-/*
+
 	if (mysqli_num_rows($result) > 0) {
 		// output data of each row
 		while($row = mysqli_fetch_assoc($result)) {
 			echo '
-			<div class="postFrame">
-			<div class="postByUser">
-				<div id="profilePicName">
-					<i class="fas fa-user-circle"></i>
-					<h3>' . $row["UserID"]. '</h3>
-				</div>
-				<div id="timestamp"><p>' . $row["PostTime"] . '</p></div>
-			</div>
+				<div id="post">
+					<div id="postFrame">
+						<div class="postImg">
+							<img id="theImage" src="' . $row["PostImage"] . '" alt="">
+						</div>
 
-			<div class="postImg">
-			<img src="' . $row["PostImage"] . '" alt="">
-			</div>
+						<div class="postTitle"><h3>' . $row["PostTitle"] . '</h3></div>
+						<div class="postInfo">
+							<div class="postStats">
+								<p>' . $row["PostLikes"] . ' Likes</p>
+								<p>&bull;</p>
+								<p>' . $row["PostTime"] . '</p>
+							</div>
+							<div class="postAction">
+									<a href="#" id="like"><i class="fas fa-heart"></i></a>
+									<a href="#"id="comment"><i class="fas fa-comment"></i></a>
+									<a href="#" ><i class="fas fa-thumbtack"></i></a>
+							</div>
+						</div>
 
-			<div class="postAction">
-				<div id="likeComment">
-					<a href="#" id="like"><i class="fas fa-heart"></i></a>
-					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-				</div>
-				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
-			</div>
+						<div class="postUser">
+							<i class="fas fa-user-circle"></i>
+							<div>
+								<h3>' . $row["UserID"]. '</h3>
+								<p>' . $row["PostDesc"] . '</p>
+							</div>
+						</div>
+					</div>
 
-			<div class="postLikes">
-			<p>' . $row["PostLikes"] . ' Likes</p>
-			</div>
 
-			<div class="postComments">
-				<p id="postUsername"><b>' . $row["UserID"]. '</b></p>
-				<p id="postTitle">' . $row["PostTitle"] . '</p>
-			</div>
-		</div>
+					<div id="postCommentFrame">
+							<div id="commentField">
+								<h3>100 Comments</h3>
+							
+								<div class="commentUser">
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+									<div class="theComment">
+										<i class="fas fa-user-circle"></i>
+											<div>
+												<h3>' . $row["UserID"]. '</h3>
+												<p>' . $row["PostDesc"] . '</p>
+											</div>
+									</div>
+								</div>
+								
+							</div>
+							<div id="writeComment">
+								<i class="fas fa-user-circle"></i>
+								<input type="text">
+								<button><i class="fas fa-paperclip"></i></button>
+								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
+							</div>
+						</div>
+				</div>	
 			';
-			
 		}
 	} else {
 		echo "0 results";
-	} */?>
-<div id="post">
-	<div id="postFrame">
-		<div class="postImg">
-			<img id="theImage" src="https://placekitten.com/1920/1080" alt="">
-		</div>
-
-		<div class="postTitle"><h3>Hello Kitten</h3></div>
-		<div class="postInfo">
-			<div class="postStats">
-				<p>4 Likes</p>
-				<p>&bull;</p>
-				<p>18-03-2020</p>
-			</div>
-			<div class="postAction">
-					<a href="#" id="like"><i class="fas fa-heart"></i></a>
-					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-					<a href="#" ><i class="fas fa-thumbtack"></i></a>
-			</div>
-		</div>
-
-		<div class="postUser">
-			<i class="fas fa-user-circle"></i>
-			<div>
-				<h3>Bbaggz</h3>
-				<p>Dette er min beskrivelse</p>
-			</div>
-		</div>
-	</div>
-
-
-	<div id="postCommentFrame">
-			<div id="commentField">
-				<h3>100 Comments</h3>
-			
-				<div class="commentUser">
-					<i class="fas fa-user-circle"></i>
-					<div>
-						<h3>Marcus</h3>
-						<p>Dette er min kommentar</p>
-					</div>
-				</div>
-			</div>
-			<div id="writeComment">
-				<i class="fas fa-user-circle"></i>
-				<input type="text">
-				<button><i class="fas fa-paper-plane"></i></button>
-			</div>
-		</div>
-</div>
-
+	} ?>
 
 		<div id="uploadContent">
 			<button><i class="fas fa-plus"></i></button>
 		</div>
 	</section>
-
-	<script>
-		var img = document.getElementById('theImage');
-		var imgHeight = img.clientHeight;
-
-		document.getElementById('postCommentFrame').style.height = imgHeight+'px';
-	</script>
-
 </body>
 </html>
+
+
