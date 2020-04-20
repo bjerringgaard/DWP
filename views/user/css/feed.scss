@@ -393,6 +393,31 @@ header{
 	}
 
 
+	.profilePic {
+		display: flex;
+
+		img{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-right: 10px;
+		}
+	}
+
+	#writing{
+		display: flex;
+		align-items: center;
+		
+		img {
+			width: 30px;
+			height: 30px;
+			align-self: center;
+			padding-left: 5px;
+		}
+	}
+
+
 
 
 
