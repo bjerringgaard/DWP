@@ -1,12 +1,18 @@
 $navheight: 70px;
 
+$background: #23272A;
+$dark: #2C2F33;
+$grey: #99AAB5;
+$White: #FFFFFF;
+$color: #7700FF;
+
 body { 
 	margin: 0;
 	height: 100%;
 	width: 100%;
 	font-family: 'Inter', sans-serif;
 	font-weight: 400;
-	background-color: #24252A;
+	background-color: $dark;
 	
 	}
 
@@ -19,8 +25,7 @@ header{
 	display: flex;
 	flex-direction: row;
 	height: $navheight;
-	background: #191A1D;
-	color: black;
+	background: $background;
 	border-bottom: 1px solid #202125;
 	line-height: $navheight;
    }
@@ -86,124 +91,227 @@ header{
 	}
 
 // Post
-	.postFrame {
+	#post{
 		display: flex;
-		flex-direction: column;
-		background-color: red;
-		background-color: #191A1D;
-		width: 25vw;
-		height:	35vw;
+		background-color: $background;
+		padding: 20px;
 		margin: 10px;
-		border-radius: 3%;
+		border-radius: 20px;
 	}
 
-	.postByUser{
+	#postFrame {
 		display: flex;
-		flex-direction: row;
-		color: white;
-		height: 1.5vw;
-		width: 94.5%;
-		padding: 10px; 
-			margin-left: 10px;
-			margin-top: .4vw;
+		flex-direction: column;
+		width: 50vw;
 
-		#profilePicName{
+		.postByUser{
 			display: flex;
-			width: 80%;
+			flex-direction: row;
+			color: white;
+			height: 1.5vw;
+			width: 94.5%;
+			padding: 10px; 
+				margin-left: 10px;
+				margin-top: .4vw;
+		}
+
+		.postImg{
+				img{
+					max-width: 100%;
+					//height: auto;
+					border-radius: 10px;
+				}
+		}
+
+		.postTitle{
+			padding: 0;
+			margin: 0;
 
 			h3{
 				margin: 0;
+				padding: 0;
+
+				margin-top: 10px;
+
+				font-size: 24px;
+				color: $White;
 			}
-	
+
+		}
+
+		.postInfo{
+			width: 100%;
+			height: 20px;
+			display: flex;
+			margin: 0;
+				margin-top: 10px;
+				margin-bottom: 20px;	
+
+			.postStats{
+				width: 50%;
+
+				color: $White;
+				display: flex;
+				align-items: center;
+
+				p{
+					margin: 0;
+					margin-right: 10px;
+				}
+			}
+		
+			.postAction{
+				width: 50%;
+
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				
+
+				a {
+					justify-content: flex-end;
+					color: white;
+					font-size: 20px;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.postLikes {
+			margin: 0;
+			margin-left: 20px;
+			p {
+				margin: 0;
+				color: white;
+			}
+			
+		}
+
+		.postUser {
+			display: flex;
+			align-items: center;
+
 			i {
-				margin: 0;
-				font-size: 25px;
 				margin-right: 10px;
-			}
-		}
-
-		#timestamp{
-			display: flex;
-			justify-content: flex-end;
-			width: 20%;
-			margin: 0;
-			margin-right: 10px;
-
-			p{
-				margin: 0;
-			}
-		}
-		
-	}
-
-	.postImg{
-		img {
-			object-fit: cover;
-			width: 25vw;
-			height: 25vw;
-		}
-	}
-
-	.postAction{
-		display: flex;
-			margin-top: 5px;
-			margin-left: 10px;
-		padding-top: 10px;
-		padding-right: 10px;
-		padding-left: 10px;
-		padding-bottom: 5px;
-		width: 94.5%;
-
-		a {
-			width: 20%;
-			color: white;
-			font-size: 25px;
-			margin: 0;
-				margin-right: 15px;
-		}
-
-			#likeComment{
-				width: 80%;
+				color: $White;
+				font-size: 30px;
+				align-self: flex-start;
 			}
 
-		#pin{
-			display: flex;
-			justify-content: flex-end;
-			width: 20%;
-			padding-right: 10px;
+			div {
+				h3{
+					margin: 0;
+					padding: 0;
 
-			a{
-				margin: 0;
+					margin-bottom: 5px;
+
+					color: $White;
+				}
+
+				p {
+					margin: 0;
+					padding: 0;
+					color: $White;
+				}
 			}
-		}
-	}
+			
 
-	.postLikes {
-		margin: 0;
-		margin-left: 20px;
-		p {
-			margin: 0;
-			color: white;
-		}
-		
-	}
-
-	.postComments {
-		margin-top: 0;
-		display: flex;
-		color: #FFFFFF;
-		width: 94.5%;
-		margin-left: 20px;
-
-		#postUsername {
-			margin-top: 5px;
-			margin-right: 10px;
-			font-weight: 700;
+			
 		}	
+	}
 
-		#postTitle {
-			margin-top: 5px;
+	#postCommentFrame{
+		width: 20vw;
+		margin-left: 20px;
+		background-color: $background;
+
+		#commentField{
+			background-color: $dark;
+			border-radius: 10px;
+
+			h3{
+				margin: 0;
+				padding: 20px;
+				color: $White;
+	
+				margin-bottom: 20px;
+				padding-bottom: 0;
+			}
+
+			.commentUser {
+				display: flex;
+				align-items: center;
+				padding: 20px;
+				padding-top: 0;
+	
+				i {
+					margin-right: 10px;
+					color: $White;
+					font-size: 30px;
+					align-self: flex-start;
+				}
+	
+				div {
+					h3{
+						margin: 0;
+						padding: 0;
+	
+						margin-bottom: 5px;
+	
+						color: $White;
+					}
+	
+					p {
+						margin: 0;
+						padding: 0;
+						color: $White;
+					}
+				}
+				
+			}	
 		}
+
+		#writeComment{
+			width: 20vw;
+			margin-top: 20px;
+			display: flex;
+			background-color: $dark;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+
+			i {
+				margin-right: 5px;
+				color: $White;
+				font-size: 32px;
+				align-self: center;
+				width: 10%;
+				padding-left: 5px;
+			}
+
+			input {
+				width: 75%;
+				
+				background-color: $dark;
+				border: none;
+				color: $White;
+			}
+			button{
+				height: 50px;
+				width: 15%;
+				background-color: $color;
+				color: $White;
+				border: none;
+
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+
+				i{
+					font-size: 20px;
+					padding-right: 20px;
+				}
+			}
+		}
+
 	}
 
 	#uploadContent {
