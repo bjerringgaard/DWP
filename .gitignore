@@ -1,0 +1,20 @@
+/dist
+
+# local env files
+.env.local
+.env.*.local
+
+# MAP FILES
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
