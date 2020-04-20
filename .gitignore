@@ -9,7 +9,7 @@
 *.css.map
 *.sass.map
 *.scss.map
-*.scss
+.scss
 
 # Editor directories and files
 .idea
