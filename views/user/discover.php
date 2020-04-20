@@ -38,7 +38,7 @@ require("../../Includes/connection.php");
 				<h3>Most Commented</h3>
 			</div>
 			</a>
-			<a href="">
+			<a href="discoverPages/IsPinned.php">
 			<div class="card" id="cardPinned">
 				<i class="fas fa-thumbtack"></i>
 				<h3>Admin Pinned</h3>
