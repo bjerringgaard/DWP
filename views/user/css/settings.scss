@@ -1,10 +1,4 @@
-$navheight: 70px;
-
-$background: #23272A;
-$dark: #2C2F33;
-$grey: #99AAB5;
-$White: #FFFFFF;
-$color: #7700FF;
+@import "variables.scss";
 
 ::-webkit-scrollbar-track-piece{
 	background: transparent;

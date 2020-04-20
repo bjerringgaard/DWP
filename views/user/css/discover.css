@@ -178,4 +178,55 @@ a:hover {
 #discoverCards #cardPinned {
   color: #663399;
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #F2F3F5;
+  }
+  header {
+    background: #FFFFFF;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav a {
+    color: #23272A;
+  }
+  #logo {
+    color: #23272A;
+  }
+  #logo a {
+    color: #23272A;
+  }
+  .menu-trigger {
+    color: #23272A;
+  }
+  h2 {
+    color: #23272A;
+  }
+  p {
+    color: #23272A;
+  }
+  #discoverCards .card {
+    background-color: #7700FF;
+    color: #23272A;
+  }
+  #discoverCards #cardLike {
+    background-color: #d64541;
+    color: #96281b;
+  }
+  #discoverCards #cardComment {
+    background-color: #446cb3;
+    color: #3a539b;
+  }
+  #discoverCards #cardPinned {
+    color: #663399;
+  }
+}
 /*# sourceMappingURL=discover.css.map */

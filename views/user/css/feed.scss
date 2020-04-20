@@ -1,10 +1,4 @@
-$navheight: 70px;
-
-$background: #23272A;
-$dark: #2C2F33;
-$grey: #99AAB5;
-$White: #FFFFFF;
-$color: #7700FF;
+@import "variables.scss";
 
 ::-webkit-scrollbar-track-piece{
 	background: transparent;
@@ -417,6 +411,160 @@ header{
 			padding-left: 5px;
 		}
 	}
+
+@media (prefers-color-scheme: light) {
+	body { 
+		background-color: $ldark;
+		}
+		
+	// Navigation 
+	header{
+		background: $lbackground;
+	   }
+	
+		nav{
+				a{
+					color:$lWhite;
+				}
+			}
+	
+		#logo{
+			color: $lWhite;
+			a{
+				color: $lWhite;
+			}
+			}	
+	
+		.menu-trigger {
+			color:$lWhite;
+		  }
+	
+	// Post
+		#post{
+			background-color: $lbackground;
+		}
+	
+		#postFrame {
+	
+			.postByUser{
+				color: $lWhite;
+			}
+	
+			.postTitle{
+				padding: 0;
+				margin: 0;
+	
+				h3{
+					color: $lWhite;
+				}
+	
+			}
+	
+			.postInfo{
+				.postStats{
+					color: $lWhite;
+					display: flex;
+					align-items: center;
+				}
+			
+				.postAction{
+	
+					a {
+						color: $lWhite;
+					}
+				}
+			}
+	
+			.postLikes {
+				p {
+					color: $lWhite;
+				}
+				
+			}
+	
+			.postUser {
+	
+				i {
+					color: $lWhite;
+				}
+	
+				div {
+					h3{
+						color: $lWhite;
+					}
+	
+					p {
+						color: $lWhite;
+					}
+				}
+				
+	
+				
+			}	
+		}
+	
+		#postCommentFrame{
+			background-color: $lbackground;
+	
+			#commentField{
+				background-color: $ldark;
+	
+				h3{
+					color: $lWhite;
+				}
+	
+				.commentUser {
+					.theComment {
+						i {
+							color: $lWhite;
+						}
+			
+						div {
+							h3{
+								color: $lWhite;
+							}
+			
+							p {
+								color: $lWhite;
+							}
+						}
+					}
+				}	
+			}
+	
+			#writeComment{
+	
+				i {
+					color: $lWhite;
+				}
+	
+				input {
+					background-color: $ldark;
+					color: $lWhite;
+	
+				}
+				button{
+					background-color: $ldark;
+					color: $lWhite;
+				}
+	
+				#paper-plane{
+					background-color: $lcolor;
+					i{
+						color: $White;
+					}
+				}
+			}
+	
+		}
+	
+		#uploadContent {
+			button {
+				color: $White;
+			}
+			
+		}
+}
 
 
 
