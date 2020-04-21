@@ -35,33 +35,33 @@ require("../../Includes/connection.php");
 
 	if (mysqli_num_rows($result) > 0) {
 		// output data of each row
-		while($row = mysqli_fetch_assoc($result)) {
+		while($post = mysqli_fetch_assoc($result)) {
 			echo '
 				<div id="post">
 					<div id="postFrame">
 						<div class="postImg">
-							<img id="theImage" src="' . $row["PostImage"] . '" alt="">
+							<img id="theImage" src="' . $post["PostImage"] . '" alt="">
 						</div>
 
-						<div class="postTitle"><h3>' . $row["PostTitle"] . '</h3></div>
+						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
 						<div class="postInfo">
 							<div class="postStats">
-								<p>' . $row["PostLikes"] . ' Likes</p>
+								<p>' . $post["PostLikes"] . ' Likes</p>
 								<p>&bull;</p>
-								<p>' . $row["PostTime"] . '</p>
+								<p>' . $post["PostTime"] . '</p>
 							</div>
 							<div class="postAction">
-									<a href="#" id="like"><i class="fas fa-heart"></i></a>
-									<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-									<a href="#" ><i class="fas fa-thumbtack"></i></a>
+									<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
+									<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
+									<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
 							</div>
 						</div>
 
 						<div class="postUser">
-						<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
+						<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
 							<div>
-								<h3>' . $row["UserID"]. '</h3>
-								<p>' . $row["PostDesc"] . '</p>
+								<h3>' . $post["UserID"]. '</h3>
+								<p>' . $post["PostDesc"] . '</p>
 							</div>
 						</div>
 					</div>
@@ -69,7 +69,7 @@ require("../../Includes/connection.php");
 
 					<div id="postCommentFrame">
 							<div id="commentField">
-								<h3>100 Comments</h3>
+								<h3>Comments</h3>
 							
 								<div class="commentUser"> ';
 
@@ -77,19 +77,18 @@ require("../../Includes/connection.php");
 								FROM Post p, Comment c, User u
 								WHERE c.PostID = p.PostID
 								AND c.UserID = u.UserID
-								";
+								AND p.PostID = " . $post["PostID"];
 
 								$cresult = mysqli_query($conn, $csql);
 
 								if (mysqli_num_rows($cresult) > 0) {
-								// output data of each row
-									while($row = mysqli_fetch_assoc($cresult)) {
+									while($comment = mysqli_fetch_assoc($cresult)) {
 										echo '
 											<div class="theComment">
-												<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
+												<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
 													<div>
-														<h3>' . $row["UserID"]. '</h3>
-														<p>' . $row["CommentText"] . '</p>
+														<h3>' . $comment["UserID"]. '</h3>
+														<p>' . $comment["CommentText"] . '</p>
 													</div>
 											</div> '; 
 									} 
