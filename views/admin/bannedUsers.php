@@ -21,58 +21,31 @@ require("../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-  <h2>Latest Post</h2>
-
-
-
+<h2>Banned Users</h2>
 
 <div class="overSkriftHeader">
 <?php
- $sql = "SELECT * 
- FROM post p, User u
- WHERE p.UserID = u.UserID
- ORDER BY p.postTime DESC
- ";
+$sql = "SELECT * FROM user WHERE isBanned = 1";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
-        echo "
-          <h4> " . $row["PostTitle"]. "</h4>
-          <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
-          <p> " . $row["PostDesc"]. "</p>
+        echo"
+          <p>" . $row["UserID"]. "</p>
         ";
-        echo'
-        <a href="includes/deletePost.php?id='.$row['PostID'].'"'; ?>
-        onclick="return confirm('Er du sikker på du vil slette denne post');"
-        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>';
-        
     }
 } else {
-    echo "0 results";
+    echo "<p>Der er ingen Banned Users Yet !</p>";
 }
 
 ?>
 
 </div>
-
-
-
-
-<hr class="new1">
 </div>
-
-
-
-
-
-
 </section>
 
-  
-
-<section id="sb">
+  <section id="sb">
 <?php include 'includes/navigation.php';?>
 </section>
 <footer>
