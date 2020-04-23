@@ -1,4 +1,4 @@
-<?php
+<?php /* We don't use this, but i'm too scared to delete it
 class Config
 {
     static $configArray;
