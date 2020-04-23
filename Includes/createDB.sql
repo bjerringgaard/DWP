@@ -62,7 +62,7 @@ VALUES (
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'HelloItIsMeJohnFaxe!',
-    'John John',
+    'John',
     'Faxe Jensen',
     'futbol@danmark.dk',
     'hunter2',
