@@ -4,7 +4,8 @@ require("../../../Includes/connection.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include 'userIncludes/navigation.php';?>
+	<?php include '../userIncludes/head.php';?>
+	<link rel="stylesheet" href="discoverPages.css">
 	<title>ShortCircuit | Most Commented</title>
 </head>
 <body>		

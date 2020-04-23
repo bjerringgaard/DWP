@@ -5,6 +5,7 @@ require("../../Includes/connection.php");
 <html lang="en">
 <head>
 	<?php include 'userIncludes/head.php';?>
+	<link rel="stylesheet" href="css/feed.css">
 	<title>ShortCircuit | Feed</title>
 </head>
 <body>		
@@ -101,7 +102,7 @@ require("../../Includes/connection.php");
 	} ?>
 
 		<div id="uploadContent">
-			<button><i class="fas fa-plus"></i></button>
+			<a href="postUpload.php"><button><i class="fas fa-plus"></i></button></a>
 		</div>
 	</section>
 </body>

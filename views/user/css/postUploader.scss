@@ -1,0 +1,83 @@
+@import "cssConstants/variables.scss";
+@import "cssConstants/navigation.scss";
+
+// Main 
+	#main{
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+#upload{
+	display: flex;
+	background-color: $background;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 20px;
+	width: 50vw;
+	max-width: 1364px;
+
+	#uploadFrame {
+		display: flex;
+		flex-direction: column;
+		color: $White;
+		width: 100%;
+
+		#uploadIMG{
+			border-radius: 10px;
+			width: 100%;
+			background-color: $dark;
+			height: 200px;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			display: flex;
+
+			input{
+				width: fit-content;
+			}
+		}
+
+		#uploadForm{
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+
+			#title, #desc{
+				display: flex;
+				margin-bottom: 10px;
+				align-items: center;
+				background-color: $dark;
+				border-radius: 10px;
+
+				h3{
+					padding-left: 10px;
+				}
+			}
+
+			#submit {
+				margin-top: 10px;
+				background-color: $color;
+			}
+
+			input {
+				border-radius: 10px;
+				width: 100%;
+				height: 60px;
+				padding-left: 10px;
+				
+				background-color: $dark;
+				border: none;
+				color: $White;
+				font-size: 16px;
+
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+	}
+}
