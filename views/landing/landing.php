@@ -3,7 +3,7 @@
 <?php require_once("../../controllers/functions.php"); ?>
 <?php
 		if (logged_in()) {
-		redirect_to("frontpage.php");
+		redirect_to("../user/feed.php");
 	}
  ?>
 <!DOCTYPE html>
@@ -44,8 +44,8 @@
 <?php
 	// START FORM PROCESSING
 	if (isset($_POST['submit'])) { // Form has been submitted.
-		$username = trim(mysqli_real_escape_string($connection, $_POST['UserID']));
-		$password = trim(mysqli_real_escape_string($connection,$_POST['UserPassword']));
+		$username = trim(mysqli_real_escape_string($connection, $_POST['username']));
+		$password = trim(mysqli_real_escape_string($connection,$_POST['password']));
 
 		$query = "SELECT UserID, UserPassword FROM User WHERE UserID = '{$username}' LIMIT 1";
 		$result = mysqli_query($connection, $query);
@@ -71,10 +71,13 @@
 if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>
 
 <form action = "" method = "post">
-                  <label>UserName</label><input type= text name="username" class="textbox"><br/><br/>
-                  <label>Password</label><input type= password name="password" class="textbox"><br/><br/>
-                  <input type="submit" value="Log in" class="button" class="button"><br/>
+                  <label>UserName</label><input type= text name="username" class="textbox" value=""><br/><br/>
+                  <label>Password</label><input type= password name="password" class="textbox" value=""><br/><br/>
+                  <input type="submit" value="Log in" class="button"><br/>
                </form>
 </div>
 </body>
 </html>
+<?php
+if (isset($connection)){mysqli_close($connection);}
+?>
