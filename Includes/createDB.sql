@@ -21,6 +21,7 @@ CREATE TABLE Post (
     PostImage varchar (255) NOT NULL,
     PostLikes INT NULL,
     PostTime DATE NOT NULL,
+    IsPinned boolean NOT NULL,
     UserID varchar(20) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
 );
@@ -71,22 +72,48 @@ VALUES (
     '1'
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID)
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
 VALUES (
     'My first build',
     'I just really like the golden color #precious #beginner',
     'https://i.ytimg.com/vi/V18eUOLW7Kk/maxresdefault.jpg',
     4,
     '2020/05/03',
-    'Bbaggz'
+    'Bbaggz',
+    1
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID)
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
 VALUES (
     'Hello! How do I use this site? I\'m not good at PC',
     'I just really like the golden color #precious #beginner',
     'https://i.imgur.com/0skJjHK.jpg',
-    3, 
+    5, 
     '2020/04/03',
-    'HelloItIsMeJohnFaxe!'
-)
+    'HelloItIsMeJohnFaxe!',
+    0
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/03',
+    'I really Like this post!!!',
+    1
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/05',
+    'This is amazing',
+    1
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'Bbaggz',
+    '2020/04/05',
+    'Awesome',
+    2
+);

@@ -18,65 +18,93 @@ require("../../Includes/connection.php");
 
 	<title>ShortCircuit | Feed</title>
 </head>
-<body>
-	<div id="wrapper"> 
-		
+<body>		
 	<header>
-		<div class="sideBar"></div> 
-	<div id="logo"><a href="feed.php">ShortCircuit</a></div>
-		<nav>
-		<a href="#" class="menu-trigger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a>
-		<ul>
-			<li><a href="#"><i class="fas fa-home"></i></a></li>
-			<li><a href="#categories"><i class="fas fa-compass"></i></a></li>
-			<li><a href="profile.php"><i class="fas fa-user-circle"></i></a></li>
-			<li><a href="#settings"><i class="fas fa-cog"></i></a></li>
-		</ul>
-		</nav>
-		<div class="sideBar"></div> 
+		<?php include 'userIncludes/navigation.php';?>
 	</header> 
 
 	<section id="main">
 
 	<?php
-	$sql = "SELECT * FROM post";
+	$sql = "SELECT * 
+			FROM post p, User u
+			WHERE p.UserID = u.UserID
+			ORDER BY p.postTime DESC
+			";
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {
 		// output data of each row
-		while($row = mysqli_fetch_assoc($result)) {
+		while($post = mysqli_fetch_assoc($result)) {
 			echo '
-			<div class="postFrame">
-			<div class="postByUser">
-				<div id="profilePicName">
-					<i class="fas fa-user-circle"></i>
-					<h3>' . $row["UserID"]. '</h3>
-				</div>
-				<div id="timestamp"><p>' . $row["PostTime"] . '</p></div>
-			</div>
+				<div id="post">
+					<div id="postFrame">
+						<div class="postImg">
+							<img id="theImage" src="' . $post["PostImage"] . '" alt="">
+						</div>
 
-			<div class="postImg">
-			<img src="' . $row["PostImage"] . '" alt="">
-			</div>
+						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
+						<div class="postInfo">
+							<div class="postStats">
+								<p>' . $post["PostLikes"] . ' Likes</p>
+								<p>&bull;</p>
+								<p>' . $post["PostTime"] . '</p>
+							</div>
+							<div class="postAction">
+									<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
+									<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
+									<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
+							</div>
+						</div>
 
-			<div class="postAction">
-				<div id="likeComment">
-					<a href="#" id="like"><i class="fas fa-heart"></i></a>
-					<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-				</div>
-				<div id="pin"><a href="#" ><i class="fas fa-thumbtack"></i></a></div>
-			</div>
+						<div class="postUser">
+						<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
+							<div>
+								<h3>' . $post["UserID"]. '</h3>
+								<p>' . $post["PostDesc"] . '</p>
+							</div>
+						</div>
+					</div>
 
-			<div class="postLikes">
-			<p>' . $row["PostLikes"] . ' Likes</p>
-			</div>
 
-			<div class="postComments">
-				<p id="postUsername"><b>' . $row["UserID"]. '</b></p>
-				<p id="postTitle">' . $row["PostTitle"] . '</p>
-			</div>
-		</div>
-			';
+					<div id="postCommentFrame">
+							<div id="commentField">
+								<h3>Comments</h3>
+							
+								<div class="commentUser"> ';
+
+								$csql = "SELECT * 
+								FROM Post p, Comment c, User u
+								WHERE c.PostID = p.PostID
+								AND c.UserID = u.UserID
+								AND p.PostID = " . $post["PostID"];
+
+								$cresult = mysqli_query($conn, $csql);
+
+								if (mysqli_num_rows($cresult) > 0) {
+									while($comment = mysqli_fetch_assoc($cresult)) {
+										echo '
+											<div class="theComment">
+												<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
+													<div>
+														<h3>' . $comment["UserID"]. '</h3>
+														<p>' . $comment["CommentText"] . '</p>
+													</div>
+											</div> '; 
+									} 
+								}
+
+
+							echo '	</div>	
+							</div>
+
+							<div id="writeComment">
+								<input type="text">
+								<button><i class="fas fa-paperclip"></i></button>
+								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
+							</div>
+						</div>
+				</div>	';
 			
 		}
 	} else {
@@ -89,3 +117,5 @@ require("../../Includes/connection.php");
 	</section>
 </body>
 </html>
+
+

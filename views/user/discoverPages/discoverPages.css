@@ -123,7 +123,6 @@ nav i {
   padding: 20px;
   margin: 10px;
   border-radius: 20px;
-  max-width: 1364px;
 }
 
 #postFrame {
@@ -135,9 +134,6 @@ nav i {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50vw;
-  /*	#Pin {
-			display: none;
-		} */
 }
 
 #postFrame .postByUser {
@@ -222,7 +218,7 @@ nav i {
       -ms-flex-pack: end;
           justify-content: flex-end;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   margin-left: 20px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -277,7 +273,6 @@ nav i {
   width: 20vw;
   margin-left: 20px;
   background-color: #23272A;
-  max-width: 384px;
 }
 
 #postCommentFrame #commentField {
@@ -345,12 +340,14 @@ nav i {
 
 #postCommentFrame #writeComment {
   width: 20vw;
-  max-width: 384px;
   height: 50px;
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #2C2F33;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #postCommentFrame #writeComment i {
@@ -366,9 +363,6 @@ nav i {
 
 #postCommentFrame #writeComment input {
   width: 75%;
-  padding-left: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
   background-color: #2C2F33;
   border: none;
   color: #FFFFFF;
@@ -466,6 +460,44 @@ nav i {
   padding-left: 5px;
 }
 
+.card {
+  width: calc(70vw + 60px);
+  height: 70px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #7700FF;
+  color: #FFFFFF;
+  font-size: 24px;
+}
+
+.card i {
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+#cardLike {
+  background-color: #d64541;
+  color: #96281b;
+}
+
+#cardComment {
+  background-color: #446cb3;
+  color: #3a539b;
+}
+
+#cardPinned {
+  color: #663399;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: #F2F3F5;
@@ -561,4 +593,4 @@ nav i {
     color: #FFFFFF;
   }
 }
-/*# sourceMappingURL=feed.css.map */
+/*# sourceMappingURL=discoverPages.css.map */

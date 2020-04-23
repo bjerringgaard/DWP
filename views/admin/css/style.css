@@ -5,11 +5,70 @@ margin: 0;
 height: 100%;
 width: 100%;
 font-family: 'Inter', sans-serif;
-
 } 
+
+input[type=text] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  margin-left: 15px;
+  background-color:#2e3131;
+  border: 0px;
+  color: #e8ecf1;
+  font-size: 16px;
+}
+
+input[type=checkbox] {
+  padding-left:5px;
+  padding-right:5px;
+  margin-left: 15px;
+
+  -webkit-appearance:button;
+
+
+  background-color:#00b16a;
+  color:#FFF;
+  white-space: nowrap;
+  overflow:hidden;
+
+  width:35px;
+  height:35px;
+}
+
+input[type=checkbox]:checked {
+  background-color:#f62459;
+
+}
+
+
+.overSkriftHeader p.postedBy{
+  color: #6246ea;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.editUser p.editUser{
+  color: #e8ecf1;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-left: 15px;
+}
+
+.detteTest{
+  color: #6246ea;
+  font-weight: 800;
+}
 
 * {
   box-sizing: border-box;
+}
+
+.updateDelete{
+  color: #ffffff;
+  font-size: 30px;
+  margin-left: 15px;
 }
 
 #sb{
@@ -81,7 +140,22 @@ h2{
     font-size: 30px;
     margin: 0;
     padding: 15px;
+}
 
+h4{
+  padding: 15px;
+  margin-top: -20px;
+  margin-bottom: 0;
+  font-weight: 800;
+  color: #CBCBCB;
+}
+
+h5{
+  padding: 15px;
+  margin-top: -20px;
+  margin-bottom: 0;
+  font-weight: 800;
+  color: #6246ea;
 }
 
 h3{
@@ -147,13 +221,7 @@ h3{
   margin-top: -20px;
 }
 
-h4{
-  padding: 15px;
-  margin-top: -20px;
-  margin-bottom: 0;
-  font-weight: 800;
-  color: #CBCBCB;
-}
+
 
 .overSkriftHeader p{
   padding: 15px;
