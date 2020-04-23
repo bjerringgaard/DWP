@@ -62,7 +62,7 @@ VALUES (
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'HelloItIsMeJohnFaxe!',
-    'John John',
+    'John',
     'Faxe Jensen',
     'futbol@danmark.dk',
     'hunter2',
@@ -71,7 +71,7 @@ VALUES (
     '0',
     '1'
 );
-
+/*
 INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
 VALUES (
     'My first build',
@@ -124,4 +124,4 @@ VALUES (
     '2020/04/05',
     'Hello',
     2
-);
+); */

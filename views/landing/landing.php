@@ -17,7 +17,7 @@ if(isset($_POST["submit"])){
          if (count($userDBResult)==1){
            if($login->logMeIn($userDBResult,$password)==1){
                if(isset($_SESSION['user_id'])){
-                   LoginController::redirect_to("frontpage.php");
+                   LoginController::redirect_to("feed.php");
                }
            }
         }

@@ -4,18 +4,8 @@ require("../../Includes/connection.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+	<?php include 'userIncludes/head.php';?>
 	<link rel="stylesheet" href="css/feed.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Asap|Heebo|Quicksand|Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-
 	<title>ShortCircuit | Feed</title>
 </head>
 <body>		
@@ -40,7 +30,7 @@ require("../../Includes/connection.php");
 				<div id="post">
 					<div id="postFrame">
 						<div class="postImg">
-							<img id="theImage" src="' . $post["PostImage"] . '" alt="">
+							<img id="theImage" src="../../uploads/posts' . $post["PostImage"] . '" alt="">
 						</div>
 
 						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
@@ -112,7 +102,7 @@ require("../../Includes/connection.php");
 	} ?>
 
 		<div id="uploadContent">
-			<button><i class="fas fa-plus"></i></button>
+			<a href="postUpload.php"><button><i class="fas fa-plus"></i></button></a>
 		</div>
 	</section>
 </body>
