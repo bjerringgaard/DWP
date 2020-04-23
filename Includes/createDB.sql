@@ -62,7 +62,7 @@ VALUES (
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'HelloItIsMeJohnFaxe!',
-    'John',
+    'John John',
     'Faxe Jensen',
     'futbol@danmark.dk',
     'hunter2',
@@ -115,5 +115,13 @@ VALUES (
     'Bbaggz',
     '2020/04/05',
     'Awesome',
+    2
+);
+
+INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
+VALUES (
+    'HelloItIsMeJohnFaxe!',
+    '2020/04/05',
+    'Hello',
     2
 );
