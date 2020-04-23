@@ -55,11 +55,11 @@ if($_FILES["file"]["error"]>0){
     echo "Size: ". ($_FILES["file"]["size"]/1024)."<br>";
     echo "Temp folder: ". $_FILES["file"]["tmp_name"]."<br>";
 
-        if (file_exists("../../uploads/posts".$_FILES["file"]["name"])){
+        if (file_exists("../../uploads/posts/".$_FILES["file"]["name"])){
             echo "Findes allerede";
         }else{
             move_uploaded_file($_FILES["file"]["tmp_name"],
-            "../../uploads/posts".$_FILES["file"]["name"]);
+            "../../uploads/posts/".$_FILES["file"]["name"]);
 			echo "stored in upload: ". $_FILES["file"]["name"];
 			
         $sql = "INSERT INTO Post (PostID, PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID) 
