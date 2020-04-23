@@ -23,12 +23,15 @@ require("../../Includes/connection.php");
 <div class="box1">
   <h2>Latest Post</h2>
 
-
-
-
 <div class="overSkriftHeader">
 <?php
-$sql = "SELECT * FROM post";
+ //$sql = "SELECT * FROM post";
+ $sql = "SELECT * 
+ FROM post p, User u
+ WHERE p.UserID = u.UserID
+ ORDER BY p.postTime DESC
+ ";
+
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -36,8 +39,9 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "
           <h4> " . $row["PostTitle"]. "</h4>
+          <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
           <p> " . $row["PostDesc"]. "</p>
-          <button class='button'>Read More</button>
+          <button class='button'>Edit Post</button>
           <hr class='new1'>
         ";
         
@@ -50,13 +54,7 @@ if (mysqli_num_rows($result) > 0) {
 
 </div>
 
-
-
-
 <hr class="new1">
-
-
-    
 </div>
 <div class="box2">
 <h2>Latest Users</h2>
@@ -92,7 +90,6 @@ if (mysqli_num_rows($result) > 0) {
           <span> " . $row["UserEmail"]. "</span>
           <span> " . $row["ProfileDesc"]. "</span>
         ";
-        
     }
 } else {
     echo "0 results";
@@ -111,7 +108,6 @@ if (mysqli_num_rows($result) > 0) {
 </div>
 </section>
 
-  
 
 <section id="sb">
 <?php include 'includes/navigation.php';?>
