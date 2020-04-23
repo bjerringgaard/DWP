@@ -1,4 +1,4 @@
-<?php
+<?php /* We don't use this, but i'm too scared to delete it
 class DBController
 {
     private $connection;
@@ -48,7 +48,7 @@ class DBController
     public function runNewUserWriteQuery($username, $hashed_password){
         try {
             $DBCon = DBController::getInstance();
-            $stmt = $DBCon->connection->prepare("INSERT INTO users (user, pass) VALUES (?,?)");
+            $stmt = $DBCon->connection->prepare("INSERT INTO User (UserID, UserPassword) VALUES (?,?)");
         $stmt->bindParam(1, $username);
         $stmt->bindParam(2, $hashed_password);
         if(!$stmt->execute())
@@ -61,4 +61,4 @@ class DBController
             echo $exception->getMessage();
         }
     }
-}
+} 
