@@ -1,33 +1,11 @@
+<?php require("../../Includes/connection.php"); ?>
+<?php require_once("../../controllers/session.php"); ?>
+<?php require_once("../../controllers/functions.php"); ?>
 <?php
-require("../../Includes/connection.php");
-spl_autoload_register(function ($class)
-{include"../../controllers/".$class.".php";});
-$login = new LoginController();
-$messages = new MsgController();
-if(LoginController::logged_in()){
-    LoginController::redirect_to("feed.php");
-}
-if(isset($_POST["submit"])){
-
-    $username = trim(htmlspecialchars($_POST['username']));
-    $password = trim(htmlspecialchars($_POST['password']));
-    $DBConn = new DBController();
-    $userDBResult = $DBConn->runReadQuery("SELECT UserID, UserPassword FROM User WHERE UserID = '{$username}' LIMIT 1");
-    $userDBResult = $DBConn->readResults;
-         if (count($userDBResult)==1){
-           if($login->logMeIn($userDBResult,$password)==1){
-               if(isset($_SESSION['user_id'])){
-                   LoginController::redirect_to("feed.php");
-               }
-           }
-        }
-}
-else{
-    if(isset($_GET['logout']) && $_GET['logout'] == 1){
-        $messages->setMessage("You are now logged out");
-    }
-}
-?>
+		if (logged_in()) {
+		redirect_to("../user/feed.php");
+	}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,17 +42,42 @@ else{
 		</header> 
 <div id="loginFrame">
 <?php
-if (!empty($messages->getMessage())){
-    $msgs = $messages->getMessage();
-    foreach ($msgs as $msg){
-        echo "<p>". $msg. "</p>";
-    }}
-?>
+	// START FORM PROCESSING
+	if (isset($_POST['submit'])) { // Form has been submitted.
+		$username = trim(mysqli_real_escape_string($connection, $_POST['username']));
+		$password = trim(mysqli_real_escape_string($connection,$_POST['password']));
+
+		$query = "SELECT UserID, UserPassword FROM User WHERE UserID = '{$username}' LIMIT 1";
+		$result = mysqli_query($connection, $query);
+			
+			if (mysqli_num_rows($result) == 1) {
+				// username/password authenticated
+				// and only 1 match
+				$found_user = mysqli_fetch_array($result);
+                if(password_verify($password, $found_user['UserPassword'])){
+				    $_SESSION['user_id'] = $found_user['UserID'];
+				    $_SESSION['user'] = $found_user['UserID'];
+				    redirect_to("../feed.php");
+			} else {
+				// username/password combo was not found in the database
+				$message = "Username/password combination incorrect.<br />
+					Please make sure your caps lock key is off and try again.";
+			}}
+	} else { // Form has not been submitted.
+		if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+			$message = "You are now logged out.";
+		} 
+	}
+if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>
+
 <form action = "" method = "post">
-                  <label>UserName</label><input type= text name="username" class="textbox"><br/><br/>
-                  <label>Password</label><input type= password name="password" class="textbox"><br/><br/>
-                  <input type="submit" value="Log in" class="button" class="button"><br/>
+                  <label>UserName</label><input type= text name="username" class="textbox" value=""><br/><br/>
+                  <label>Password</label><input type= password name="password" class="textbox" value=""><br/><br/>
+                  <input type="submit" value="Log in" class="button"><br/>
                </form>
 </div>
 </body>
 </html>
+<?php
+if (isset($connection)){mysqli_close($connection);}
+?>
