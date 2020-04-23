@@ -38,5 +38,5 @@ require("../../Includes/connection.php");
 </body>
 </html>
 <?php 
-require("userComponents/uploadPost.php");
+require("userComponents/postUploadComponent.php");
 ?>
