@@ -71,7 +71,7 @@ VALUES (
     '0',
     '1'
 );
-
+/*
 INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
 VALUES (
     'My first build',
@@ -124,4 +124,4 @@ VALUES (
     '2020/04/05',
     'Hello',
     2
-);
+); */

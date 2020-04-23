@@ -30,7 +30,7 @@ require("../../Includes/connection.php");
 				<div id="post">
 					<div id="postFrame">
 						<div class="postImg">
-							<img id="theImage" src="' . $post["PostImage"] . '" alt="">
+							<img id="theImage" src="../../uploads/posts' . $post["PostImage"] . '" alt="">
 						</div>
 
 						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
