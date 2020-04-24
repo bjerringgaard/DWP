@@ -42,7 +42,7 @@ CREATE TABLE Comment (
     CommentStyle varchar (255),
     UserID varchar(20) NOT NULL,
     PostID int NOT NULL,
-    FOREIGN KEY (PostID) REFERENCES Post (PostID),
+    FOREIGN KEY (PostID) REFERENCES Post (PostID) ON DELETE CASCADE,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
 );
 

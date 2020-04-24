@@ -8,22 +8,22 @@ function timeAgo($datetime, $full = false) {
     $diff->d -= $diff->w * 7;
 
     $string = array(
-        'y' => 'year',
-        'm' => 'month',
-        'w' => 'week',
-        'd' => 'day',
-        'h' => 'hour',
-        'i' => 'minute',
-        's' => 'second',
+        'y' => 'YEAR',
+        'm' => 'MONTH',
+        'w' => 'WEEK',
+        'd' => 'DAY',
+        'h' => 'HOUR',
+        'i' => 'MINUTE',
+        's' => 'SECOND',
     );
     foreach ($string as $k => &$v) {
         if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 'S' : '');
         } else {
             unset($string[$k]);
         }
     }
 
     if (!$full) $string = array_slice($string, 0, 1);
-    return $string ? implode(', ', $string) . ' ago' : 'just now';
+    return $string ? implode(', ', $string) . ' AGO' : 'JUST NOW';
 }
