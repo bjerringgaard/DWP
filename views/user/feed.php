@@ -89,9 +89,9 @@ include("userIncludes/comment.php")
 
 							echo '</div>	
 							</div>
-
 							<div id="writeComment">
 							<form action="" method="post" enctype="multipart/form-data">
+								<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
 								<input type="text" name="commentText">
 								<input type="file" name="file" id="file"></input>
 								<label for="file"><i class="fas fa-paperclip"></i></label>
@@ -100,7 +100,6 @@ include("userIncludes/comment.php")
 							</div>
 						</div>
 				</div>	';
-			
 		}
 	} else {
 		echo "0 results";
