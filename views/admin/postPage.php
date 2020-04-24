@@ -85,7 +85,7 @@ if (mysqli_num_rows($result) > 0) {
 						<div class="postUser">
 						<div class="profilePic"></div>
 							<div>
-								<h3>' . $post["UserID"]. '</h3>
+								<h4>by user: ' . $post["UserID"]. '</h4>
 								<p>' . $post["PostDesc"] . '</p>
 							</div>
 						</div>
@@ -106,24 +106,23 @@ if (mysqli_num_rows($result) > 0) {
 
 								if (mysqli_num_rows($cresult) > 0) {
 									while($comment = mysqli_fetch_assoc($cresult)) {
-										echo '
-										
 
-													<div>
-														<h3>' . $comment["UserID"]. '</h3>
-														<p>' . $comment["CommentText"] . '</p>
-													</div>
-									'; 
+                    echo "
+                    <div class='postComment'>
+                    <p> " . $comment["UserID"]. "</p>
+                    <p> " . $comment["CommentText"]. "</p>
+                  ";
+                  echo'
+                  <a href="includes/deleteComment.php?id='.$comment['CommentID'].'"'; ?>
+                  onclick="return confirm('Er du sikker på du vil slette denne kommentar');"
+                  <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>
+                  </div>';
+                  
 									} 
 								}
 
 
 							echo '	</div>	
-							</div>
-							<div id="writeComment">
-								<input type="text">
-								<button><i class="fas fa-paperclip"></i></button>
-								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
 							</div>
 						</div>
 				</div>	';
