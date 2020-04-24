@@ -1,6 +1,7 @@
 <?php
 require("../../Includes/connection.php");
-include("userIncludes/date.php")
+include("userIncludes/date.php");
+include("userIncludes/comment.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +18,6 @@ include("userIncludes/date.php")
 	<section id="main">
 
 	<?php
-
-	// echo time_elapsed_string('$post["PostTime"]');
-
 	$sql = "SELECT * 
 			FROM post p, User u
 			WHERE p.UserID = u.UserID
@@ -40,9 +38,9 @@ include("userIncludes/date.php")
 						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
 						<div class="postInfo">
 							<div class="postStats">
-								<p>' . $post["PostLikes"] . ' Likes</p>
+								<p>' . $post["PostLikes"] . ' LIKES</p>
 								<p>&bull;</p>
-								<p>' . timeAgo($post["PostTime"]) . '</p>
+								<p id="postTime">' . timeAgo($post["PostTime"]) . '</p>
 							</div>
 							<div class="postAction">
 									<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
@@ -89,13 +87,16 @@ include("userIncludes/date.php")
 								}
 
 
-							echo '	</div>	
+							echo '</div>	
 							</div>
 
 							<div id="writeComment">
-								<input type="text">
-								<button><i class="fas fa-paperclip"></i></button>
-								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
+							<form action="" method="post" enctype="multipart/form-data">
+								<input type="text" name="commentText">
+								<input type="file" name="file" id="file"></input>
+								<label for="file"><i class="fas fa-paperclip"></i></label>
+								<input type="submit" name="submit" class="btn fa-input" value="send"></input>
+							</form>
 							</div>
 						</div>
 				</div>	';

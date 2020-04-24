@@ -62,6 +62,7 @@
 
 		}
 
+
 	/*	#Pin {
 			display: none;
 		} */
@@ -84,6 +85,10 @@
 				p{
 					margin: 0;
 					margin-right: 10px;
+				}
+
+				#postTime{
+					opacity: .5;
 				}
 			}
 		
@@ -152,6 +157,8 @@
 			
 		}	
 	}
+
+
 
 	#postCommentFrame{
 		width: 20vw;
@@ -222,69 +229,82 @@
 			margin-top: 20px;
 			display: flex;
 
-			i {
-				margin-right: 10px;
-				color: $White;
-				font-size: 32px;
-				align-self: center;
-				width: 10%;
-				padding-left: 5px;
-			}
-
-			input {
-				width: 75%;
-				padding-left: 10px;
-
-				border-top-left-radius: 10px;
-				border-bottom-left-radius: 10px;
-				
-				background-color: $dark;
-				border: none;
-				color: $White;
-				font-size: 16px;
-
-				&:focus{
-					outline: none;
+			form {
+				display: flex;
+				width: 20vw;
+				i {
+					margin-right: 10px;
+					color: $White;
+					font-size: 32px;
+					align-self: center;
+					width: 10%;
+					padding-left: 5px;
+				}
+	
+				input[type = text] {
+					width: 75%;
+					height: 50px;
+					padding: 0;
+					padding-left: 10px;
+	
+					border-top-left-radius: 10px;
+					border-bottom-left-radius: 10px;
+					
+					background-color: $dark;
+					border: none;
+					color: $White;
+					font-size: 16px;
+	
+					&:focus{
+						outline: none;
+					}
 				}
 
-			}
-			button{
-				height: 50px;
-				width: 15%;
-				background-color: $dark;
-				color: $White;
-				border: none;
-				cursor: pointer;
-
-				transition: all .2s ease-in-out;
-
-				&:focus{
-					outline: none;
+				input[type = file]{
+					width: 0.1px;
+					height: 0.1px;
+					opacity: 0;
+					overflow: hidden;
+					position: absolute;
+					z-index: -1;
 				}
 
-				i{
-					font-size: 20px;
-					padding-right: 20px;
+				input[type = submit]{
+					height: 50px;
+					width: 15%;
+					background-color: $color;
+					color: $White;
+					border: none;
+					cursor: pointer;
+	
+					transition: all .2s ease-in-out;
+					border-top-right-radius: 10px;
+					border-bottom-right-radius: 10px;
+				}
 
-					&:hover {
-						transform: scale(1.2); 
+				label {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 50px;
+					width: 15%;
+					background-color: $dark;
+					color: $White;
+					border: none;
+					cursor: pointer;
+
+					i{
+						width: 15%;
+						font-size: 20px;
+						padding-right: 10px;
+	
+						&:hover {
+							transform: scale(1.2); 
+						}
 					}
 				}
 			}
-
-			#paper-plane{
-				border-top-right-radius: 10px;
-				border-bottom-right-radius: 10px;
-				background-color: $color;
-
-				
-
-				&:focus{
-					outline: none;
-				}
-			}
 		}
-
 	}
 
 	#uploadContent {
