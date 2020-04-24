@@ -4,13 +4,13 @@ require("../../Includes/connection.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include 'userIncludes/head.php';?>
+	<?php include 'userTemplates/head.php';?>
 	<link rel="stylesheet" href="css/postUploader.css">
 	<title>ShortCircuit | Post Uploader</title>
 </head>
 <body>		
 	<header>
-		<?php include 'userIncludes/navigation.php';?>
+		<?php include 'userTemplates/navigation.php';?>
 	</header> 
 
 	<section id="main">
@@ -38,5 +38,5 @@ require("../../Includes/connection.php");
 </body>
 </html>
 <?php 
-require("userComponents/uploadPost.php");
+require("userIncludes/upload.php");
 ?>

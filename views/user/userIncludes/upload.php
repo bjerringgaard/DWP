@@ -4,7 +4,7 @@ if(isset($_POST["submit"])){
         or($_FILES["file"]["type"] == "image/gif")
         or($_FILES["file"]["type"] == "image/png")
         or($_FILES["file"]["type"] == "image/jpg"))
-        && ($_FILES["file"]["size"]<10000000)){
+        && ($_FILES["file"]["size"]<2500000000)){
 
 
 if($_FILES["file"]["error"]>0){
@@ -23,7 +23,7 @@ if($_FILES["file"]["error"]>0){
 			echo "stored in upload: ". $_FILES["file"]["name"];
 			
         $sql = "INSERT INTO Post (PostID, PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID) 
-				VALUES (NULL, '".$_POST["title"]."', '".$_POST["description"]."', '".$_FILES["file"]["name"]."', 0, CURRENT_DATE, 0, 'Bbaggz')"; 
+				VALUES (NULL, '".$_POST["title"]."', '".$_POST["description"]."', '".$_FILES["file"]["name"]."', 0, CURRENT_TIMESTAMP, 0, 'Bbaggz')"; 
         mysqli_query($conn, $sql);
         mysqli_close($conn);
         }

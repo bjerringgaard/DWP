@@ -4,13 +4,13 @@ require("../../../Includes/connection.php");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include '../userIncludes/head.php';?>
+	<?php include '../userTemplates/head.php';?>
 	<link rel="stylesheet" href="discoverPages.css">
 	<title>ShortCircuit | Most Commented</title>
 </head>
 <body>		
 	<header>
-		<?php include '../userIncludes/navigationDiscover.php';?>
+		<?php include '../userTemplates/navigationDiscover.php';?>
 	</header>
 	
 	<section id="main">

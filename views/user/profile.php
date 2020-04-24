@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include 'userIncludes/head.php';?>
+	<?php include 'userTemplates/head.php';?>
 	<link rel="stylesheet" href="css/profile.css">
 	<title>ShortCircuit | Profile</title>
 </head>
 <body>	
 	<header>
-		<?php include 'userIncludes/navigation.php';?>
+		<?php include 'userTemplates/navigation.php';?>
 	</header> 
 
 	<section id="main">
