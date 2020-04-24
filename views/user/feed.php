@@ -1,21 +1,25 @@
 <?php
 require("../../Includes/connection.php");
+include("userIncludes/date.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include 'userIncludes/head.php';?>
+	<?php include 'userTemplates/head.php';?>
 	<link rel="stylesheet" href="css/feed.css">
 	<title>ShortCircuit | Feed</title>
 </head>
 <body>		
 	<header>
-		<?php include 'userIncludes/navigation.php';?>
+		<?php include 'userTemplates/navigation.php';?>
 	</header> 
 
 	<section id="main">
 
 	<?php
+
+	// echo time_elapsed_string('$post["PostTime"]');
+
 	$sql = "SELECT * 
 			FROM post p, User u
 			WHERE p.UserID = u.UserID
@@ -38,7 +42,7 @@ require("../../Includes/connection.php");
 							<div class="postStats">
 								<p>' . $post["PostLikes"] . ' Likes</p>
 								<p>&bull;</p>
-								<p>' . $post["PostTime"] . '</p>
+								<p>' . timeAgo($post["PostTime"]) . '</p>
 							</div>
 							<div class="postAction">
 									<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>

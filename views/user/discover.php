@@ -10,7 +10,7 @@ require("../../Includes/connection.php");
 </head>
 <body>		
 	<header>
-		<?php include 'userIncludes/navigation.php';?>
+		<?php include 'userTemplates/navigation.php';?>
 	</header>
 	
 	<section id="main">

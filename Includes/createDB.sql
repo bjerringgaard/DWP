@@ -20,7 +20,7 @@ CREATE TABLE Post (
     PostDesc varchar (255) NULL,
     PostImage varchar (255) NOT NULL,
     PostLikes INT NULL,
-    PostTime DATE NOT NULL,
+    PostTime TIMESTAMP NOT NULL,
     IsPinned boolean NOT NULL,
     UserID varchar(20) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
