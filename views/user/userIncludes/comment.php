@@ -10,13 +10,13 @@ VALUES (
 
 if(isset($_POST["submit"])){
 	$sql = "INSERT INTO Comment (UserID, CommentText, CmtAttachement, CommentStyle, CommentTimeStamp, PostID) 
-				VALUES ('Bbaggz', '".$_POST["commentText"]."', NULL, NULL, CURRENT_TIMESTAMP, 1)"; 
+				VALUES ('Bbaggz', '".$_POST["commentText"]."', NULL, NULL, CURRENT_TIMESTAMP, '".$post["PostID"]."')"; 
         mysqli_query($conn, $sql);
 		mysqli_close($conn);	
 
 		header("Location: feed.php");
-        exit;
 }
 
 //'".$_POST["PostID"]."'
-//'".$_POST["commentText"]."'
+//'".$comment["PostID"]."'
+//'".$post["PostID"]."'
