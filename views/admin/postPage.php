@@ -23,22 +23,14 @@ require("../../Includes/connection.php");
 <div class="box1">
   <h2>Latest Post</h2>
 
-
-
-
-
-
-
 <div class="overSkriftHeader">
-<?php
+<!-- <?php
 
 
 $sql = "SELECT * 
 FROM Post p, Comment c, User u
 WHERE c.PostID = p.PostID
-AND c.UserID = u.UserID;
-AND p.PostID = " . $post['PostID'];
-
+AND c.UserID = u.UserID";
 
 
 /*  $sql = "SELECT * 
@@ -56,7 +48,7 @@ if (mysqli_num_rows($result) > 0) {
           <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
           <p> " . $row["PostDesc"]. "</p>
           <p> " . $row["CommentText"]. "</p>
-          <p> " . $row["CommentText"]. "</p>
+          <p> " . $row["UserID"]. "</p>
         ";
         echo'
         <a href="includes/deletePost.php?id='.$row['PostID'].'"'; ?>
@@ -68,25 +60,84 @@ if (mysqli_num_rows($result) > 0) {
     echo "0 results";
 }
 
-?>
+?> -->
+
+<?php
+
+	$sql = "SELECT * 
+			FROM post p, User u
+			WHERE p.UserID = u.UserID
+			ORDER BY p.postTime DESC
+			";
+	$result = mysqli_query($conn, $sql);
+
+	if (mysqli_num_rows($result) > 0) {
+		// output data of each row
+		while($post = mysqli_fetch_assoc($result)) {
+			echo '
+				<div id="post">
+					<div id="postFrame">
+						<div class="postImg">
+						</div>
+						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
+						<div class="postInfo">
+						</div>
+						<div class="postUser">
+						<div class="profilePic"></div>
+							<div>
+								<h3>' . $post["UserID"]. '</h3>
+								<p>' . $post["PostDesc"] . '</p>
+							</div>
+						</div>
+					</div>
+					<div id="postCommentFrame">
+							<div id="commentField">
+								<h3>Comments</h3>
+							
+								<div class="commentUser"> ';
+
+								$csql = "SELECT * 
+								FROM Post p, Comment c, User u
+								WHERE c.PostID = p.PostID
+								AND c.UserID = u.UserID
+								AND p.PostID = " . $post["PostID"];
+
+								$cresult = mysqli_query($conn, $csql);
+
+								if (mysqli_num_rows($cresult) > 0) {
+									while($comment = mysqli_fetch_assoc($cresult)) {
+										echo '
+										
+
+													<div>
+														<h3>' . $comment["UserID"]. '</h3>
+														<p>' . $comment["CommentText"] . '</p>
+													</div>
+									'; 
+									} 
+								}
+
+
+							echo '	</div>	
+							</div>
+							<div id="writeComment">
+								<input type="text">
+								<button><i class="fas fa-paperclip"></i></button>
+								<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
+							</div>
+						</div>
+				</div>	';
+			
+		}
+	} else {
+		echo "0 results";
+	} ?>
+
 
 </div>
-
-
-
-
 <hr class="new1">
 </div>
-
-
-
-
-
-
 </section>
-
-  
-
 <section id="sb">
 <?php include 'includes/navigation.php';?>
 </section>
