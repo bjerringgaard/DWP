@@ -204,6 +204,10 @@ nav i {
   margin-right: 10px;
 }
 
+#postFrame .postInfo .postStats #postTime {
+  opacity: .5;
+}
+
 #postFrame .postInfo .postAction {
   width: 50%;
   display: -webkit-box;
@@ -353,7 +357,14 @@ nav i {
   display: flex;
 }
 
-#postCommentFrame #writeComment i {
+#postCommentFrame #writeComment form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20vw;
+}
+
+#postCommentFrame #writeComment form i {
   margin-right: 10px;
   color: #FFFFFF;
   font-size: 32px;
@@ -364,8 +375,10 @@ nav i {
   padding-left: 5px;
 }
 
-#postCommentFrame #writeComment input {
+#postCommentFrame #writeComment form input[type=text] {
   width: 75%;
+  height: 50px;
+  padding: 0;
   padding-left: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -375,43 +388,59 @@ nav i {
   font-size: 16px;
 }
 
-#postCommentFrame #writeComment input:focus {
+#postCommentFrame #writeComment form input[type=text]:focus {
   outline: none;
 }
 
-#postCommentFrame #writeComment button {
+#postCommentFrame #writeComment form input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+#postCommentFrame #writeComment form input[type=submit] {
+  height: 50px;
+  width: 15%;
+  background-color: #7700FF;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#postCommentFrame #writeComment form label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 50px;
   width: 15%;
   background-color: #2C2F33;
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
 }
 
-#postCommentFrame #writeComment button:focus {
-  outline: none;
-}
-
-#postCommentFrame #writeComment button i {
+#postCommentFrame #writeComment form label i {
+  width: 15%;
   font-size: 20px;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
-#postCommentFrame #writeComment button i:hover {
+#postCommentFrame #writeComment form label i:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-}
-
-#postCommentFrame #writeComment #paper-plane {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: #7700FF;
-}
-
-#postCommentFrame #writeComment #paper-plane:focus {
-  outline: none;
 }
 
 #uploadContent {
