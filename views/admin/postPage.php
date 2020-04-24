@@ -26,13 +26,26 @@ require("../../Includes/connection.php");
 
 
 
+
+
+
 <div class="overSkriftHeader">
 <?php
- $sql = "SELECT * 
- FROM post p, User u
- WHERE p.UserID = u.UserID
+
+
+$sql = "SELECT * 
+FROM Post p, Comment c, User u
+WHERE c.PostID = p.PostID
+AND c.UserID = u.UserID;
+AND p.PostID = " . $post['PostID'];
+
+
+
+/*  $sql = "SELECT * 
+ FROM post p, user u, comment m
+ WHERE p.UserID = u.UserID AND p.CommentID = m.CommentID
  ORDER BY p.postTime DESC
- ";
+ "; */
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -42,6 +55,8 @@ if (mysqli_num_rows($result) > 0) {
           <h4> " . $row["PostTitle"]. "</h4>
           <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
           <p> " . $row["PostDesc"]. "</p>
+          <p> " . $row["CommentText"]. "</p>
+          <p> " . $row["CommentText"]. "</p>
         ";
         echo'
         <a href="includes/deletePost.php?id='.$row['PostID'].'"'; ?>
