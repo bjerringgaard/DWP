@@ -83,18 +83,24 @@ if (mysqli_num_rows($result) > 0) {
 						<div class="postInfo">
 						</div>
 						<div class="postUser">
-						<div class="profilePic"></div>
 							<div>
 								<h4>by user: ' . $post["UserID"]. '</h4>
-								<p>' . $post["PostDesc"] . '</p>
+                <p>' . $post["PostDesc"] . '</p>
+                
 							</div>
 						</div>
 					</div>
 					<div id="postCommentFrame">
 							<div id="commentField">
-								<h3>Comments</h3>
 							
-								<div class="commentUser"> ';
+                <div class="commentUser"> ';
+                echo'
+                <a href="includes/deletePost.php?id='.$post['PostID'].'"'; ?>
+                onclick="return confirm('Er du sikker på du vil slette denne Post');"
+                <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>
+                <h3>Comments</h3>
+                ';
+                
 
 								$csql = "SELECT * 
 								FROM Post p, Comment c, User u
@@ -107,21 +113,20 @@ if (mysqli_num_rows($result) > 0) {
 								if (mysqli_num_rows($cresult) > 0) {
 									while($comment = mysqli_fetch_assoc($cresult)) {
 
-                    echo "
-                    <div class='postComment'>
-                    <p> " . $comment["UserID"]. "</p>
-                    <p> " . $comment["CommentText"]. "</p>
+                  echo "
+                  <div class='postComment'>
+                  <p> " . $comment["UserID"]. "</p>
+                  <p> " . $comment["CommentText"]. "</p>
                   ";
                   echo'
                   <a href="includes/deleteComment.php?id='.$comment['CommentID'].'"'; ?>
                   onclick="return confirm('Er du sikker på du vil slette denne kommentar');"
                   <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>
-                  </div>';
+                  </div><hr class="new1">';
                   
 									} 
-								}
-
-
+                }
+                
 							echo '	</div>	
 							</div>
 						</div>
