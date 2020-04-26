@@ -71,3 +71,24 @@ VALUES (
     '0',
     '1'
 );
+
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+VALUES (
+    'My First Intel Build',
+    'Dette er mit første build',
+    'https://i.imgur.com/0skJjHK.jpg',
+    '2',
+    '2020-04-10 00:00:00',
+    '0',
+    'Bbaggz'
+);
+
+INSERT INTO Comment (CmtAttachement, CommentTimeStamp, CommentText, CommentStyle, UserID, PostID)
+VALUES (
+    'NULL',
+    '2020-04-24 12:50:14',
+    'Meget Flot',
+    'NULL',
+    'HelloItIsMeJohnFaxe!',
+    '4'
+);
