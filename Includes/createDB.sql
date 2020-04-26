@@ -90,5 +90,5 @@ VALUES (
     'Meget Flot',
     'NULL',
     'HelloItIsMeJohnFaxe!',
-    '4'
+    '1'
 );
