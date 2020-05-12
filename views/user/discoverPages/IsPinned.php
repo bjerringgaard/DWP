@@ -7,7 +7,7 @@ include("../userIncludes/comment.php")
 <html lang="en">
 <head>
 	<?php include '../userTemplates/head.php';?>
-	<link rel="stylesheet" href="discoverPages.css">
+	<link rel="stylesheet" href="css/discoverPages.css">
 	<title>ShortCircuit | Admin Pinned</title>
 </head>
 <body>		

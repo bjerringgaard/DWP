@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<?php include 'userTemplates/head.php';?>
-	<link rel="stylesheet" href="css/profile.css">
+	<link rel="stylesheet" href="styles/css/profile.css">
 	<title>ShortCircuit | Profile</title>
 </head>
 <body>	
