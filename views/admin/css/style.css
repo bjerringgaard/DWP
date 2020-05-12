@@ -7,6 +7,23 @@ width: 100%;
 font-family: 'Inter', sans-serif;
 } 
 
+textarea {
+  width: 500px;
+  height: 400px;
+  margin: 20px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color:#2e3131;
+  color: #e8ecf1;
+  font-size: 16px;
+  border: 0px;
+}
+
+.rules{
+  padding: 50px;
+}
+
 .postComment {
   padding-top: 15px;
   background-color: #67809f;

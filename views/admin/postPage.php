@@ -97,7 +97,13 @@ if (mysqli_num_rows($result) > 0) {
                 echo'
                 <a href="includes/deletePost.php?id='.$post['PostID'].'"'; ?>
                 onclick="return confirm('Er du sikker på du vil slette denne Post');"
-                <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>
+                <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>
+
+                <a href="includes/editPost.php?id='.$post['PostID'].'"'; ?>
+                onclick="return confirm('Edit Post?');"
+                <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>
+
+
                 <h3>Comments</h3>
                 ';
                 
@@ -146,9 +152,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php include 'includes/navigation.php';?>
 </section>
 <footer>
-     <div class="footer_information">
-        <p>© Peter Schaadt Wind</p>
-    </div> 
+<?php include 'includes/footer.php';?>
 </footer>
 </div>   
 </body>
