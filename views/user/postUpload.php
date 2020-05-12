@@ -5,7 +5,7 @@ require("../../Includes/connection.php");
 <html lang="en">
 <head>
 	<?php include 'userTemplates/head.php';?>
-	<link rel="stylesheet" href="css/postUploader.css">
+	<link rel="stylesheet" href="styles/css/postUploader.css">
 	<title>ShortCircuit | Post Uploader</title>
 </head>
 <body>		

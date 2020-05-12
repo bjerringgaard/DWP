@@ -5,7 +5,7 @@ require("../../../Includes/connection.php");
 <html lang="en">
 <head>
 	<?php include '../userTemplates/head.php';?>
-	<link rel="stylesheet" href="discoverPages.css">
+	<link rel="stylesheet" href="css/discoverPages.css">
 	<title>ShortCircuit | Most Commented</title>
 </head>
 <body>		

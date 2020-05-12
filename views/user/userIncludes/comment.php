@@ -26,7 +26,7 @@ if($_FILES["file"]["error"]>0){
 						VALUES ('Bbaggz', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 							mysqli_query($conn, $sql);
 							mysqli_close($conn);	
-								header("Location: feed.php");
+							header("Location: feed.php");
 			}
 
 }}else{
@@ -36,14 +36,3 @@ if($_FILES["file"]["error"]>0){
 						mysqli_close($conn);	
 							header("Location: feed.php");
     }}
-
-
-/* 
-if(isset($_POST["submit"])){
-	$sql = "INSERT INTO Comment (UserID, CommentText, CmtAttachement, CommentStyle, CommentTimeStamp, PostID) 
-				VALUES ('Bbaggz', '".$_POST["commentText"]."', NULL, NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
-        mysqli_query($conn, $sql);
-		mysqli_close($conn);	
-
-		header("Location: feed.php");
-} */

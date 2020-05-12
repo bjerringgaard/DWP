@@ -165,20 +165,24 @@
 		margin-left: 20px;
 		background-color: $background;
 		max-width: 384px;
+		background-color: $dark;
+		border-radius: 10px;
+		height: 470px;
+
+		h3{
+			margin: 0;
+			padding: 20px;
+			height: 20px;
+			color: $White;
+			margin-bottom: 20px;
+			padding-bottom: 0;
+		}
 
 		#commentField{
 			background-color: $dark;
 			border-radius: 10px;
-			height: 470px;
-
-			h3{
-				margin: 0;
-				padding: 20px;
-				color: $White;
-	
-				margin-bottom: 20px;
-				padding-bottom: 0;
-			}
+			height: 410px;
+			overflow: auto;
 
 			.commentUser {
 				display: flex;
@@ -186,24 +190,18 @@
 				align-items: left;
 				padding: 20px;
 				padding-top: 0;
-				overflow: auto;
-
-				height: 387px;
+				height: fit-content;
 
 				.theComment {
 					display: flex;
 					flex-direction: row;
+					height: fit-content;
 
 					margin-bottom: 10px;
 
-					.commentImg{
-						img{
-							width: 300px;
-							height: 169px;
-							border-radius: 10px;
-							object-fit: cover;
-						}
-				}
+					.profilePic{
+						height: 40px;
+					}
 
 					i {
 						margin-right: 10px;
@@ -213,6 +211,7 @@
 					}
 		
 					div {
+						height: fit-content;
 						h3{
 							margin: 0;
 							padding: 0;
@@ -224,10 +223,20 @@
 		
 						p {
 							margin: 0;
+							margin-bottom: 10px;
 							padding: 0;
 							color: $White;
 						}
 					}
+					.commentImg{
+						height: 0;
+						img{
+							width: 300px;
+							height: 169px;
+							border-radius: 10px;
+							object-fit: cover;
+						}
+				}
 				}
 			}	
 		}

@@ -282,20 +282,25 @@ nav i {
   margin-left: 20px;
   background-color: #23272A;
   max-width: 384px;
-}
-
-#postCommentFrame #commentField {
   background-color: #2C2F33;
   border-radius: 10px;
   height: 470px;
 }
 
-#postCommentFrame #commentField h3 {
+#postCommentFrame h3 {
   margin: 0;
   padding: 20px;
+  height: 20px;
   color: #FFFFFF;
   margin-bottom: 20px;
   padding-bottom: 0;
+}
+
+#postCommentFrame #commentField {
+  background-color: #2C2F33;
+  border-radius: 10px;
+  height: 410px;
+  overflow: auto;
 }
 
 #postCommentFrame #commentField .commentUser {
@@ -311,8 +316,9 @@ nav i {
           align-items: left;
   padding: 20px;
   padding-top: 0;
-  overflow: auto;
-  height: 387px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #postCommentFrame #commentField .commentUser .theComment {
@@ -323,15 +329,14 @@ nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-bottom: 10px;
 }
 
-#postCommentFrame #commentField .commentUser .theComment .commentImg img {
-  width: 300px;
-  height: 169px;
-  border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
+#postCommentFrame #commentField .commentUser .theComment .profilePic {
+  height: 40px;
 }
 
 #postCommentFrame #commentField .commentUser .theComment i {
@@ -340,6 +345,12 @@ nav i {
   font-size: 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #postCommentFrame #commentField .commentUser .theComment div h3 {
@@ -351,8 +362,21 @@ nav i {
 
 #postCommentFrame #commentField .commentUser .theComment div p {
   margin: 0;
+  margin-bottom: 10px;
   padding: 0;
   color: #FFFFFF;
+}
+
+#postCommentFrame #commentField .commentUser .theComment .commentImg {
+  height: 0;
+}
+
+#postCommentFrame #commentField .commentUser .theComment .commentImg img {
+  width: 300px;
+  height: 169px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #postCommentFrame #writeComment {
@@ -598,4 +622,3 @@ nav i {
     color: #FFFFFF;
   }
 }
-/*# sourceMappingURL=feed.css.map */
