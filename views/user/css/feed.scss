@@ -194,7 +194,17 @@
 					display: flex;
 					flex-direction: row;
 
-					margin-bottom: 20px;
+					margin-bottom: 10px;
+
+					.commentImg{
+						img{
+							width: 300px;
+							height: 169px;
+							border-radius: 10px;
+							object-fit: cover;
+						}
+				}
+
 					i {
 						margin-right: 10px;
 						color: $White;
