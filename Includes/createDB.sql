@@ -46,6 +46,13 @@ CREATE TABLE Comment (
     FOREIGN KEY (UserID) REFERENCES User (UserID)
 );
 
+CREATE TABLE aboutPage (
+    PageID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    PageRules TEXT NULL,
+    PageDesc TEXT NULL,
+    PageContact TEXT NULL,
+);
+
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'Bbaggz',
