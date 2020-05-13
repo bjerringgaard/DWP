@@ -1,11 +1,14 @@
 <?php
 if(isset($_POST["submit"])){
+	$localfile = $_FILES["file_1"];
+	var_dump($localfile);
+
     if((($_FILES["file"]["type"] == "image/jpeg")
         or($_FILES["file"]["type"] == "image/gif")
         or($_FILES["file"]["type"] == "image/png")
         or($_FILES["file"]["type"] == "image/jpg"))
         && ($_FILES["file"]["size"]<2500000000)){
-
+					
 
 if($_FILES["file"]["error"]>0){
     echo "Error: ". $_FILES["file"]["error"]."<br>";
@@ -31,8 +34,9 @@ if($_FILES["file"]["error"]>0){
 
 }}else{
 	$sql = "INSERT INTO Comment (UserID, CommentText, CmtAttachement, CommentStyle, CommentTimeStamp, PostID) 
-					VALUES ('Bbaggz', '".$_POST["commentText"]."', NULL, NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+					VALUES ('Bbaggz', '".$_POST["commentText"]."', 'test1', NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 						mysqli_query($conn, $sql);
 						mysqli_close($conn);	
-							header("Location: feed.php");
+							//header("Location: feed.php");
+							echo "Error: ". $_FILES["file"]["error"]."<br>";
     }}

@@ -98,10 +98,10 @@ echo '
 
 		echo ' </div>
 		<div id="writeComment">
-			<form action="" method="post" enctype="multipart/form-data">
+			<form action="" method="post" enctype="multipart/form-data" name="' . $post["PostID"] . '">
 				<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
 				<input type="text" name="commentText">
-				<input type="file" name="file" id="file"></input>
+				<input type="file" name="file_1" id="file"></input>
 				<label for="file"><i class="fas fa-paperclip"></i></label>
 				<input type="submit" name="submit" class="btn fa-input" value="send"></input>
 			</form>
