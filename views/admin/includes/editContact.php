@@ -21,7 +21,7 @@ require("../../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-<h2>Edit Post</h2>
+<h2>Edit Contact Information</h2>
 
 <div class="editUser">
 <?php
@@ -38,8 +38,9 @@ if(!mysqli_stmt_prepare($stmt, $query)){
   while($row=mysqli_fetch_array($result)){
 ?>
 
-<form name="upload" method="post" action="editRulesSend.php"> 
-<textarea class="inp" name="PageRules"><?php echo $row['PageRules']; ?></textarea>
+<form name="upload" method="post" action="editContactSend.php"> 
+<textarea class="inp" name="PageContact"><?php echo $row['PageContact']; ?></textarea>
+<br><br>
 <input name="PageID" type="hidden" value="<?php echo $row['PageID']; ?>">
 <br><br>
 <input class="button" name="Submit" type="submit" value="Update Post">

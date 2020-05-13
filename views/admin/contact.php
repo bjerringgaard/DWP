@@ -21,7 +21,7 @@ require("../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-<h2>Rules</h2>
+<h2>Contact Information</h2>
 
 <div class="overSkriftHeader">
 <?php
@@ -32,18 +32,12 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo"
-          <p>" . $row["PageRules"]. "</p>
+          <p class='maxTextWidth'>" . $row["PageContact"]. "</p>
         ";
-        // SLETTER BRUGEREN
-        echo'
-        <a href="includes/deleteUser.php?id='.$row['PageID'].'"'; ?>
-        onclick="return confirm('Er du sikker på du vil slette denne bruger');"
-        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
-
         // UPDATER BRUGEREN
         echo
-        '<a href="includes/editRules.php?id='.$row['PageID'].'"'; ?>
-        onclick="return confirm('Edit Rules?');"
+        '<a href="includes/editContact.php?id='.$row['PageID'].'"'; ?>
+        onclick="return confirm('Edit Desciption?');"
         <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>';
         
     }

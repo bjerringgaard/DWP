@@ -127,7 +127,11 @@ if (mysqli_num_rows($result) > 0) {
                   echo'
                   <a href="includes/deleteComment.php?id='.$comment['CommentID'].'"'; ?>
                   onclick="return confirm('Er du sikker på du vil slette denne kommentar');"
-                  <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a><br><br><br><br>
+                  <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>
+
+                  <a href="includes/editComment.php?id='.$comment['CommentID'].'"'; ?>
+                       onclick="return confirm('Edit Comment?');"
+                       <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>
                   </div><hr class="new1">';
                   
 									} 
