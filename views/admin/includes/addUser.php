@@ -46,9 +46,7 @@ require("../../Includes/connection.php");
 <?php include 'includes/navigation.php';?>
 </section>
 <footer>
-     <div class="footer_information">
-        <p>© Peter Schaadt Wind</p>
-    </div> 
+<?php include 'footer.php';?>
 </footer>
 </div>   
 </body>
