@@ -46,6 +46,15 @@ CREATE TABLE Comment (
     FOREIGN KEY (UserID) REFERENCES User (UserID)
 );
 
+CREATE TABLE TextStyling(
+    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    TextStylingName varchar (50) NOT NULL,
+    TextStylingColor varchar (50) NOT NULL,
+    TextStylingFont varchar (50) NOT NULL,
+    CommentID int NOT NULL,
+    FOREIGN KEY (CommentID) REFERENCES Comment (CommentID)
+);
+
 CREATE TABLE aboutPage (
     PageID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     PageRules TEXT NULL,
