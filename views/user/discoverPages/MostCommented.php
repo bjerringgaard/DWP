@@ -22,10 +22,13 @@ include("../userIncludes/comment.php")
 		</div>
 	<?php
 	$sql = "SELECT * 
-			FROM post p, User u
+			FROM post p, User u, Comment c,
+			COUNT(*) AS CommentAmount
 			WHERE p.UserID = u.UserID
-			AND p.IsPinned = 1
+			AND c.PostID = p.PostID
+			ORDER BY COUNT(*) DESC
 			";
+
 	$result = mysqli_query($conn, $sql);
 
 	if (mysqli_num_rows($result) > 0) {

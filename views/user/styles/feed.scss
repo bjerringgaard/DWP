@@ -25,6 +25,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 50vw;
+		max-width: 960px;
 
 		.postByUser{
 			display: flex;
@@ -69,6 +70,7 @@
 
 		.postInfo{
 			width: 100%;
+			max-width: 1364px;
 			height: 20px;
 			display: flex;
 			margin: 0;
@@ -128,6 +130,8 @@
 		.postUser {
 			display: flex;
 			align-items: center;
+			justify-content: left;
+			word-wrap: break-word;
 
 			i {
 				margin-right: 10px;
@@ -137,6 +141,7 @@
 			}
 
 			div {
+					width: 95%;
 				h3{
 					margin: 0;
 					padding: 0;
@@ -152,9 +157,10 @@
 					color: $White;
 				}
 			}
-			
 
-			
+			.profilePic{
+				width: 60px;
+			}
 		}	
 	}
 
@@ -195,7 +201,9 @@
 				.theComment {
 					display: flex;
 					flex-direction: row;
+
 					height: fit-content;
+					width: 340px;
 
 					margin-bottom: 10px;
 
@@ -226,10 +234,14 @@
 							margin-bottom: 10px;
 							padding: 0;
 							color: $White;
+							word-wrap: break-word;
+							width: 300px;
 						}
 					}
 					.commentImg{
-						height: 0;
+						height: fit-content;
+						min-height: 0;
+						max-height: 169;
 						img{
 							width: 300px;
 							height: 169px;
@@ -278,7 +290,7 @@
 						outline: none;
 					}
 				}
-
+				
 				input[type = file]{
 					width: 0.1px;
 					height: 0.1px;
