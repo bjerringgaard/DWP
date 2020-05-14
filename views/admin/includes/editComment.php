@@ -6,7 +6,7 @@ require("../../../Includes/connection.php");
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Page</title>
+    <title>Edit Comment</title>
     <meta name="description" content="Admin Dashboard">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
@@ -21,14 +21,13 @@ require("../../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-<h2>Edit Post</h2>
+<h2>Edit Comment</h2>
 
 <div class="editUser">
-
 <?php
 $id=$_GET['id'];
 
-$query = "SELECT * FROM post WHERE PostID= ?";
+$query = "SELECT * FROM comment  WHERE CommentID= ?";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $query)){
   echo "SQL Failed";
@@ -39,17 +38,10 @@ if(!mysqli_stmt_prepare($stmt, $query)){
   while($row=mysqli_fetch_array($result)){
 ?>
 
-<form name="upload" method="post" action="editPostSend.php"> 
-    
-    <input class="inp" name="PostID" type="text" value="<?php echo $row['PostID']; ?>">
-    <br><br>
-    <input name="PostTitle" type="text" value="<?php echo $row['PostTitle']; ?>">
-    <br><br>
-    <input name="PostDesc" type="text" value="<?php echo $row['PostDesc']; ?>">
-    <br><br>
-    <input type='hidden' value='0' name='IsPinned'>
-    <p class='editUser'>Pinned Post?</p><input type="checkbox" name="IsPinned"value="1" <?php echo ($row['IsPinned']==1 ? 'checked' : '0');?>>
-    <br><br>
+<form name="upload" method="post" action="editCommentSend.php"> 
+<textarea class="inp" name="CommentText"><?php echo $row['CommentText']; ?></textarea>
+<input name="CommentID" type="hidden" value="<?php echo $row['CommentID']; ?>">
+<br><br>
 <input class="button" name="Submit" type="submit" value="Update Post">
 </form>
 

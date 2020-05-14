@@ -27,23 +27,26 @@ require("../../../Includes/connection.php");
 <?php
 $id=$_GET['id'];
 
-$query = "SELECT * FROM aboutPage  WHERE PageID='$id'";
-$result=mysqli_query($conn, $query);
-
-while($row=mysqli_fetch_array($result)){
+$query = "SELECT * FROM aboutPage  WHERE PageID= ?";
+$stmt = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($stmt, $query)){
+  echo "SQL Failed";
+}else{
+  mysqli_stmt_bind_param($stmt, "i", $id);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+  while($row=mysqli_fetch_array($result)){
 ?>
 
 <form name="upload" method="post" action="editRulesSend.php"> 
-    
-    <input class="inp" name="PageID" type="text" value="<?php echo $row['PageID']; ?>">
-    <br><br>
-    <input name="PageRules" type="text" value="<?php echo $row['PageRules']; ?>">
-    <br><br>
+<textarea class="inp" name="PageRules"><?php echo $row['PageRules']; ?></textarea>
+<input name="PageID" type="hidden" value="<?php echo $row['PageID']; ?>">
+<br><br>
 <input class="button" name="Submit" type="submit" value="Update Post">
 </form>
 
 <?php
-}
+}}
 mysqli_close($conn);
 ?>
 </div>
@@ -54,7 +57,7 @@ mysqli_close($conn);
 </section>
 
 <section id="sb">
-<?php include 'navigation.php';?>
+<?php include 'navigationEdit.php';?>
 </section>
 <footer>
 <?php include 'footer.php';?>

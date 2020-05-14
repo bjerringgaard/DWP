@@ -12,7 +12,6 @@ require("../../Includes/connection.php");
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e0fef6fe5f.js" crossorigin="anonymous"></script>
   </head>
-
 <body>
 <div id="wrapper">   
 <header> 
@@ -21,43 +20,32 @@ require("../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-<h2>Rules</h2>
+<h2>Pinned</h2>
 
 <div class="overSkriftHeader">
 <?php
-$sql = "SELECT * FROM aboutPage";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo"
-          <p>" . $row["PageRules"]. "</p>
-        ";
-        // SLETTER BRUGEREN
-        echo'
-        <a href="includes/deleteUser.php?id='.$row['PageID'].'"'; ?>
-        onclick="return confirm('Er du sikker på du vil slette denne bruger');"
-        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
-
-        // UPDATER BRUGEREN
-        echo
-        '<a href="includes/editRules.php?id='.$row['PageID'].'"'; ?>
-        onclick="return confirm('Edit Rules?');"
-        <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>';
-        
-    }
-} else {
-    echo "0 results";
-}
-
+$pinned = '1';
+$query = "SELECT * FROM post WHERE IsPinned = ? ";
+$stmt = mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($stmt, $query)){
+  echo "SQL Failed";
+}else{
+  mysqli_stmt_bind_param($stmt, "i", $pinned);
+  mysqli_stmt_execute($stmt);
+  $result = mysqli_stmt_get_result($stmt);
+  while($row=mysqli_fetch_array($result)){
+    echo "<p>Post Title: " . $row["PostTitle"]. "</p>";
+    echo "<p>Post Description: " . $row["PostDesc"]. "</p>";
+    echo "<hr class='new1'>";
 ?>
+<?php
+}}
+mysqli_close($conn);
+?>
+</div>
+</div>
 
-</div>
-</div>
 </section>
-
-  
 
 <section id="sb">
 <?php include 'includes/navigation.php';?>

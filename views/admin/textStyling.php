@@ -21,28 +21,25 @@ require("../../Includes/connection.php");
 
 <section id="main">
 <div class="box1">
-<h2>Rules</h2>
+<h2>Styling</h2>
+<h3>Current Styling</h3>
 
 <div class="overSkriftHeader">
 <?php
-$sql = "SELECT * FROM aboutPage";
+$sql = "SELECT * FROM TextStyling";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo"
-          <p>" . $row["PageRules"]. "</p>
+          <p>Name: " . $row["TextStylingName"]. "</p>
+          <p>Color: " . $row["TextStylingColor"]. "</p>
+          <p>Font: " . $row["TextStylingFont"]. "</p>
         ";
-        // SLETTER BRUGEREN
-        echo'
-        <a href="includes/deleteUser.php?id='.$row['PageID'].'"'; ?>
-        onclick="return confirm('Er du sikker på du vil slette denne bruger');"
-        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
-
         // UPDATER BRUGEREN
         echo
-        '<a href="includes/editRules.php?id='.$row['PageID'].'"'; ?>
+        '<a href="includes/editTextStyling.php?id='.$row['TextStylingID'].'"'; ?>
         onclick="return confirm('Edit Rules?');"
         <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>';
         
