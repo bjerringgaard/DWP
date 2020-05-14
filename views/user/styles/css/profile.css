@@ -100,109 +100,110 @@ nav i {
 }
 
 #main {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: 20vh auto 0 auto;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#main #profileInfo {
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 1364px;
+  width: 80vw;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #23272A;
+  border-radius: 20px;
+}
+
+#main #profileInfo #profilePic {
+  height: 200px;
+  width: 200px;
+}
+
+#main #profileInfo #profilePic img {
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#main #profileInfo #info {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #FFFFFF;
 }
 
-#main #profilePicture {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#main #profilePicture img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 15vw;
-  height: 15vw;
-  border-radius: 20%;
-}
-
-#main #userInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: white;
-  margin-left: 50px;
-}
-
-#main #userInfo button {
-  background-color: #7700FF;
-  border: none;
-  color: white;
-  border-radius: 10px;
-  width: 100px;
-  height: 40px;
-  font-size: 15px;
-}
-
-#main #userInfo .bold {
-  font-weight: 700;
-}
-
-#main #userInfo #row1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#main #userInfo #row1 h2 {
-  margin-bottom: 5px;
-}
-
-#main #userInfo #row2 {
-  margin-top: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#main #userInfo #row2 p {
+#main #profileInfo #info h2 {
   margin-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  font-size: 48px;
 }
 
-#main #userInfo #row2 .normal {
-  margin-right: 20px;
-  margin-left: 5px;
+#main #profileInfo #info p {
+  margin: 10px;
+  margin-top: 5px;
+  font-size: 20px;
 }
 
-#main #userInfo #row3 {
+#main #profileInfo #info #stats {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-#main #userInfo #row3 .bold {
-  margin: 0;
-  margin-top: 20px;
-}
-
-#main #userInfo #row3 .normal {
+#main #profileInfo #info #stats p {
   margin-top: 10px;
+  margin-right: 20px;
+}
+
+#main #profileInfo #info button {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #7700FF;
+  color: #FFFFFF;
+}
+
+#main #userPosts {
+  margin-top: 20px;
+  padding: 20px;
+  max-width: 1364px;
+  width: 80vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 20px;
 }

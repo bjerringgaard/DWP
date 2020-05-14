@@ -1,7 +1,7 @@
 <?php
 require("../../Includes/connection.php");
 include("userIncludes/date.php");
-//include("userIncludes/comment.php");
+include("userIncludes/comment.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
