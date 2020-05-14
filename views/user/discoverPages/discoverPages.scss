@@ -1,5 +1,6 @@
 @import "../styles/cssConstants/variables.scss";
 @import "../styles/cssConstants/navigation.scss";
+@import "../styles/feed.scss";
 
 		.card{
 			width: calc(1364px + 40px);
@@ -33,7 +34,7 @@
 		}
 		
 		#cardPinned{
-			color: #663399;
+			color: #4e1c80;
 		}
 
 @media (prefers-color-scheme: light) {
@@ -62,130 +63,4 @@
 		.menu-trigger {
 			color:$lWhite;
 			}
-	
-	// Post
-		#post{
-			background-color: $lbackground;
-		}
-	
-		#postFrame {
-	
-			.postByUser{
-				color: $lWhite;
-			}
-	
-			.postTitle{
-				padding: 0;
-				margin: 0;
-	
-				h3{
-					color: $lWhite;
-				}
-	
-			}
-	
-			.postInfo{
-				.postStats{
-					color: $lWhite;
-					display: flex;
-					align-items: center;
-				}
-			
-				.postAction{
-	
-					a {
-						color: $lWhite;
-					}
-				}
-			}
-	
-			.postLikes {
-				p {
-					color: $lWhite;
-				}
-				
-			}
-	
-			.postUser {
-	
-				i {
-					color: $lWhite;
-				}
-	
-				div {
-					h3{
-						color: $lWhite;
-					}
-	
-					p {
-						color: $lWhite;
-					}
-				}
-				
-	
-				
-			}	
-		}
-	
-		#postCommentFrame{
-			background-color: $lbackground;
-	
-			#commentField{
-				background-color: $ldark;
-	
-				h3{
-					color: $lWhite;
-				}
-	
-				.commentUser {
-					.theComment {
-						i {
-							color: $lWhite;
-						}
-			
-						div {
-							h3{
-								color: $lWhite;
-							}
-			
-							p {
-								color: $lWhite;
-							}
-						}
-					}
-				}	
-			}
-	
-			#writeComment{
-	
-				i {
-					color: $lWhite;
-				}
-	
-				input {
-					background-color: $ldark;
-					color: $lWhite;
-	
-				}
-				button{
-					background-color: $ldark;
-					color: $lWhite;
-				}
-	
-				#paper-plane{
-					background-color: $lcolor;
-					i{
-						color: $White;
-					}
-				}
-			}
-	
-		}
-	
-		#uploadContent {
-			button {
-				color: $White;
-			}
-			
-		}
 }

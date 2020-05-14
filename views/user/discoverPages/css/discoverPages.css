@@ -236,6 +236,7 @@ nav i {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50vw;
+  max-width: 960px;
   /*	#Pin {
 			display: none;
 		} */
@@ -280,6 +281,7 @@ nav i {
 
 #postFrame .postInfo {
   width: 100%;
+  max-width: 1364px;
   height: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,6 +357,10 @@ nav i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  word-wrap: break-word;
 }
 
 #postFrame .postUser i {
@@ -363,6 +369,10 @@ nav i {
   font-size: 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+#postFrame .postUser div {
+  width: 95%;
 }
 
 #postFrame .postUser div h3 {
@@ -378,25 +388,34 @@ nav i {
   color: #FFFFFF;
 }
 
+#postFrame .postUser .profilePic {
+  width: 60px;
+}
+
 #postCommentFrame {
   width: 20vw;
   margin-left: 20px;
   background-color: #23272A;
   max-width: 384px;
-}
-
-#postCommentFrame #commentField {
   background-color: #2C2F33;
   border-radius: 10px;
   height: 470px;
 }
 
-#postCommentFrame #commentField h3 {
+#postCommentFrame h3 {
   margin: 0;
   padding: 20px;
+  height: 20px;
   color: #FFFFFF;
   margin-bottom: 20px;
   padding-bottom: 0;
+}
+
+#postCommentFrame #commentField {
+  background-color: #2C2F33;
+  border-radius: 10px;
+  height: 410px;
+  overflow: auto;
 }
 
 #postCommentFrame #commentField .commentUser {
@@ -412,8 +431,9 @@ nav i {
           align-items: left;
   padding: 20px;
   padding-top: 0;
-  overflow: auto;
-  height: 387px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #postCommentFrame #commentField .commentUser .theComment {
@@ -424,7 +444,15 @@ nav i {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 20px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 340px;
+  margin-bottom: 10px;
+}
+
+#postCommentFrame #commentField .commentUser .theComment .profilePic {
+  height: 40px;
 }
 
 #postCommentFrame #commentField .commentUser .theComment i {
@@ -433,6 +461,12 @@ nav i {
   font-size: 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #postCommentFrame #commentField .commentUser .theComment div h3 {
@@ -444,8 +478,27 @@ nav i {
 
 #postCommentFrame #commentField .commentUser .theComment div p {
   margin: 0;
+  margin-bottom: 10px;
   padding: 0;
   color: #FFFFFF;
+  word-wrap: break-word;
+  width: 300px;
+}
+
+#postCommentFrame #commentField .commentUser .theComment .commentImg {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 0;
+  max-height: 169;
+}
+
+#postCommentFrame #commentField .commentUser .theComment .commentImg img {
+  width: 300px;
+  height: 169px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #postCommentFrame #writeComment {
@@ -727,7 +780,7 @@ nav i {
 }
 
 #cardPinned {
-  color: #663399;
+  color: #4e1c80;
 }
 
 @media (prefers-color-scheme: light) {
@@ -748,80 +801,5 @@ nav i {
   }
   .menu-trigger {
     color: #23272A;
-  }
-  #post {
-    background-color: #FFFFFF;
-  }
-  #postFrame .postByUser {
-    color: #23272A;
-  }
-  #postFrame .postTitle {
-    padding: 0;
-    margin: 0;
-  }
-  #postFrame .postTitle h3 {
-    color: #23272A;
-  }
-  #postFrame .postInfo .postStats {
-    color: #23272A;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #postFrame .postInfo .postAction a {
-    color: #23272A;
-  }
-  #postFrame .postLikes p {
-    color: #23272A;
-  }
-  #postFrame .postUser i {
-    color: #23272A;
-  }
-  #postFrame .postUser div h3 {
-    color: #23272A;
-  }
-  #postFrame .postUser div p {
-    color: #23272A;
-  }
-  #postCommentFrame {
-    background-color: #FFFFFF;
-  }
-  #postCommentFrame #commentField {
-    background-color: #F2F3F5;
-  }
-  #postCommentFrame #commentField h3 {
-    color: #23272A;
-  }
-  #postCommentFrame #commentField .commentUser .theComment i {
-    color: #23272A;
-  }
-  #postCommentFrame #commentField .commentUser .theComment div h3 {
-    color: #23272A;
-  }
-  #postCommentFrame #commentField .commentUser .theComment div p {
-    color: #23272A;
-  }
-  #postCommentFrame #writeComment i {
-    color: #23272A;
-  }
-  #postCommentFrame #writeComment input {
-    background-color: #F2F3F5;
-    color: #23272A;
-  }
-  #postCommentFrame #writeComment button {
-    background-color: #F2F3F5;
-    color: #23272A;
-  }
-  #postCommentFrame #writeComment #paper-plane {
-    background-color: #7700FF;
-  }
-  #postCommentFrame #writeComment #paper-plane i {
-    color: #FFFFFF;
-  }
-  #uploadContent button {
-    color: #FFFFFF;
   }
 }
