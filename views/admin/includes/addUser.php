@@ -22,26 +22,9 @@ require("../../Includes/connection.php");
 <section id="main">
 <div class="box1">
   <h2>Users</h2>
-
-
-
-
-
-
 </div>
-
-
 </div>
-
-
-
-
-
-
 </section>
-
-  
-
 <section id="sb">
 <?php include 'includes/navigation.php';?>
 </section>

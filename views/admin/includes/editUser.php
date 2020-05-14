@@ -71,18 +71,9 @@ mysqli_close($conn);
 
 <hr class="new1">
 </div>
-
-
-
-
-
-
 </section>
-
-  
-
 <section id="sb">
-<?php include 'navigation.php';?>
+<?php include 'navigationEdit.php';?>
 </section>
 <footer>
 <?php include 'footer.php';?>

@@ -58,7 +58,7 @@ mysqli_close($conn);
 </section>
 
 <section id="sb">
-<?php include 'navigation.php';?>
+<?php include 'navigationEdit.php';?>
 </section>
 <footer>
 <?php include 'footer.php';?>

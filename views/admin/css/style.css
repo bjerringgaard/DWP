@@ -23,6 +23,18 @@ textarea {
   font-size: 16px;
   border: 0px;
 }
+select {
+  border: 0 none;
+  color: #e8ecf1;
+  background: #2e3131;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 10px;
+  width: 200px;
+  margin-left: 15px;
+
+}
+
 
 .rules{
   padding: 50px;
