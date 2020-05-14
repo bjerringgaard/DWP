@@ -135,6 +135,7 @@ nav i {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50vw;
+  max-width: 960px;
   /*	#Pin {
 			display: none;
 		} */
@@ -179,6 +180,7 @@ nav i {
 
 #postFrame .postInfo {
   width: 100%;
+  max-width: 1364px;
   height: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,6 +256,10 @@ nav i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  word-wrap: break-word;
 }
 
 #postFrame .postUser i {
@@ -262,6 +268,10 @@ nav i {
   font-size: 30px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+#postFrame .postUser div {
+  width: 95%;
 }
 
 #postFrame .postUser div h3 {
@@ -275,6 +285,10 @@ nav i {
   margin: 0;
   padding: 0;
   color: #FFFFFF;
+}
+
+#postFrame .postUser .profilePic {
+  width: 60px;
 }
 
 #postCommentFrame {
@@ -332,6 +346,7 @@ nav i {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: 340px;
   margin-bottom: 10px;
 }
 
@@ -365,10 +380,16 @@ nav i {
   margin-bottom: 10px;
   padding: 0;
   color: #FFFFFF;
+  word-wrap: break-word;
+  width: 300px;
 }
 
 #postCommentFrame #commentField .commentUser .theComment .commentImg {
-  height: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 0;
+  max-height: 169;
 }
 
 #postCommentFrame #commentField .commentUser .theComment .commentImg img {
