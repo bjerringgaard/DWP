@@ -90,15 +90,28 @@
 	}
 
 	#userPosts{
-		margin-top: 20px;
-		padding: 20px;
+		margin: 0 auto;
+		margin-top: 10px;
 
-		max-width: 1364px;
+		max-width: 1404px;
 		width: 80vw;
 		height: fit-content;
 
 		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		align-content: center;
 
 		border-radius: 20px;
+
+		.thePost{
+			img{
+				width: 452px;
+				height: 254.25px;
+				margin: 8px;
+				border-radius: 10px;
+				object-fit: cover;
+			}
+		}
 	}	
 }

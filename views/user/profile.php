@@ -1,5 +1,6 @@
 <?php
 require("../../Includes/connection.php");
+$theUser = $_GET['UserID'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +17,6 @@ require("../../Includes/connection.php");
 <section id="main">
 	<div id="profileInfo">
 		<?php
-		$theUser = $_GET['UserID'];
-
 		$sql = "SELECT * 
 						FROM User u
 						WHERE UserID = '" . $theUser . "'";
@@ -45,9 +44,22 @@ require("../../Includes/connection.php");
 	</div>
 
 	<div id="userPosts">
-		<div>
+		<?php 
+		$psql = "SELECT p.PostImage, p.UserID, u.UserID
+						 FROM Post p, User u
+						 WHERE p.UserID = u.UserID
+						 AND p.UserID = '" . $theUser . "'";
 
-		</div>
+		$presult = mysqli_query($conn, $psql);
+		$posts = mysqli_fetch_assoc($presult);
+
+			while($posts = mysqli_fetch_assoc($presult)) {
+				echo '
+					<div class="thePost">
+						<img src="../../uploads/posts/' . $posts["PostImage"] . '" alt="">
+					</div>';
+			}
+		?>
 	</div>
 </section>
 </body>

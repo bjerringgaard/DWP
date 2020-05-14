@@ -195,9 +195,9 @@ nav i {
 }
 
 #main #userPosts {
-  margin-top: 20px;
-  padding: 20px;
-  max-width: 1364px;
+  margin: 0 auto;
+  margin-top: 10px;
+  max-width: 1404px;
   width: 80vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -205,5 +205,21 @@ nav i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border-radius: 20px;
+}
+
+#main #userPosts .thePost img {
+  width: 452px;
+  height: 254.25px;
+  margin: 8px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
