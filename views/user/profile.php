@@ -45,10 +45,9 @@ $theUser = $_GET['UserID'];
 
 	<div id="userPosts">
 		<?php 
-		$psql = "SELECT p.PostImage, p.UserID, u.UserID
-						 FROM Post p, User u
-						 WHERE p.UserID = u.UserID
-						 AND p.UserID = '" . $theUser . "'";
+		$psql = "SELECT *
+						 FROM Post p
+						 WHERE p.UserID = '" . $theUser . "'";
 
 		$presult = mysqli_query($conn, $psql);
 		$posts = mysqli_fetch_assoc($presult);
