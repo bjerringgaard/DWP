@@ -45,7 +45,7 @@ $theUser = $_GET['UserID'];
 
 	<div id="userPosts">
 		<?php 
-		$psql = "SELECT *
+		$psql = "SELECT p.PostID, p.PostImage, p.UserID
 						 FROM Post p
 						 WHERE p.UserID = '" . $theUser . "'";
 
