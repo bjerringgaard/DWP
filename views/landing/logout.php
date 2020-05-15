@@ -1,5 +1,5 @@
 
-<?php require_once("includes/functions.php"); ?>
+<?php require_once("../../Includes/functions.php"); ?>
 <?php
 		// Four steps to closing a session
 		// (i.e. logging out)

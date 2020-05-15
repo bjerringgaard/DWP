@@ -184,8 +184,12 @@ nav i {
 #main #profileInfo #info button {
   margin-left: 10px;
   margin-top: 5px;
-  width: 100px;
-  height: 50px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   border-radius: 5px;
   border: none;
   font-weight: bold;
