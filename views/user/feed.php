@@ -1,5 +1,9 @@
 <?php
 require("../../Includes/connection.php");
+require_once("../../Includes/session.php");
+require_once("../../Includes/functions.php");
+confirm_logged_in();
+
 include("userIncludes/date.php");
 include("userIncludes/comment.php");
 ?>
@@ -48,7 +52,7 @@ echo '
 		<div class="postUser">
 			<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
 			<div>
-				<h3>' . $post["UserID"]. '</h3>
+				<h3>' . $post["UserName"]. '</h3>
 				<p>' . $post["PostDesc"] . '</p>
 			</div>
 		</div>
@@ -85,7 +89,7 @@ echo '
 				<div class="theComment">
 					<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
 					<div>
-						<h3>' . $comment["UserID"]. '</h3>
+						<h3>' . $comment["UserName"]. '</h3>
 						<p>' . $comment["CommentText"] . '</p>
 						<div class="commentImg"><img id="theCmtImage" src="../../uploads/comments/' . $comment["CmtAttachement"] . '" alt=""></div>
 				 </div>
