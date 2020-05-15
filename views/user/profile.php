@@ -30,7 +30,7 @@ $theUser = $_GET['UserID'];
 				<img src="' . $info["ProfilePic"] . '" alt="">
 			</div>
 			<div id="info">
-				<h2>' . $info["UserFirstName"] . ' "' .  $info["UserID"] . '" ' . $info["UserLastName"] . '</h2>
+				<h2>' . $info["UserFirstName"] . ' "' .  $info["UserName"] . '" ' . $info["UserLastName"] . '</h2>
 				<p>' . $info["ProfileDesc"] . '</p>
 				<div id="stats">
 					<p><b>15</b> Posts</p>
