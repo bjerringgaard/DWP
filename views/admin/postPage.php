@@ -84,7 +84,7 @@ if (mysqli_num_rows($result) > 0) {
 						</div>
 						<div class="postUser">
 							<div>
-								<h4>by user: ' . $post["UserID"]. '</h4>
+								<h4>by user: ' . $post["UserName"]. '</h4>
                 <p>' . $post["PostDesc"] . '</p>
                 
 							</div>
@@ -121,7 +121,7 @@ if (mysqli_num_rows($result) > 0) {
 
                   echo "
                   <div class='postComment'>
-                  <p> " . $comment["UserID"]. "</p>
+                  <p> " . $comment["UserName"]. "</p>
                   <p> " . $comment["CommentText"]. "</p>
                   ";
                   echo'

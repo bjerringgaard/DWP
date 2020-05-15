@@ -39,7 +39,7 @@ if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         echo "
           <h4> " . $row["PostTitle"]. "</h4>
-          <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
+          <p class='postedBy'>Post By: " . $row["UserName"]. "</p>
           <p> " . $row["PostDesc"]. "</p>
           <hr class='new1'>
         ";
@@ -83,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "
-          <span> " . $row["UserID"]. "</span>
+          <span> " . $row["UserName"]. "</span>
           <span> " . $row["UserFirstName"]. "</span>
           <span> " . $row["UserLastName"]. "</span>
           <span> " . $row["UserEmail"]. "</span>
