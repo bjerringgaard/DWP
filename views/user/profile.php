@@ -37,7 +37,7 @@ $theUser = $_GET['UserID'];
 					<p><b>100</b> Likes</p>
 					<p><b>1</b> Pinned</p>
 				</div>
-				<button>EDIT</button>
+				<button>EDIT PROFILE</button>
 			</div>';
 		}
 		?>
@@ -45,10 +45,9 @@ $theUser = $_GET['UserID'];
 
 	<div id="userPosts">
 		<?php 
-		$psql = "SELECT p.PostImage, p.UserID, u.UserID
-						 FROM Post p, User u
-						 WHERE p.UserID = u.UserID
-						 AND p.UserID = '" . $theUser . "'";
+		$psql = "SELECT p.PostID, p.PostImage, p.UserID
+						 FROM Post p
+						 WHERE p.UserID = '" . $theUser . "'";
 
 		$presult = mysqli_query($conn, $psql);
 		$posts = mysqli_fetch_assoc($presult);

@@ -157,6 +157,13 @@ nav i {
   margin-top: .4vw;
 }
 
+#postFrame .postImg {
+  width: 960px;
+  height: 540px;
+  background-color: #2C2F33;
+  border-radius: 10px;
+}
+
 #postFrame .postImg img {
   width: 960px;
   height: 540px;
