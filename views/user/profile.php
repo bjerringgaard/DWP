@@ -37,7 +37,7 @@ $theUser = $_GET['UserID'];
 					<p><b>100</b> Likes</p>
 					<p><b>1</b> Pinned</p>
 				</div>
-				<button>EDIT</button>
+				<button>EDIT PROFILE</button>
 			</div>';
 		}
 		?>
