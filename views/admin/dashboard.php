@@ -41,7 +41,6 @@ if (mysqli_num_rows($result) > 0) {
           <h4> " . $row["PostTitle"]. "</h4>
           <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
           <p> " . $row["PostDesc"]. "</p>
-          <button class='button'>Edit Post</button>
           <hr class='new1'>
         ";
         
@@ -101,10 +100,10 @@ if (mysqli_num_rows($result) > 0) {
   </div>
 </div>
 <div class="box3">
-  <h2>Something</h2>
+  <h2>Banned Users</h2>
 </div>
 <div class="box4">
-  <h2>Active</h2>
+  <h2>Pinned Post</h2>
 </div>
 </section>
 
