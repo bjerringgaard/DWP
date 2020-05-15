@@ -20,7 +20,7 @@ CREATE TABLE Post (
     PostDesc varchar (255) NULL,
     PostImage varchar (255) NOT NULL,
     PostLikes INT NULL,
-    PostTime DATE NOT NULL,
+    PostTime TIMESTAMP NOT NULL,
     IsPinned boolean NOT NULL,
     UserID varchar(20) NOT NULL,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
@@ -42,8 +42,24 @@ CREATE TABLE Comment (
     CommentStyle varchar (255),
     UserID varchar(20) NOT NULL,
     PostID int NOT NULL,
-    FOREIGN KEY (PostID) REFERENCES Post (PostID),
+    FOREIGN KEY (PostID) REFERENCES Post (PostID) ON DELETE CASCADE,
     FOREIGN KEY (UserID) REFERENCES User (UserID)
+);
+
+CREATE TABLE TextStyling(
+    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    TextStylingName varchar (50) NOT NULL,
+    TextStylingColor varchar (50) NOT NULL,
+    TextStylingFont varchar (50) NOT NULL,
+    CommentID int NOT NULL,
+    FOREIGN KEY (CommentID) REFERENCES Comment (CommentID)
+);
+
+CREATE TABLE aboutPage (
+    PageID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    PageRules TEXT NULL,
+    PageDesc TEXT NULL,
+    PageContact TEXT NULL,
 );
 
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
@@ -62,7 +78,7 @@ VALUES (
 INSERT INTO User (UserID, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     'HelloItIsMeJohnFaxe!',
-    'John John',
+    'John',
     'Faxe Jensen',
     'futbol@danmark.dk',
     'hunter2',
@@ -72,56 +88,23 @@ VALUES (
     '1'
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
 VALUES (
-    'My first build',
-    'I just really like the golden color #precious #beginner',
-    'https://i.ytimg.com/vi/V18eUOLW7Kk/maxresdefault.jpg',
-    4,
-    '2020/05/03',
-    'Bbaggz',
-    1
-);
-
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, UserID, IsPinned)
-VALUES (
-    'Hello! How do I use this site? I\'m not good at PC',
-    'I just really like the golden color #precious #beginner',
+    'My First Intel Build',
+    'Dette er mit første build',
     'https://i.imgur.com/0skJjHK.jpg',
-    5, 
-    '2020/04/03',
+    '2',
+    '2020-04-10 00:00:00',
+    '0',
+    'Bbaggz'
+);
+
+INSERT INTO Comment (CmtAttachement, CommentTimeStamp, CommentText, CommentStyle, UserID, PostID)
+VALUES (
+    'NULL',
+    '2020-04-24 12:50:14',
+    'Meget Flot',
+    'NULL',
     'HelloItIsMeJohnFaxe!',
-    0
-);
-
-INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
-VALUES (
-    'Bbaggz',
-    '2020/04/03',
-    'I really Like this post!!!',
-    1
-);
-
-INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
-VALUES (
-    'Bbaggz',
-    '2020/04/05',
-    'This is amazing',
-    1
-);
-
-INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
-VALUES (
-    'Bbaggz',
-    '2020/04/05',
-    'Awesome',
-    2
-);
-
-INSERT INTO Comment (UserID, CommentTimeStamp, CommentText, PostID)
-VALUES (
-    'HelloItIsMeJohnFaxe!',
-    '2020/04/05',
-    'Hello',
-    2
+    '1'
 );

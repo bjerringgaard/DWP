@@ -1,26 +1,18 @@
 <?php
 require("../../../Includes/connection.php");
+include("../userIncludes/date.php");
+include("../userIncludes/comment.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-	<link rel="stylesheet" href="discoverPages.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Asap|Heebo|Quicksand|Oswald" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-
-	<title>ShortCircuit | IsPinned</title>
+	<?php include '../userTemplates/head.php';?>
+	<link rel="stylesheet" href="css/discoverPages.css">
+	<title>ShortCircuit | Most Liked</title>
 </head>
 <body>		
 	<header>
-		<?php include '../userIncludes/navigationDiscover.php';?>
+		<?php include '../userTemplates/navigationDiscover.php';?>
 	</header>
 	
 	<section id="main">
@@ -38,80 +30,90 @@ require("../../../Includes/connection.php");
 
 	if (mysqli_num_rows($result) > 0) {
 		// output data of each row
-		while($row = mysqli_fetch_assoc($result)) {
+		while($post = mysqli_fetch_assoc($result)) {
 			echo '
-			<div id="post">
-				<div id="postFrame">
-					<div class="postImg">
-						<img id="theImage" src="' . $row["PostImage"] . '" alt="">
-					</div>
+<div id="post">
+	<div id="postFrame">
+		<div class="postImg"><img id="theImage" src="../../../uploads/posts/' . $post["PostImage"] . '" alt=""></div>
+		<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
+		<div class="postInfo">
+			<div class="postStats">
+				<p>' . $post["PostLikes"] . ' LIKES</p>
+				<p>&bull;</p>
+				<p id="postTime">' . timeAgo($post["PostTime"]) . '</p>
+			</div>
+			<div class="postAction">
+					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
+					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
+					<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
+			</div>
+		</div>
 
-					<div class="postTitle"><h3>' . $row["PostTitle"] . '</h3></div>
-					<div class="postInfo">
-						<div class="postStats">
-							<p>' . $row["PostLikes"] . ' Likes</p>
-							<p>&bull;</p>
-							<p>' . $row["PostTime"] . '</p>
-						</div>
-						<div class="postAction">
-								<a href="#" id="like"><i class="fas fa-heart"></i></a>
-								<a href="#"id="comment"><i class="fas fa-comment"></i></a>
-								<a href="#" ><i class="fas fa-thumbtack"></i></a>
-						</div>
-					</div>
-
-					<div class="postUser">
-					<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-						<div>
-							<h3>' . $row["UserID"]. '</h3>
-							<p>' . $row["PostDesc"] . '</p>
-						</div>
-					</div>
-				</div>
+		<div class="postUser">
+			<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
+			<div>
+				<h3>' . $post["UserID"]. '</h3>
+				<p>' . $post["PostDesc"] . '</p>
+			</div>
+		</div>
+	</div>
 
 
-				<div id="postCommentFrame">
-						<div id="commentField">
-							<h3>100 Comments</h3>
-						
-							<div class="commentUser"> ';
+	<div id="postCommentFrame">';
+		$asql = "SELECT COUNT(*) As CommentAmount
+				FROM Comment
+				WHERE PostID=" . $post["PostID"];
+				$aresult = mysqli_query($conn, $asql);
+				
+				if (mysqli_num_rows($aresult) > 0) {
+					$cmtAmount = mysqli_fetch_assoc($aresult);
+					echo '<h3>' . $cmtAmount["CommentAmount"] . ' Comments</h3>';
+					
+				}else{
+					echo '<h3> 0 Comments</h3>';
+				}
+		echo '
+		<div id="commentField">';
+			$csql = "SELECT * 
+			FROM Post p, Comment c, User u
+			WHERE c.PostID = p.PostID
+			AND c.UserID = u.UserID
+			AND p.PostID = " . $post["PostID"];
 
-							$csql = "SELECT * 
-							FROM Post p, Comment c, User u
-							WHERE c.PostID = p.PostID
-							AND c.UserID = u.UserID
-							";
+			$cresult = mysqli_query($conn, $csql);
 
-							$cresult = mysqli_query($conn, $csql);
+				if (mysqli_num_rows($cresult) > 0) {
+					while($comment = mysqli_fetch_assoc($cresult)) {
+						echo '
+			<div class="commentUser">
+				<div class="theComment">
+					<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
+					<div>
+						<h3>' . $comment["UserID"]. '</h3>
+						<p>' . $comment["CommentText"] . '</p>
+						<div class="commentImg"><img id="theCmtImage" src="../../../uploads/comments/' . $comment["CmtAttachement"] . '" alt=""></div>
+				 </div>
+			</div> 
+		</div>
+		'; 
+					} 
+				}
 
-							if (mysqli_num_rows($cresult) > 0) {
-							// output data of each row
-								while($row = mysqli_fetch_assoc($cresult)) {
-									echo '
-										<div class="theComment">
-											<div class="profilePic"><img src="' . $row["ProfilePic"] . '" alt=""></div>
-												<div>
-													<h3>' . $row["UserID"]. '</h3>
-													<p>' . $row["CommentText"] . '</p>
-												</div>
-										</div> '; 
-								} 
-							}
-
-
-						echo '	</div>	
-						</div>
-
-						<div id="writeComment">
-							<input type="text">
-							<button><i class="fas fa-paperclip"></i></button>
-							<button id="paper-plane"><i class="fas fa-paper-plane"></i></button>
-						</div>
-					</div>
-			</div>	';
-		
-		}
-	} else {
-		echo "0 results";
-	} ?>
+		echo ' </div>
+		<div id="writeComment">
+			<form action="" method="POST" enctype="multipart/form-data" name="' . $post["PostID"] . '">
+				<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
+				<input type="text" name="commentText">
+				<input type="file" name="file[]" id="file"></input>
+				<label for="file"><i class="fas fa-paperclip"></i></label>
+				<input type="submit" name="submit" class="btn fa-input" value="send"></input>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>';
+	}
+} else {
+	echo "0 results";
+} ?>
 	</section>

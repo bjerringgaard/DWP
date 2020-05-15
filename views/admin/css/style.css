@@ -7,6 +7,48 @@ width: 100%;
 font-family: 'Inter', sans-serif;
 } 
 
+.maxTextWidth{
+  max-width: 1000px;
+}
+
+textarea {
+  max-width: 500px;
+  height: 400px;
+  margin: 20px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color:#2e3131;
+  color: #e8ecf1;
+  font-size: 16px;
+  border: 0px;
+}
+select {
+  border: 0 none;
+  color: #e8ecf1;
+  background: #2e3131;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 10px;
+  width: 200px;
+  margin-left: 15px;
+
+}
+
+
+.rules{
+  padding: 50px;
+}
+
+.postComment {
+  padding-top: 15px;
+  background-color: #67809f;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
 input[type=text] {
   width: 200px;
   padding: 12px 20px;
@@ -159,8 +201,11 @@ h5{
 }
 
 h3{
- font-size: 26px;
   color: #CBCBCB;
+  font-size: 22px;
+  margin: 0;
+  padding: 15px;
+  color: #6246ea;
 }
 
 #wrapper{

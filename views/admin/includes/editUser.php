@@ -71,23 +71,12 @@ mysqli_close($conn);
 
 <hr class="new1">
 </div>
-
-
-
-
-
-
 </section>
-
-  
-
 <section id="sb">
-<?php include 'navigation.php';?>
+<?php include 'navigationEdit.php';?>
 </section>
 <footer>
-     <div class="footer_information">
-        <p>© Peter Schaadt Wind</p>
-    </div> 
+<?php include 'footer.php';?>
 </footer>
 </div>   
 </body>

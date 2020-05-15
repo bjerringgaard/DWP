@@ -72,9 +72,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php include 'includes/navigation.php';?>
 </section>
 <footer>
-     <div class="footer_information">
-        <p>© Peter Schaadt Wind</p>
-    </div> 
+<?php include 'includes/footer.php';?>
 </footer>
 </div>   
 </body>
