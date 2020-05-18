@@ -2,6 +2,7 @@
 require("../../Includes/connection.php");
 require_once("../../Includes/session.php");
 require_once("../../Includes/functions.php");
+include("userIncludes/isAdmin.php");
 confirm_logged_in();
 
 include("userIncludes/date.php");
@@ -23,7 +24,7 @@ include("userIncludes/comment.php");
 
 <?php
 $sql = "SELECT * 
-		FROM post p, User u
+		FROM post p, user u
 		WHERE p.UserID = u.UserID
 		ORDER BY p.postTime DESC
 		";
@@ -45,7 +46,7 @@ echo '
 			<div class="postAction">
 					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
 					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
-					<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
+					<a href="#" id="isAdmin"' . $adminclass . '><i class="fas fa-thumbtack"></i></a>
 			</div>
 		</div>
 
@@ -61,7 +62,7 @@ echo '
 
 	<div id="postCommentFrame">';
 		$asql = "SELECT COUNT(*) As CommentAmount
-				FROM Comment
+				FROM comment
 				WHERE PostID=" . $post["PostID"];
 				$aresult = mysqli_query($conn, $asql);
 				
@@ -75,7 +76,7 @@ echo '
 		echo '
 		<div id="commentField">';
 			$csql = "SELECT * 
-			FROM Post p, Comment c, User u
+			FROM post p, comment c, user u
 			WHERE c.PostID = p.PostID
 			AND c.UserID = u.UserID
 			AND p.PostID = " . $post["PostID"];
@@ -122,6 +123,9 @@ echo '
 	</div>
 	</section>
 </body>
+<?php
+include("userIncludes/isAdmin.php");
+?>
 </html>
 
 

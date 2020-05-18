@@ -18,6 +18,7 @@ confirm_logged_in();
 
 	<section id="main">
 	<a href="../landing/logout.php">LOG OUT</a>
+	<?php var_dump($_SESSION)?>
 	</section>
 </body>
 </html>
