@@ -54,17 +54,6 @@ CREATE TABLE aboutpage (
     PageContact TEXT NULL
 );
 
-CREATE VIEW commentamountview (
-SELECT p.PostID, p.PostTitle, p.PostDesc, p.PostImage, p.PostLikes, p.PostTime, p.UserID, u.ProfilePic,
-COUNT(*) AS CommentAmount
-FROM comment c, post p, user u
-WHERE p.PostID = c.PostID
-AND u.UserID = p.UserID
-GROUP BY c.PostID
-ORDER BY CommentAmount DESC
-);
-
-
 INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     '1',	
@@ -118,9 +107,25 @@ VALUES (
 INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
 VALUES (
    '1',	
-   'White Horse',
+   'Regular',
    'csWhite',
+   'csRegular'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '2',	
+   'Raging',
+   'csRed',
    'csBold'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '3',	
+   'Mystic',
+   'csPurple',
+   'csItalic'
 );
 
 INSERT INTO comment (CmtAttachement, CommentTimeStamp, CommentText, UserID, PostID, TextStylingID)
