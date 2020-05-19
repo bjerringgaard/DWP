@@ -281,6 +281,7 @@
 				#commentRowText{
 				display: flex;
 				width: 20vw;
+				max-width: 384px;
 				i {
 					margin-right: 10px;
 					color: $White;

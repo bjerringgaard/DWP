@@ -6,6 +6,10 @@
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ::-webkit-scrollbar-track-piece {
   background: transparent;
 }
@@ -471,6 +475,7 @@ nav i {
   display: -ms-flexbox;
   display: flex;
   width: 20vw;
+  max-width: 384px;
 }
 
 #postCommentFrame #writeComment form #commentRowText i {

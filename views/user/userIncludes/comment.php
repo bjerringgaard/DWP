@@ -1,12 +1,4 @@
 <?php
-$textstylingOrNULL = '';
-if($_POST["textStyle"] == NULL){
-	$textstylingOrNULL = NULL;
-} else{
-	$textstylingOrNULL = $_POST["textStyle"];
-}
-?>
-<?php
 if(isset($_POST["submit"])){
     if((($_FILES["file"]["type"] == "image/jpeg")
         or($_FILES["file"]["type"] == "image/gif")
