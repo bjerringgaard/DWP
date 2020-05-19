@@ -27,7 +27,7 @@ require("../../../Includes/connection.php");
 <?php
 $id=$_GET['id'];
 
-$query = "SELECT * FROM TextStyling  WHERE TextStylingID= ?";
+$query = "SELECT * FROM textstyling  WHERE TextStylingID= ?";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $query)){
   echo "SQL Failed";

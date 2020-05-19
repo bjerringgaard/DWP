@@ -25,7 +25,7 @@ require("../../Includes/connection.php");
 
 <div class="overSkriftHeader">
 <?php
-$sql = "SELECT * FROM aboutPage";
+$sql = "SELECT * FROM aboutpage";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {

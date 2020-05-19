@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) { // Form has been submitted.
     $iterations = ['cost' => 5];
     $hashed_password = password_hash($password, PASSWORD_BCRYPT, $iterations);
 
-	$query = "INSERT INTO `User` (UserName, UserPassword, UserFirstName, UserLastName, UserEmail) VALUES ('{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}')";
+	$query = "INSERT INTO `user` (UserName, UserPassword, UserFirstName, UserLastName, UserEmail) VALUES ('{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}')";
 	$result = mysqli_query($conn, $query);
 		if ($result) {
 			$message = "User Created.";

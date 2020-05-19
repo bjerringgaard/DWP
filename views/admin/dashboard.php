@@ -27,7 +27,7 @@ require("../../Includes/connection.php");
 <?php
  //$sql = "SELECT * FROM post";
  $sql = "SELECT * 
- FROM post p, User u
+ FROM post p, user u
  WHERE p.UserID = u.UserID
  ORDER BY p.postTime DESC
  ";

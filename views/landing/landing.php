@@ -22,7 +22,7 @@ if (logged_in()) {
 		$username = trim(mysqli_real_escape_string($conn, $_POST['user']));
 		$password = trim(mysqli_real_escape_string($conn,$_POST['pass']));
 
-		$query = "SELECT UserID, UserName, UserPassword, IsAdmin FROM User WHERE UserName = '{$username}' LIMIT 1";
+		$query = "SELECT UserID, UserName, UserPassword, IsAdmin FROM user WHERE UserName = '{$username}' LIMIT 1";
 		$result = mysqli_query($conn, $query);
 			
 			if (mysqli_num_rows($result) == 1) {
