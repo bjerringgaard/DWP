@@ -54,10 +54,9 @@ CREATE TABLE aboutpage (
     PageContact TEXT NULL
 );
 
-
 INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
-    '1',
+    '1',	
     'user',
     'user',
     'lastname',	
@@ -71,10 +70,10 @@ VALUES (
 
 INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
-    '2',
+    '2',	
     'admin',
     'admin',
-    'admin lastname';		
+    'admin lastname',		
     'admin@admin.com',
     '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
     'Dette er en beskrivelse til admin',
@@ -82,3 +81,52 @@ VALUES (
     '1',
     '0'
 );
+
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+VALUES (
+    'My First Intel Build',
+    'Er dette et godt build?',
+    'https://i.imgur.com/0skJjHK.jpg',
+    '2',
+    '2020-05-10 00:00:00',
+    '0',
+    '1'
+);
+
+INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+VALUES (
+    'Er Amd eller Intel bedst',
+    'Jeg tror personligt det er AMD.',
+    'https://i.imgur.com/0skJjHK.jpg',
+    '2',
+    '2020-04-10 00:00:00',
+    '0',
+    '1'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '1',	
+   'White Horse',
+   'csWhite',
+   'bold'
+);
+
+INSERT INTO Comment (CmtAttachement, CommentTimeStamp, CommentText, UserID, PostID, TextStylingID)
+VALUES (
+    'NULL',
+    '2020-05-24 12:50:14',
+    'Meget Flot',
+    '1',
+    '1',
+    '1'
+);
+
+INSERT INTO aboutpage (PageID, PageRules, PageDesc, PageContact)
+VALUES ( 
+   '1',	 
+   'Dette er Pagerules',
+   'Dette er PageDesc',
+   'Dette er PageKontakt'
+);
+
