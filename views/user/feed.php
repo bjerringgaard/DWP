@@ -4,7 +4,6 @@ require_once("../../Includes/session.php");
 require_once("../../Includes/functions.php");
 include("userIncludes/isAdmin.php");
 include("userIncludes/commentStyling.php");
-include("userincludes/postlike.php");
 confirm_logged_in();
 
 include("userIncludes/date.php");

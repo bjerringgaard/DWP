@@ -54,7 +54,18 @@ CREATE TABLE aboutpage (
     PageContact TEXT NULL
 );
 
-INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
+CREATE VIEW commentamountview (
+SELECT p.PostID, p.PostTitle, p.PostDesc, p.PostImage, p.PostLikes, p.PostTime, p.UserID, u.ProfilePic,
+COUNT(*) AS CommentAmount
+FROM comment c, post p, user u
+WHERE p.PostID = c.PostID
+AND u.UserID = p.UserID
+GROUP BY c.PostID
+ORDER BY CommentAmount DESC
+);
+
+
+INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     '1',	
     'user',
@@ -68,7 +79,7 @@ VALUES (
     '0'
 );
 
-INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
+INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     '2',	
     'admin',
@@ -82,18 +93,18 @@ VALUES (
     '0'
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+INSERT INTO post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
 VALUES (
     'My First Intel Build',
     'Er dette et godt build?',
-    'https://i.imgur.com/0skJjHK.jpg',
+    'NULL',
     '2',
     '2020-05-10 00:00:00',
     '0',
     '1'
 );
 
-INSERT INTO Post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+INSERT INTO post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
 VALUES (
     'Er Amd eller Intel bedst',
     'Jeg tror personligt det er AMD.',
@@ -109,10 +120,10 @@ VALUES (
    '1',	
    'White Horse',
    'csWhite',
-   'bold'
+   'csBold'
 );
 
-INSERT INTO Comment (CmtAttachement, CommentTimeStamp, CommentText, UserID, PostID, TextStylingID)
+INSERT INTO comment (CmtAttachement, CommentTimeStamp, CommentText, UserID, PostID, TextStylingID)
 VALUES (
     'NULL',
     '2020-05-24 12:50:14',
