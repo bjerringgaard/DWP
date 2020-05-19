@@ -1,4 +1,12 @@
 <?php
+$textstylingOrNULL = '';
+if($_POST["textStyle"] == NULL){
+	$textstylingOrNULL = NULL;
+} else{
+	$textstylingOrNULL = $_POST["textStyle"];
+}
+?>
+<?php
 if(isset($_POST["submit"])){
     if((($_FILES["file"]["type"] == "image/jpeg")
         or($_FILES["file"]["type"] == "image/gif")
@@ -22,16 +30,16 @@ if($_FILES["file"]["error"]>0){
 					"../../uploads/comments/".$_FILES["file"]["name"]);
 		echo "stored in Commentupload: ". $_FILES["file"]["name"];
 		
-		$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, CommentStyle, CommentTimeStamp, PostID) 
-						VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+		$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID CommentTimeStamp, PostID) 
+						VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 							mysqli_query($conn, $sql);
 							mysqli_close($conn);	
 							header("Location: feed.php");
 			}
 
 }}else{
-	$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, CommentStyle, CommentTimeStamp, PostID) 
-					VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, NULL, CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+	$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
+					VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, '". $textstylingOrNULL ."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 						mysqli_query($conn, $sql);
 						mysqli_close($conn);	
 							header("Location: feed.php");
