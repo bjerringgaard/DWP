@@ -26,7 +26,7 @@ require("../../Includes/connection.php");
 
 <div class="overSkriftHeader">
 <?php
-$sql = "SELECT * FROM TextStyling";
+$sql = "SELECT * FROM textstyling";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {

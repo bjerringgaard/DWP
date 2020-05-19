@@ -1,7 +1,14 @@
+-- CREATE DATABASE 
 DROP DATABASE IF EXISTS ShortCircuit;
 CREATE DATABASE ShortCircuit;
 USE ShortCircuit;
 
+-- CREATE USER WITH PRIVILEGES 
+DROP USER 'DWP'@'localhost';
+CREATE USER 'DWP'@'localhost' IDENTIFIED BY '123456'; 
+GRANT ALL PRIVILEGES ON ShortCircuit.* To 'DWP'@'localhost' IDENTIFIED BY '123456'; FLUSH PRIVILEGES;
+
+-- CREATE TABLES 
 CREATE TABLE user (
     UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     UserName varchar (20) NOT NULL,
@@ -54,6 +61,7 @@ CREATE TABLE aboutpage (
     PageContact TEXT NULL
 );
 
+-- CREATE DUMMY DATA
 INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     '1',	

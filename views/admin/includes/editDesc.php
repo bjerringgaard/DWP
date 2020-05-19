@@ -27,7 +27,7 @@ require("../../../Includes/connection.php");
 <?php
 $id=$_GET['id'];
 
-$query = "SELECT * FROM aboutPage  WHERE PageID= ?";
+$query = "SELECT * FROM aboutpage  WHERE PageID= ?";
 $stmt = mysqli_stmt_init($conn);
 if(!mysqli_stmt_prepare($stmt, $query)){
   echo "SQL Failed";

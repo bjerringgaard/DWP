@@ -9,7 +9,7 @@ $pageContactNew = $_POST['PageContact'];
 
 //mysqli_query($conn, "UPDATE aboutpage SET PageRules='$rules' WHERE PageID='$id'");
 
-$stmt = $conn->prepare("UPDATE aboutPage SET PageContact = ? WHERE PageID = ?");
+$stmt = $conn->prepare("UPDATE aboutpage SET PageContact = ? WHERE PageID = ?");
 $stmt->bind_param("si", $pageContactNew, $id);
 $stmt->execute();
 
