@@ -4,7 +4,7 @@ require_once("../../Includes/session.php");
 require_once("../../Includes/functions.php");
 include("userIncludes/isAdmin.php");
 confirm_logged_in();
-$theUser = $_GET['UserID'];
+$theUser = $_GET["UserID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,9 @@ $theUser = $_GET['UserID'];
 	<div id="profileInfo">
 		<?php
 		$sql = "SELECT * 
-						FROM user u
-						WHERE UserName = '" . $theUser . "'";
+						FROM user u, post p
+						WHERE u.UserID = p.UserID
+						AND UserName = '" . $theUser . "'";
 
 		$result = mysqli_query($conn, $sql);
 		$info = mysqli_fetch_assoc($result);
@@ -42,28 +43,18 @@ $theUser = $_GET['UserID'];
 					<p><b>1</b> Pinned</p>
 				</div>
 				<button>EDIT PROFILE</button>
-			</div>';
+			</div>
+			</div>
+				<div id="userPosts">';
+				while($info = mysqli_fetch_assoc($result)) {
+					echo '
+						<div class="thePost">
+							<img src="../../uploads/posts/' . $info["PostImage"] . '" alt="">
+						</div>';
+				}
+				echo '</div>';
 		}
 		?>
-	</div>
-
-	<div id="userPosts">
-		<?php 
-		$psql = "SELECT p.PostID, p.PostImage, p.UserID, u.UserName
-						 FROM post p, user u
-						 WHERE u.UserName = '" . $theUser . "'";
-
-		$presult = mysqli_query($conn, $psql);
-		$posts = mysqli_fetch_assoc($presult);
-
-			while($posts = mysqli_fetch_assoc($presult)) {
-				echo '
-					<div class="thePost">
-						<img src="../../uploads/posts/' . $posts["PostImage"] . '" alt="">
-					</div>';
-			}
-		?>
-	</div>
 </section>
 </body>
 </html>
