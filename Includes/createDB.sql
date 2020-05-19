@@ -54,15 +54,31 @@ CREATE TABLE aboutpage (
     PageContact TEXT NULL
 );
 
+
 INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
 VALUES (
     '1',
     'user',
     'user',
+    'lastname';		
     'user@users.com',
     '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
     'Dette er en beskrivelse',
     'NULL',
     '0',
+    '0'
+);
+
+INSERT INTO User (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
+VALUES (
+    '2',
+    'admin',
+    'admin',
+    'admin lastname';		
+    'admin@admin.com',
+    '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
+    'Dette er en beskrivelse til admin',
+    'NULL',
+    '1',
     '0'
 );
