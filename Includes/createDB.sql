@@ -22,9 +22,16 @@ CREATE TABLE post (
     PostImage varchar (255) NOT NULL,
     PostLikes INT NULL,
     PostTime TIMESTAMP NOT NULL,
-    IsPinned boolean NOT NULL,
+    IsPinned boolean NOT NULL DEFAULT 0,
     UserID INT NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User (UserID)
+    FOREIGN KEY (UserID) REFERENCES user (UserID)
+);
+
+CREATE TABLE textstyling(
+    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    TextStylingName varchar (50) NOT NULL,
+    TextStylingColor varchar (50) NOT NULL,
+    TextStylingFont varchar (50) NOT NULL
 );
 
 CREATE TABLE comment (
@@ -32,20 +39,12 @@ CREATE TABLE comment (
     CmtAttachement varchar (255),
     CommentTimeStamp TIMESTAMP NOT NULL,
     CommentText varchar (255),
-    CommentStyle varchar (255),
     UserID INT NOT NULL,
     PostID INT NOT NULL,
-    FOREIGN KEY (PostID) REFERENCES Post (PostID) ON DELETE CASCADE,
-    FOREIGN KEY (UserID) REFERENCES User (UserID)
-);
-
-CREATE TABLE textstyling(
-    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    TextStylingName varchar (50) NOT NULL,
-    TextStylingColor varchar (50) NOT NULL,
-    TextStylingFont varchar (50) NOT NULL,
-    CommentID INT NOT NULL,
-    FOREIGN KEY (CommentID) REFERENCES Comment (CommentID)
+    TextStylingID INT,
+    FOREIGN KEY (PostID) REFERENCES post (PostID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES user (UserID),
+    FOREIGN KEY (TextStylingID) REFERENCES textstyling (TextStylingID)
 );
 
 CREATE TABLE aboutpage (

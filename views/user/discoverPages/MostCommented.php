@@ -1,7 +1,11 @@
 <?php
 require("../../../Includes/connection.php");
 include("../userIncludes/date.php");
-include("../userIncludes/comment.php")
+include("../userIncludes/comment.php");
+require_once("../../../Includes/session.php");
+require_once("../../../Includes/functions.php");
+include("../userIncludes/isAdmin.php");
+confirm_logged_in();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +27,7 @@ include("../userIncludes/comment.php")
 	<?php
 	$sql = "SELECT p.PostID, p.PostTitle, p.PostDesc, p.PostImage, p.PostLikes, p.PostTime, p.UserID, u.UserID, u.ProfilePic,  
 		COUNT(*) AS CommentAmount
-		FROM Comment c, Post p, User u
+		FROM comment c, post p, user u
 		WHERE p.PostID = c.PostID
 		AND u.UserID = p.UserID
 		GROUP BY c.PostID
@@ -49,14 +53,14 @@ include("../userIncludes/comment.php")
 			<div class="postAction">
 					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
 					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
-					<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
+					<a href="#" id="isAdmin"' . $adminclass . '><i class="fas fa-thumbtack"></i></a>
 			</div>
 		</div>
 
 		<div class="postUser">
 			<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
 			<div>
-				<h3>' . $post["UserID"]. '</h3>
+				<h3>' . $post["UserName"]. '</h3>
 				<p>' . $post["PostDesc"] . '</p>
 			</div>
 		</div>
@@ -65,7 +69,7 @@ include("../userIncludes/comment.php")
 
 	<div id="postCommentFrame">';
 		$asql = "SELECT COUNT(*) As CommentAmount
-				FROM Comment
+				FROM comment
 				WHERE PostID=" . $post["PostID"];
 				$aresult = mysqli_query($conn, $asql);
 				
@@ -79,7 +83,7 @@ include("../userIncludes/comment.php")
 		echo '
 		<div id="commentField">';
 			$csql = "SELECT * 
-			FROM Post p, Comment c, User u
+			FROM post p, comment c, user u
 			WHERE c.PostID = p.PostID
 			AND c.UserID = u.UserID
 			AND p.PostID = " . $post["PostID"];
@@ -93,7 +97,7 @@ include("../userIncludes/comment.php")
 				<div class="theComment">
 					<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
 					<div>
-						<h3>' . $comment["UserID"]. '</h3>
+						<h3>' . $comment["UserName"]. '</h3>
 						<p>' . $comment["CommentText"] . '</p>
 						<div class="commentImg"><img id="theCmtImage" src="../../uploads/comments/' . $comment["CmtAttachement"] . '" alt=""></div>
 				 </div>

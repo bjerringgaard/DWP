@@ -1,5 +1,8 @@
 <?php
 require("../../Includes/connection.php");
+require_once("../../Includes/session.php");
+require_once("../../Includes/functions.php");
+confirm_logged_in();
 $theUser = $_GET['UserID'];
 ?>
 <!DOCTYPE html>
@@ -18,8 +21,8 @@ $theUser = $_GET['UserID'];
 	<div id="profileInfo">
 		<?php
 		$sql = "SELECT * 
-						FROM User u
-						WHERE UserID = '" . $theUser . "'";
+						FROM user u
+						WHERE UserName = '" . $theUser . "'";
 
 		$result = mysqli_query($conn, $sql);
 		$info = mysqli_fetch_assoc($result);
@@ -45,9 +48,9 @@ $theUser = $_GET['UserID'];
 
 	<div id="userPosts">
 		<?php 
-		$psql = "SELECT p.PostID, p.PostImage, p.UserID
-						 FROM Post p
-						 WHERE p.UserID = '" . $theUser . "'";
+		$psql = "SELECT p.PostID, p.PostImage, p.UserID, u.UserName
+						 FROM post p, user u
+						 WHERE u.UserName = '" . $theUser . "'";
 
 		$presult = mysqli_query($conn, $psql);
 		$posts = mysqli_fetch_assoc($presult);
