@@ -27,9 +27,7 @@ require("../../Includes/connection.php");
 <?php
  //$sql = "SELECT * FROM post";
  $sql = "SELECT * 
- FROM post p, User u
- WHERE p.UserID = u.UserID
- ORDER BY p.postTime DESC
+ FROM dashboard
  ";
 
 $result = mysqli_query($conn, $sql);
