@@ -3,7 +3,7 @@ CREATE DATABASE ShortCircuit;
 USE ShortCircuit;
 
 CREATE TABLE user (
-		UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     UserName varchar (20) NOT NULL,
     UserFirstName varchar (50) NOT NULL,
     UserLastName varchar (50) NOT NULL,
@@ -60,7 +60,7 @@ VALUES (
     '1',
     'user',
     'user',
-    'lastname';		
+    'lastname',	
     'user@users.com',
     '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
     'Dette er en beskrivelse',
