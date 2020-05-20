@@ -34,8 +34,8 @@ if(!mysqli_stmt_prepare($stmt, $query)){
   mysqli_stmt_execute($stmt);
   $result = mysqli_stmt_get_result($stmt);
   while($row=mysqli_fetch_array($result)){
-    echo "<p>Post Title: " . $row["PostTitle"]. "</p>";
-    echo "<p>Post Description: " . $row["PostDesc"]. "</p>";
+    echo "<p>Post Title: " . htmlspecialchars ($row["PostTitle"]). "</p>";
+    echo "<p>Post Description: " . htmlspecialchars ($row["PostDesc"]). "</p>";
     echo "<hr class='new1'>";
 ?>
 <?php

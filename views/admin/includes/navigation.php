@@ -3,7 +3,7 @@
         <li><a href="dashboard.php"><i class="fas fa-home sbmenu"></i>Home</a></li>
         <p class="sideBarMenu">Users</p>
         <li><a href="userPage.php"><i class="fas fa-users sbmenu"></i>Users</a></li>
-        <li><a href="bannedUsers.php"><i class="fas fa-hand-paper sbmenu"></i>Banned Users</a></li>
+        <li><a href="banned.php"><i class="fas fa-hand-paper sbmenu"></i>Banned Users</a></li>
         <p class="sideBarMenu">Post</p>
         <li><a href="postPage.php"><i class="fas fa-file-invoice sbmenu"></i>Post</a></li>
         <li><a href="pinnedUsers.php"><i class="fas fa-file-invoice sbmenu"></i>Pinned Post</a></li>

@@ -2,12 +2,7 @@
 require("../../../Includes/connection.php");
 
 $id=$_POST['PageID'];
-$description = $_POST['PageDesc'];
-
-//$query = "SELECT * FROM aboutPage WHERE PageID='$id'";
-//$result = mysqli_query($conn, $query) or die('Error, query failed');
-
-//mysqli_query($conn, "UPDATE aboutpage SET PageRules='$rules' WHERE PageID='$id'");
+$description = trim("$_POST[PageDesc]");
 
 $stmt = $conn->prepare("UPDATE aboutpage SET PageDesc = ? WHERE PageID = ?");
 $stmt->bind_param("si", $description, $id);

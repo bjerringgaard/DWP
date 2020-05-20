@@ -1,12 +1,13 @@
 <?php
 require("../../../Includes/connection.php");
 
-
 $id=$_POST['UserID'];
-$NewFirstName = $_POST['UserFirstName'];
-$NewLastName = $_POST['UserLastName'];
-$NewEmail = $_POST['UserEmail'];
-$NewBanned = $_POST['IsBanned'];
+$NewFirstName = trim("$_POST[UserFirstName]");
+$NewLastName = trim("$_POST[UserLastName]");
+$NewEmail = trim("$_POST[UserEmail]");
+$NewBanned = trim("$_POST[IsBanned]");
+
+$NewFirstName = trim("$_POST[UserFirstName]");
 
 $query = "SELECT * FROM user WHERE UserID='$id'";
 $result = mysqli_query($conn, $query) or die('Error, query failed');

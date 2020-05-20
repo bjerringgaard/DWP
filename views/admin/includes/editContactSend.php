@@ -2,7 +2,8 @@
 require("../../../Includes/connection.php");
 
 $id=$_POST['PageID'];
-$pageContactNew = $_POST['PageContact'];
+$pageContactNew = trim("$_POST[PageContact]");
+
 
 //$query = "SELECT * FROM aboutPage WHERE PageID='$id'";
 //$result = mysqli_query($conn, $query) or die('Error, query failed');
