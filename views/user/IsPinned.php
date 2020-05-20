@@ -27,7 +27,7 @@ include("userIncludes/date.php");
 			FROM post p, user u
 			WHERE p.UserID = u.UserID
 			AND p.IsPinned = 1
-			ORDER BY p.postTime DESC
+			ORDER BY p.PostID DESC
 			";
 	$result = mysqli_query($conn, $sql);
 

@@ -23,7 +23,7 @@ include("userIncludes/date.php");
 $sql = "SELECT * 
 		FROM post p, user u
 		WHERE p.UserID = u.UserID
-		ORDER BY p.postTime DESC
+		ORDER BY p.PostID DESC
 		";
 $result = mysqli_query($conn, $sql);
 
