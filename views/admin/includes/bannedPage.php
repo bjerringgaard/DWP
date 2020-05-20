@@ -1,11 +1,7 @@
 <?php
-
-// Velkommen til den dybe kode, her er en lost spoiler. De er ikke alene på øen!!!!!!
-
-class CommentsPage extends DbClass  {
-
-    protected function getAllComments(){
-        $sql = "SELECT * from comment";
+class BannedPage extends DbClass  {
+    protected function getAllBanned(){
+        $sql = "SELECT * FROM user WHERE isBanned = 1";
         $result = $this->connect()->query($sql);
         $numRows = $result->num_rows;
         if($numRows > 0){

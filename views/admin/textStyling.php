@@ -22,7 +22,6 @@ require("../../Includes/connection.php");
 <section id="main">
 <div class="box1">
 <h2>Styling</h2>
-<h3>Current Styling</h3>
 
 <div class="overSkriftHeader">
 <?php
@@ -33,15 +32,26 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo"
-          <p>Name: " . $row["TextStylingName"]. "</p>
+          <p>Name: " . htmlspecialchars ($row["TextStylingName"]). "</p>
           <p>Color: " . $row["TextStylingColor"]. "</p>
           <p>Font: " . $row["TextStylingFont"]. "</p>
         ";
+
+        echo'
+        <a href="includes/deleteTextStyling.php?id='.$row['TextStylingID'].'"'; ?>
+        onclick="return confirm('Er du sikker på du vil slette denne Style');"
+        <?php echo ' ><i class="far fa-trash-alt updateDelete"></i></a>';
+
+
         // UPDATER BRUGEREN
         echo
         '<a href="includes/editTextStyling.php?id='.$row['TextStylingID'].'"'; ?>
-        onclick="return confirm('Edit Rules?');"
-        <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>';
+        onclick="return confirm('Edit Style?');"
+        <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>
+        
+       
+        
+        ';
         
     }
 } else {
@@ -49,7 +59,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 ?>
-
 </div>
 </div>
 </section>

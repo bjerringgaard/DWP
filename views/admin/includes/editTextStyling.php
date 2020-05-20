@@ -41,27 +41,25 @@ if(!mysqli_stmt_prepare($stmt, $query)){
 <form name="upload" method="post" action="editTextStylingSend.php"> 
 <input name="TextStylingID" type="hidden" value="<?php echo $row['TextStylingID']; ?>">
 <h3>Name</h3>
-<select name="TextStylingName">
-  <option value="<?php echo $row['TextStylingName']; ?>"><?php echo $row['TextStylingName']; ?></option>
-  <option value="Cobalt">Cobalt</option>
-  <option value="Gold Vein">Gold Vein</option>
-  <option value="Purple Rain">Purple Rain</option>
-  <option value="Holly Hund">Holly Hund</option>
-</select>
+<input class="inp" name="TextStylingName" type="text" value="<?php echo $row['TextStylingName']; ?>">
+    <br><br>
 <h3>Color</h3>
 <select name="TextStylingColor">
   <option value="<?php echo $row['TextStylingColor']; ?>"><?php echo $row['TextStylingColor']; ?></option>
-  <option value="Purple">Purple</option>
-  <option value="Orange">Orange</option>
-  <option value="Red">Red</option>
-  <option value="Azure">Azure</option>
+  <option value="csRed">Red</option>
+  <option value="csGreen">Green</option>
+  <option value="csCyan">Cyan</option>
+  <option value="csBlue">Blue</option>
+  <option value="csYellow">Yellow</option>
+  <option value="csPurple">Purple</option>
+  <option value="csWhite">White</option>
 </select>
 <h3>Font</h3>
 <select name="TextStylingFont">
   <option value="<?php echo $row['TextStylingFont']; ?>"><?php echo $row['TextStylingFont']; ?></option>
-  <option value="Bold">Bold</option>
-  <option value="Cursive">Cursive</option>
-  <option value="Medieval">Medieval</option>
+  <option value="csBold">Bold</option>
+  <option value="csItalic">Italic</option>
+  <option value="csRegular">Regular</option>
 </select>
 <br><br>
 <input class="button" name="Submit" type="submit" value="Update Styling">

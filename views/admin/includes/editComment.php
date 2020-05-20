@@ -42,7 +42,7 @@ if(!mysqli_stmt_prepare($stmt, $query)){
 <textarea class="inp" name="CommentText"><?php echo $row['CommentText']; ?></textarea>
 <input name="CommentID" type="hidden" value="<?php echo $row['CommentID']; ?>">
 <br><br>
-<input class="button" name="Submit" type="submit" value="Update Post">
+<input class="button" name="Submit" type="submit" value="Update Comment">
 </form>
 
 <?php
