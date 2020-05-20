@@ -64,7 +64,7 @@ $SumPostLikes = '';
 					<p><b>' . $SumPostLikes . '</b> Likes</p>
 					<p><b>' . $SumIsPinned . '</b> Pinned</p>
 				</div>
-				<button>EDIT PROFILE</button>
+				<button ' . $adminclass . '>EDIT PROFILE</button>
 			</div>
 			</div>
 				<div id="userPosts">';
