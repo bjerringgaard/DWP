@@ -25,5 +25,9 @@
 		if (isset($_GET['logout']) && $_GET['logout'] == 1) {
 			$message = "You are now logged out.";
 		} 
+		if (isset($_GET['usercreated']) && $_GET['usercreated'] == 1) {
+			$message = "User Created.";
+		} 
 	}
+	
 if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>

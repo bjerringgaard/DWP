@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 	$result = mysqli_query($conn, $query);
 		if ($result) {
 			$message = "User Created.";
+			header("location: ../landing/landing.php?usercreated=1");
 		} else {
 			$message = "User could not be created.";
 			$message .= "<br />" . mysqli_error($conn);
