@@ -1,9 +1,6 @@
 <?php
-require("../../Includes/connection.php");
-require_once("../../Includes/session.php");
-require_once("../../Includes/functions.php");
+require("../../Includes/Includer.php");
 include("userIncludes/isAdmin.php");
-confirm_logged_in();
 $theUser = $_GET["UserID"];
 ?>
 <!DOCTYPE html>
@@ -21,13 +18,21 @@ $theUser = $_GET["UserID"];
 <section id="main">
 	<div id="profileInfo">
 		<?php
-		$sql = "SELECT * 
+		$sql = "SELECT u.ProfilePic, u.ProfileDesc, u.UserFirstName, u.UserName, u.UserLastName, u.UserID, p.PostImage, p.UserID  
 						FROM user u, post p
 						WHERE u.UserID = p.UserID
-						AND UserName = '" . $theUser . "'";
+						AND u.UserName = '" . $theUser . "'";
 
 		$result = mysqli_query($conn, $sql);
 		$info = mysqli_fetch_assoc($result);
+
+		$sqlsum = "SELECT SUM(p.PostLikes) AS SumPostLikes, SUM(p.IsPinned) AS SumIsPinned, COUNT(p.PostID) AS SumPostAmount
+		FROM user u, post p
+		WHERE u.UserID = p.UserID
+		AND u.UserName = '" . $theUser . "'";
+
+		$sumresult = mysqli_query($conn, $sqlsum);
+		$sum = mysqli_fetch_assoc($sumresult);
 		
 		if(mysqli_num_rows($result) > 0){
 			echo '
@@ -38,9 +43,9 @@ $theUser = $_GET["UserID"];
 				<h2>' . $info["UserFirstName"] . ' "' .  $info["UserName"] . '" ' . $info["UserLastName"] . '</h2>
 				<p>' . $info["ProfileDesc"] . '</p>
 				<div id="stats">
-					<p><b>15</b> Posts</p>
-					<p><b>100</b> Likes</p>
-					<p><b>1</b> Pinned</p>
+					<p><b>' . $sum["SumPostAmount"] . '</b> Posts</p>
+					<p><b>' . $sum["SumPostLikes"] . '</b> Likes</p>
+					<p><b>' . $sum["SumIsPinned"] . '</b> Pinned</p>
 				</div>
 				<button>EDIT PROFILE</button>
 			</div>

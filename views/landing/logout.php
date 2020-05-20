@@ -1,5 +1,4 @@
 
-<?php require_once("../../Includes/functions.php"); ?>
 <?php
 		// Four steps to closing a session
 		// (i.e. logging out)
@@ -18,5 +17,5 @@
 		// 4. Destroy the session
 		session_destroy();
 		
-		redirect_to("landing.php?logout=1");
+		header("Location: landing.php?logout=1");
 ?>
