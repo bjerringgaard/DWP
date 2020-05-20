@@ -1,11 +1,8 @@
 <?php
-require("../../Includes/connection.php");
-require_once("../../Includes/session.php");
-require_once("../../Includes/functions.php");
+require("../../Includes/Includer.php");
 include("userIncludes/isAdmin.php");
-include("userIncludes/commentStyling.php");
-confirm_logged_in();
 
+include("userIncludes/commentStyling.php");
 include("userIncludes/date.php");
 include("userIncludes/comment.php");
 ?>

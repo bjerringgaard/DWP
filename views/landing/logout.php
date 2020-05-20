@@ -1,4 +1,3 @@
-
 <?php
 		// Four steps to closing a session
 		// (i.e. logging out)

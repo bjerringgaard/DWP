@@ -23,15 +23,16 @@ $theUser = $_GET["UserID"];
 						WHERE u.UserID = p.UserID
 						AND u.UserName = '" . $theUser . "'";
 
-		$result = mysqli_query($conn, $sql);
-		$info = mysqli_fetch_assoc($result);
-
 		$sqlsum = "SELECT SUM(p.PostLikes) AS SumPostLikes, SUM(p.IsPinned) AS SumIsPinned, COUNT(p.PostID) AS SumPostAmount
-		FROM user u, post p
-		WHERE u.UserID = p.UserID
-		AND u.UserName = '" . $theUser . "'";
+						FROM user u, post p
+						WHERE u.UserID = p.UserID
+						AND u.UserName = '" . $theUser . "'";
 
+		$result = mysqli_query($conn, $sql);
+		$imgresult = mysqli_query($conn, $sql);
 		$sumresult = mysqli_query($conn, $sqlsum);
+		
+		$info = mysqli_fetch_assoc($result);
 		$sum = mysqli_fetch_assoc($sumresult);
 		
 		if(mysqli_num_rows($result) > 0){
@@ -51,10 +52,10 @@ $theUser = $_GET["UserID"];
 			</div>
 			</div>
 				<div id="userPosts">';
-				while($info = mysqli_fetch_assoc($result)) {
+				while($img = mysqli_fetch_assoc($imgresult)){
 					echo '
 						<div class="thePost">
-							<img src="../../uploads/posts/' . $info["PostImage"] . '" alt="">
+							<img src="../../uploads/posts/' . $img["PostImage"] . '" alt="">
 						</div>';
 				}
 				echo '</div>';
