@@ -1,9 +1,7 @@
 <?php
-
 include 'includes/dbClass.php';
 include 'includes/commentsPage.php';
 include 'includes/viewComments.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +9,7 @@ include 'includes/viewComments.php';
  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Page</title>
+    <title>Comments</title>
     <meta name="description" content="Admin Dashboard">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
@@ -30,25 +28,13 @@ include 'includes/viewComments.php';
 
 <div class="overSkriftHeader">
 <?php
-
 $users = new viewComments();
 $users->showAllComments();
 
-
 ?>
-
 </div>
 </div>
-
-
-
-
-
-
 </section>
-
-  
-
 <section id="sb">
 <?php include 'includes/navigation.php';?>
 </section>

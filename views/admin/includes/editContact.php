@@ -39,7 +39,7 @@ if(!mysqli_stmt_prepare($stmt, $query)){
 ?>
 
 <form name="upload" method="post" action="editContactSend.php"> 
-<textarea class="inp" name="PageContact"><?php echo $row['PageContact']; ?></textarea>
+<textarea class="inp" name="PageContact"><?php echo $row ['PageContact']; ?></textarea>
 <br><br>
 <input name="PageID" type="hidden" value="<?php echo $row['PageID']; ?>">
 <br><br>

@@ -1,5 +1,20 @@
 <?php
+
+include 'includes/dbClass.php';
+include 'includes/dashboardPostPage.php';
+include 'includes/viewdashboardPost.php';
+include 'includes/bannedPage.php';
+include 'includes/viewBanned.php';
+
 require("../../Includes/connection.php");
+require_once("../../Includes/session.php");
+require_once("../../Includes/functions.php");
+confirm_logged_in();
+
+if (($_SESSION['admin'] == '0')) {
+  header('Location: ../user/feed.php');
+  }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,27 +40,8 @@ require("../../Includes/connection.php");
 
 <div class="overSkriftHeader">
 <?php
- //$sql = "SELECT * FROM post";
- $sql = "SELECT * 
- FROM dashboard
- ";
-
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "
-          <h4> " . $row["PostTitle"]. "</h4>
-          <p class='postedBy'>Post By: " . $row["UserName"]. "</p>
-          <p> " . $row["PostDesc"]. "</p>
-          <hr class='new1'>
-        ";
-        
-    }
-} else {
-    echo "0 results";
-}
+$users = new viewDashboardPost();
+$users->showAllDashboardPost();
 
 ?>
 
@@ -98,7 +94,13 @@ if (mysqli_num_rows($result) > 0) {
   </div>
 </div>
 <div class="box3">
+<div class="overSkriftHeader">
   <h2>Banned Users</h2>
+  <?php
+$users = new viewBanned();
+$users->showAllBanned();
+?>
+</div>
 </div>
 <div class="box4">
   <h2>Pinned Post</h2>

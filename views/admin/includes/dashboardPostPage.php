@@ -1,11 +1,8 @@
 <?php
+class DashboardPostPage extends DbClass  {
 
-// Velkommen til den dybe kode, her er en lost spoiler. De er ikke alene på øen!!!!!!
-
-class CommentsPage extends DbClass  {
-
-    protected function getAllComments(){
-        $sql = "SELECT * from comment";
+    protected function getAllDashboardPost(){
+        $sql = "SELECT * FROM dashboard";
         $result = $this->connect()->query($sql);
         $numRows = $result->num_rows;
         if($numRows > 0){

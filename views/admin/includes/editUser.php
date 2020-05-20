@@ -49,6 +49,8 @@ while($row=mysqli_fetch_array($result)){
     <br><br>
     <input name="UserLastName" type="text" value="<?php echo $row['UserLastName']; ?>">
     <br><br>
+    <input name="ProfileDesc" type="text" value="<?php echo $row['ProfileDesc']; ?>">
+    <br><br>
     <input name="UserEmail" type="text" value="<?php echo $row['UserEmail']; ?>">
     <br><br>
     <input type='hidden' value='0' name='IsBanned'>

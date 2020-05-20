@@ -32,10 +32,12 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo"
-          <p>Brugernavn: " . $row["UserID"]. "</p>
-          <p>Navn " . $row["UserFirstName"]. "</p>
-          <p>Efternavn " . $row["UserLastName"]. "</p>
-          <p>Profil: " . $row["ProfileDesc"]. "</p>
+          <p>ID: " . htmlspecialchars ($row["UserID"]). "</p>
+          <p>Username " . htmlspecialchars ($row["UserFirstName"]). "</p>
+          <p>Navn " . htmlspecialchars ($row["UserFirstName"]). "</p>
+          <p>Efternavn " . htmlspecialchars ($row["UserLastName"]). "</p>
+          <p>Profil: " . htmlspecialchars ($row["ProfileDesc"]). "</p>
+          <p>Profil: " . htmlspecialchars ($row["UserEmail"]). "</p>
         ";
         // SLETTER BRUGEREN
         echo'

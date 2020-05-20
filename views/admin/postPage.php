@@ -33,22 +33,19 @@ WHERE c.PostID = p.PostID
 AND c.UserID = u.UserID";
 
 
-/*  $sql = "SELECT * 
- FROM post p, user u, comment m
- WHERE p.UserID = u.UserID AND p.CommentID = m.CommentID
- ORDER BY p.postTime DESC
- "; */
+/*  Jeg tænker, eller har tænkt at man godt kunne bruge htmlspecialchars på en bedre måde"; */
+
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "
-          <h4> " . $row["PostTitle"]. "</h4>
-          <p class='postedBy'>Post By: " . $row["UserID"]. "</p>
-          <p> " . $row["PostDesc"]. "</p>
-          <p> " . $row["CommentText"]. "</p>
-          <p> " . $row["UserID"]. "</p>
+          <h4> " . htmlspecialchars ($row["PostTitle"]). "</h4>
+          <p class='postedBy'>Post By: " .htmlspecialchars ($row["UserID"]). "</p>
+          <p> " . htmlspecialchars ($row["PostDesc"]). "</p>
+          <p> " . htmlspecialchars ($row["CommentText"]). "</p>
+          <p> " . htmlspecialchars ($row["UserID"]). "</p>
         ";
         echo'
         <a href="includes/deletePost.php?id='.$row['PostID'].'"'; ?>
@@ -63,7 +60,7 @@ if (mysqli_num_rows($result) > 0) {
 ?> -->
 
 <?php
-
+  // Mangler Prepared Statement 
 	$sql = "SELECT * 
 			FROM post p, user u
 			WHERE p.UserID = u.UserID
@@ -79,20 +76,18 @@ if (mysqli_num_rows($result) > 0) {
 					<div id="postFrame">
 						<div class="postImg">
 						</div>
-						<div class="postTitle"><h3>' . $post["PostTitle"] . '</h3></div>
+						<div class="postTitle"><h3>'. htmlspecialchars($post["PostTitle"]) . '</h3></div>
 						<div class="postInfo">
 						</div>
 						<div class="postUser">
 							<div>
-								<h4>by user: ' . $post["UserName"]. '</h4>
-                <p>' . $post["PostDesc"] . '</p>
-                
+								<h4>by user: ' . htmlspecialchars($post["UserName"]). '</h4>
+                <p class="maxTextWidth">' . htmlspecialchars($post["PostDesc"]) . '</p>
 							</div>
 						</div>
 					</div>
 					<div id="postCommentFrame">
 							<div id="commentField">
-							
                 <div class="commentUser"> ';
                 echo'
                 <a href="includes/deletePost.php?id='.$post['PostID'].'"'; ?>
@@ -102,8 +97,6 @@ if (mysqli_num_rows($result) > 0) {
                 <a href="includes/editPost.php?id='.$post['PostID'].'"'; ?>
                 onclick="return confirm('Edit Post?');"
                 <?php echo ' ><i class="far fa-edit updateDelete"></i></a><br><br><br>
-
-
                 <h3>Comments</h3>
                 ';
                 
@@ -121,8 +114,8 @@ if (mysqli_num_rows($result) > 0) {
 
                   echo "
                   <div class='postComment'>
-                  <p> " . $comment["UserName"]. "</p>
-                  <p> " . $comment["CommentText"]. "</p>
+                  <p> " . htmlspecialchars ($comment["UserName"]). "</p>
+                  <p class='maxTextWidth'> " . htmlspecialchars ($comment["CommentText"]). "</p>
                   ";
                   echo'
                   <a href="includes/deleteComment.php?id='.$comment['CommentID'].'"'; ?>
