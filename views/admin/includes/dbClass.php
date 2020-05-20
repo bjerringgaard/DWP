@@ -14,9 +14,9 @@ class DbClass {
 				/*
 				$this->servername = "mysql81.unoeuro.com";
         $this->username = "bjerringgaard_com";
-        $this->password = "********";
-        $this->dbname = "bjerringgaard_com_db_shortcircuit";*/
-
+        $this->password = "";
+        $this->dbname = "bjerringgaard_com_db_shortcircuit";
+				*/
         $conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
         return $conn;
     }

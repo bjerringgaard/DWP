@@ -14,7 +14,6 @@ $image = mysqli_fetch_assoc($iresault);
 $tsql = "SELECT * FROM textstyling t";
 $tresult = mysqli_query($conn, $tsql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
