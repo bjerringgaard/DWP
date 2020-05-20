@@ -1,7 +1,6 @@
 <?php
 require("../../../Includes/connection.php");
 
-
 $id=$_POST['PostID'];
 $NewPostTitle = $_POST['PostTitle'];
 $NewPostDesc = $_POST['PostDesc'];
