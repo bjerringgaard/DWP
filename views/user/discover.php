@@ -1,9 +1,6 @@
 <?php
-require("../../Includes/connection.php");
-require_once("../../Includes/session.php");
-require_once("../../Includes/functions.php");
+require("../../Includes/Includer.php");
 include("userIncludes/isAdmin.php");
-confirm_logged_in();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,19 +17,19 @@ confirm_logged_in();
 	<section id="main">
 		<h2>Hot Stuff</h2>
 		<div id="discoverCards">
-			<a href="discoverPages/MostLikes.php">
+			<a href="MostLikes.php">
 			<div class="card" id="cardLike">
 				<i class="fas fa-heart"></i>
 				<h3>Most Liked</h3>
 			</div>
 			</a>
-			<a href="discoverPages/MostCommented.php">
+			<a href="MostCommented.php">
 			<div class="card" id="cardComment">
 				<i class="fas fa-comment"></i>
 				<h3>Most Commented</h3>
 			</div>
 			</a>
-			<a href="discoverPages/IsPinned.php">
+			<a href="IsPinned.php">
 			<div class="card" id="cardPinned">
 				<i class="fas fa-thumbtack"></i>
 				<h3>Admin Pinned</h3>
