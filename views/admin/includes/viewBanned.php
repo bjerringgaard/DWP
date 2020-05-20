@@ -2,10 +2,16 @@
 class ViewBanned extends BannedPage  {
     public function showAllBanned(){
         $datas = $this->getAllBanned();
-        foreach($datas as $data){
-            echo"
-            <p>Banned: " . $data["UserName"]. "</p>
-          ";
+        foreach ((array) $datas as $data) {
+
+            if(!$data){
+                echo"<p>Some</p>";
+            }
+            else{
+                
+                echo"<p>Banned: " . $data["UserName"]. "</p>";
+            }
+            
+            }
         }
     }
-}

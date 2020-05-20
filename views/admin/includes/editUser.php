@@ -1,5 +1,12 @@
 <?php
 require("../../../Includes/connection.php");
+require_once("../../../Includes/session.php");
+require_once("../../../Includes/functions.php");
+confirm_logged_in();
+
+if (($_SESSION['admin'] == '0')) {
+  header('Location: ../user/feed.php');
+  }
 ?>
 <!DOCTYPE html>
 <html>
