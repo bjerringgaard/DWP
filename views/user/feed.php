@@ -41,8 +41,8 @@ echo '
 				<p id="postTime">' . timeAgo($post["PostTime"]) . '</p>
 			</div>
 			<div class="postAction">
-					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
-					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
+					<a href="userIncludes/postlikePLUS.php?PostID=' . $post["PostID"]. '" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
+					<a href="userIncludes/postlikeMINUS.php?PostID=' . $post["PostID"]. '"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
 					<a href="#" id="pin"' . $adminclass . '><i class="fas fa-thumbtack"></i></a>
 			</div>
 		</div>
@@ -99,9 +99,11 @@ echo '
 				}
 
 		echo'</div>
+			<a id="commentlink" href="commentUpload.php?PostID=' . $post["PostID"] . '">
 				<div id="writeComment">
-					<a href="commentUpload.php?PostID=' . $post["PostID"] . '">Write Comment</a>
+					<p>Write Comment</p>
 				</div>
+				</a>
 		</div>
 	</div>
 </div>';
@@ -115,9 +117,6 @@ echo '
 	</div>
 	</section>
 </body>
-<?php
-include("userIncludes/isAdmin.php");
-?>
 </html>
 
 

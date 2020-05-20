@@ -6,6 +6,10 @@
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ::-webkit-scrollbar-track-piece {
   background: transparent;
 }
@@ -105,6 +109,10 @@ nav i {
 .menu-trigger {
   display: none;
   color: #fff;
+}
+
+.hidden {
+  display: none;
 }
 
 .hidden {
@@ -504,9 +512,49 @@ nav i {
   margin: 0;
   margin-bottom: 10px;
   padding: 0;
-  color: #FFFFFF;
   word-wrap: break-word;
   width: 300px;
+  color: #FFFFFF;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csBold {
+  font-weight: bold;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csItalic {
+  font-style: italic;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csRegluar {
+  font-weight: normal;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csRed {
+  color: #f03434;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csGreen {
+  color: #7befb2;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csCyan {
+  color: #4ecdc4;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csBlue {
+  color: #19b5fe;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csYellow {
+  color: #ffff7e;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csPurple {
+  color: #7700FF;
+}
+
+#postCommentFrame #commentField .commentUser .theComment div .csWhite {
+  color: #FFFFFF;
 }
 
 #postCommentFrame #commentField .commentUser .theComment .commentImg {
@@ -525,100 +573,39 @@ nav i {
      object-fit: cover;
 }
 
-#postCommentFrame #writeComment {
-  width: 20vw;
-  max-width: 384px;
+#postCommentFrame #commentlink {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#postCommentFrame #commentlink:visited {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+#postCommentFrame #commentlink #writeComment {
   height: 50px;
   margin-top: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#postCommentFrame #writeComment form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 20vw;
-}
-
-#postCommentFrame #writeComment form i {
-  margin-right: 10px;
-  color: #FFFFFF;
-  font-size: 32px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: 10%;
-  padding-left: 5px;
-}
-
-#postCommentFrame #writeComment form input[type=text] {
-  width: 75%;
-  height: 50px;
-  padding: 0;
-  padding-left: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background-color: #2C2F33;
-  border: none;
-  color: #FFFFFF;
-  font-size: 16px;
-}
-
-#postCommentFrame #writeComment form input[type=text]:focus {
-  outline: none;
-}
-
-#postCommentFrame #writeComment form input[type=file] {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-#postCommentFrame #writeComment form input[type=submit] {
-  height: 50px;
-  width: 15%;
   background-color: #7700FF;
-  color: #FFFFFF;
-  border: none;
-  cursor: pointer;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-#postCommentFrame #writeComment form label {
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
-  width: 15%;
-  background-color: #2C2F33;
-  color: #FFFFFF;
-  border: none;
-  cursor: pointer;
 }
 
-#postCommentFrame #writeComment form label i {
-  width: 15%;
-  font-size: 20px;
-  padding-right: 10px;
+#postCommentFrame #commentlink #writeComment p {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-#postCommentFrame #writeComment form label i:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+#postCommentFrame #commentlink #writeComment p:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #uploadContent {

@@ -111,25 +111,54 @@ nav i {
   color: #fff;
 }
 
-#writeComment {
-  width: 20vw;
-  max-width: 384px;
-  height: 50px;
+#main {
+  width: 99%;
+}
+
+#main #commentContainer {
+  background-color: #23272A;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  margin: 0 auto;
   margin-top: 20px;
+  border-radius: 20px;
+  margin-top: 10vh;
+}
+
+#main #commentContainer #postPicture {
+  background-color: #2C2F33;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#main #commentContainer #postPicture img {
+  width: 40vw;
+  height: 22.5vw;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#main #commentContainer #writeComment {
+  width: 40vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#writeComment form #commentRowText {
+#main #commentContainer #writeComment form #commentRowText {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 20vw;
-  max-width: 384px;
+  width: 40vw;
 }
 
-#writeComment form #commentRowText i {
+#main #commentContainer #writeComment form #commentRowText i {
   margin-right: 10px;
   color: #FFFFFF;
   font-size: 32px;
@@ -140,7 +169,7 @@ nav i {
   padding-left: 5px;
 }
 
-#writeComment form #commentRowText input[type=text] {
+#main #commentContainer #writeComment form #commentRowText input[type=text] {
   width: 75%;
   height: 50px;
   padding: 0;
@@ -153,11 +182,11 @@ nav i {
   font-size: 16px;
 }
 
-#writeComment form #commentRowText input[type=text]:focus {
+#main #commentContainer #writeComment form #commentRowText input[type=text]:focus {
   outline: none;
 }
 
-#writeComment form #commentRowText input[type=file] {
+#main #commentContainer #writeComment form #commentRowText input[type=file] {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -166,20 +195,21 @@ nav i {
   z-index: -1;
 }
 
-#writeComment form #commentRowText input[type=submit] {
+#main #commentContainer #writeComment form #commentRowText input[type=submit] {
   height: 50px;
-  width: 15%;
+  width: 18%;
   background-color: #7700FF;
   color: #FFFFFF;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-#writeComment form #commentRowText label {
+#main #commentContainer #writeComment form #commentRowText label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,29 +220,26 @@ nav i {
       -ms-flex-pack: center;
           justify-content: center;
   height: 50px;
-  width: 15%;
+  width: 7%;
   background-color: #2C2F33;
   color: #FFFFFF;
   border: none;
   cursor: pointer;
 }
 
-#writeComment form #commentRowText label i {
+#main #commentContainer #writeComment form #commentRowText label i {
   width: 15%;
   font-size: 20px;
   padding-right: 10px;
 }
 
-#writeComment form #commentRowText label i:hover {
+#main #commentContainer #writeComment form #commentRowText label i:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
-#writeComment form #commentRowStyle {
-  width: calc(20vw - 10px);
-  max-width: 364px;
+#main #commentContainer #writeComment form #commentRowStyle {
   margin-top: 20px;
-  height: 100px;
   background-color: #2C2F33;
   color: #FFFFFF;
   border-radius: 10px;
@@ -226,7 +253,7 @@ nav i {
   padding: 10px;
 }
 
-#writeComment form #commentRowStyle label {
+#main #commentContainer #writeComment form #commentRowStyle label {
   width: 92px;
   height: 30px;
   padding: 5px 10px;
@@ -237,16 +264,16 @@ nav i {
   margin: 4px;
 }
 
-#writeComment form #commentRowStyle input[type="radio"]:checked {
+#main #commentContainer #writeComment form #commentRowStyle input[type="radio"]:checked {
   background-color: #7700FF;
   width: 0px;
 }
 
-#writeComment form #commentRowStyle input[type="radio"]:checked + label {
+#main #commentContainer #writeComment form #commentRowStyle input[type="radio"]:checked + label {
   background-color: #7700FF;
 }
 
-#writeComment form #commentRowStyle input[type="radio"] {
+#main #commentContainer #writeComment form #commentRowStyle input[type="radio"] {
   opacity: 0;
   width: 0px;
   position: absolute;

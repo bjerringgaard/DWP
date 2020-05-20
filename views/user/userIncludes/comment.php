@@ -22,16 +22,17 @@ if($_FILES["file"]["error"]>0){
 					"../../uploads/comments/".$_FILES["file"]["name"]);
 		echo "stored in Commentupload: ". $_FILES["file"]["name"];
 		
-		$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID CommentTimeStamp, PostID) 
-						VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+		$sql = "INSERT INTO comment (CommentID, UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
+						VALUES (NULL, '".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, '".$_POST["PostID"]."')"; 
 							mysqli_query($conn, $sql);
 							mysqli_close($conn);	
+							var_dump($sql);
 							header("Location: feed.php");
 			}
 
 }}else{
-	$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
-					VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+	$sql = "INSERT INTO comment (CommentID, UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
+					VALUES (NULL, '".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 						mysqli_query($conn, $sql);
 						mysqli_close($conn);	
 							header("Location: feed.php");
