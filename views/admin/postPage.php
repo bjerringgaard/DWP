@@ -28,7 +28,7 @@ require("../../Includes/connection.php");
 
 
 $sql = "SELECT * 
-FROM Post p, Comment c, User u
+FROM post p, comment c, user u
 WHERE c.PostID = p.PostID
 AND c.UserID = u.UserID";
 
@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
 <?php
 
 	$sql = "SELECT * 
-			FROM post p, User u
+			FROM post p, user u
 			WHERE p.UserID = u.UserID
 			ORDER BY p.postTime DESC
 			";
@@ -84,7 +84,7 @@ if (mysqli_num_rows($result) > 0) {
 						</div>
 						<div class="postUser">
 							<div>
-								<h4>by user: ' . $post["UserID"]. '</h4>
+								<h4>by user: ' . $post["UserName"]. '</h4>
                 <p>' . $post["PostDesc"] . '</p>
                 
 							</div>
@@ -109,7 +109,7 @@ if (mysqli_num_rows($result) > 0) {
                 
 
 								$csql = "SELECT * 
-								FROM Post p, Comment c, User u
+								FROM post p, comment c, user u
 								WHERE c.PostID = p.PostID
 								AND c.UserID = u.UserID
 								AND p.PostID = " . $post["PostID"];
@@ -121,7 +121,7 @@ if (mysqli_num_rows($result) > 0) {
 
                   echo "
                   <div class='postComment'>
-                  <p> " . $comment["UserID"]. "</p>
+                  <p> " . $comment["UserName"]. "</p>
                   <p> " . $comment["CommentText"]. "</p>
                   ";
                   echo'

@@ -22,8 +22,8 @@ if($_FILES["file"]["error"]>0){
             "../../uploads/posts/".$_FILES["file"]["name"]);
 			echo "stored in upload: ". $_FILES["file"]["name"];
 			
-        $sql = "INSERT INTO Post (PostID, PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID) 
-				VALUES (NULL, '".$_POST["title"]."', '".$_POST["description"]."', '".$_FILES["file"]["name"]."', 0, CURRENT_TIMESTAMP, 0, 'Bbaggz')"; 
+        $sql = "INSERT INTO post (PostID, PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID) 
+				VALUES (NULL, '".$_POST["title"]."', '".$_POST["description"]."', '".$_FILES["file"]["name"]."', 0, CURRENT_TIMESTAMP, 0, '".$_SESSION["user_id"]."')"; 
         mysqli_query($conn, $sql);
         mysqli_close($conn);
         }

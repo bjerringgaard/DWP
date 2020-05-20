@@ -1,9 +1,8 @@
 <?php
-require("../../Includes/connection.php");
-require_once("../../Includes/session.php");
-require_once("../../Includes/functions.php");
-confirm_logged_in();
+require("../../Includes/Includer.php");
+include("userIncludes/isAdmin.php");
 
+include("userIncludes/commentStyling.php");
 include("userIncludes/date.php");
 include("userIncludes/comment.php");
 ?>
@@ -23,7 +22,7 @@ include("userIncludes/comment.php");
 
 <?php
 $sql = "SELECT * 
-		FROM post p, User u
+		FROM post p, user u
 		WHERE p.UserID = u.UserID
 		ORDER BY p.postTime DESC
 		";
@@ -45,7 +44,7 @@ echo '
 			<div class="postAction">
 					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
 					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
-					<a href="#" id="Pin"><i class="fas fa-thumbtack"></i></a>
+					<a href="#" id="pin"' . $adminclass . '><i class="fas fa-thumbtack"></i></a>
 			</div>
 		</div>
 
@@ -61,7 +60,7 @@ echo '
 
 	<div id="postCommentFrame">';
 		$asql = "SELECT COUNT(*) As CommentAmount
-				FROM Comment
+				FROM comment
 				WHERE PostID=" . $post["PostID"];
 				$aresult = mysqli_query($conn, $asql);
 				
@@ -75,9 +74,10 @@ echo '
 		echo '
 		<div id="commentField">';
 			$csql = "SELECT * 
-			FROM Post p, Comment c, User u
+			FROM post p, comment c, user u, textstyling t
 			WHERE c.PostID = p.PostID
 			AND c.UserID = u.UserID
+			AND c.TextStylingID = t.TextStylingID
 			AND p.PostID = " . $post["PostID"];
 
 			$cresult = mysqli_query($conn, $csql);
@@ -90,7 +90,7 @@ echo '
 					<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
 					<div>
 						<h3>' . $comment["UserName"]. '</h3>
-						<p>' . $comment["CommentText"] . '</p>
+						<p class="' . $comment["TextStylingColor"] . ' ' . $comment["TextStylingFont"] . '">' . $comment["CommentText"] . '</p>
 						<div class="commentImg"><img id="theCmtImage" src="../../uploads/comments/' . $comment["CmtAttachement"] . '" alt=""></div>
 				 </div>
 			</div> 
@@ -99,15 +99,35 @@ echo '
 					} 
 				}
 
-		echo ' </div>
+		echo'</div>
 		<div id="writeComment">
 			<form action="" method="POST" enctype="multipart/form-data" name="' . $post["PostID"] . '">
-				<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
-				<input type="text" name="commentText">
-				<input type="file" name="file" id="file"></input>
-				<label for="file"><i class="fas fa-paperclip"></i></label>
-				<input type="submit" name="submit" class="btn fa-input" value="send"></input>
-			</form>
+				<div id="commentRowText">
+					<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
+					<input type="text" name="commentText">
+					<input type="file" name="file" id="file"></input>
+					<label for="file"><i class="fas fa-paperclip"></i></label>
+					<input type="submit" name="submit" class="btn fa-input" value="send"></input>
+				</div>
+				<div id="commentRowStyle">
+					<input type="radio" name="textStyle" value="1" checked style="display:none; position:absolute;"></input>
+				';
+				
+				$tsql = "SELECT * 
+								 FROM textstyling t";
+				$tresult = mysqli_query($conn, $tsql);
+
+				if (mysqli_num_rows($tresult) > 0) {
+					while($textstyling = mysqli_fetch_assoc($tresult)) { 
+						echo '<input type="radio" name="textStyle" id="' . $textstyling['TextStylingID'] . '" value="' . $textstyling['TextStylingID'] . '"></input>
+									<label for="' . $textstyling['TextStylingID'] . '" >' . $textstyling['TextStylingName'] . '</label>
+						';
+					}
+				}
+
+			echo '
+			</div>
+		</form>
 			</div>
 		</div>
 	</div>
@@ -122,6 +142,9 @@ echo '
 	</div>
 	</section>
 </body>
+<?php
+include("userIncludes/isAdmin.php");
+?>
 </html>
 
 

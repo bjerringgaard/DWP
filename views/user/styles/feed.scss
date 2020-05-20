@@ -238,10 +238,22 @@
 							margin: 0;
 							margin-bottom: 10px;
 							padding: 0;
-							color: $White;
 							word-wrap: break-word;
 							width: 300px;
+							color: $White;
 						}
+
+						.csBold{font-weight: bold;}
+						.csItalic{font-style: italic;}
+						.csRegluar{font-weight: normal;}
+
+						.csRed{color: #f03434;}
+						.csGreen{color: #7befb2;}
+						.csCyan{color: #4ecdc4;}
+						.csBlue{color: #19b5fe;}
+						.csYellow{color: #ffff7e;}
+						.csPurple{color:#7700FF;}
+						.csWhite{color: $White;}
 					}
 					.commentImg{
 						height: fit-content;
@@ -266,8 +278,10 @@
 			display: flex;
 
 			form {
+				#commentRowText{
 				display: flex;
 				width: 20vw;
+				max-width: 384px;
 				i {
 					margin-right: 10px;
 					color: $White;
@@ -337,6 +351,46 @@
 						&:hover {
 							transform: scale(1.2); 
 						}
+					}
+				}
+				}
+				#commentRowStyle{
+					width: calc(20vw - 10px);
+					max-width: 364px;
+					margin-top: 20px;
+					height:100px;
+					background-color: $dark;
+					color: $White;
+					border-radius: 10px;
+					overflow: auto;
+					text-align: center;
+					display: flex;
+					flex-wrap: wrap;
+					padding: 10px;
+
+					label{
+						width: 92px;
+						height: 30px;
+						padding: 5px 10px;
+						line-height: 28px;
+						background-color: $background;
+						font-size: 16px;
+						border-radius: 4px;
+						margin: 4px;
+					}
+
+					input[type="radio"]:checked {
+						background-color: $color;
+						width: 0px;
+				}
+					input[type="radio"]:checked + label {
+						background-color: $color;
+				}
+
+					input[type="radio"]{
+						opacity: 0;
+						width: 0px;
+						position: absolute;
 					}
 				}
 			}

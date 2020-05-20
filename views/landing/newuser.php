@@ -18,10 +18,10 @@ if (isset($_POST['submit'])) { // Form has been submitted.
 	$firstname = trim(mysqli_real_escape_string($conn, $_POST['firstname']));
 	$lastname = trim(mysqli_real_escape_string($conn, $_POST['lastname']));
 	$email = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $iterations = ['cost' => 15];
+    $iterations = ['cost' => 5];
     $hashed_password = password_hash($password, PASSWORD_BCRYPT, $iterations);
 
-	$query = "INSERT INTO `User` (UserName, UserPassword, UserFirstName, UserLastName, UserEmail) VALUES ('{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}')";
+	$query = "INSERT INTO `user` (UserName, UserPassword, UserFirstName, UserLastName, UserEmail) VALUES ('{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}')";
 	$result = mysqli_query($conn, $query);
 		if ($result) {
 			$message = "User Created.";

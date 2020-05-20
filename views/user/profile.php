@@ -1,6 +1,7 @@
 <?php
-require("../../Includes/connection.php");
-$theUser = $_GET['UserID'];
+require("../../Includes/Includer.php");
+include("userIncludes/isAdmin.php");
+$theUser = $_GET["UserID"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +18,22 @@ $theUser = $_GET['UserID'];
 <section id="main">
 	<div id="profileInfo">
 		<?php
-		$sql = "SELECT * 
-						FROM User u
-						WHERE UserID = '" . $theUser . "'";
+		$sql = "SELECT u.ProfilePic, u.ProfileDesc, u.UserFirstName, u.UserName, u.UserLastName, u.UserID, p.PostImage, p.UserID  
+						FROM user u, post p
+						WHERE u.UserID = p.UserID
+						AND u.UserName = '" . $theUser . "'";
+
+		$sqlsum = "SELECT SUM(p.PostLikes) AS SumPostLikes, SUM(p.IsPinned) AS SumIsPinned, COUNT(p.PostID) AS SumPostAmount
+						FROM user u, post p
+						WHERE u.UserID = p.UserID
+						AND u.UserName = '" . $theUser . "'";
 
 		$result = mysqli_query($conn, $sql);
+		$imgresult = mysqli_query($conn, $sql);
+		$sumresult = mysqli_query($conn, $sqlsum);
+		
 		$info = mysqli_fetch_assoc($result);
+		$sum = mysqli_fetch_assoc($sumresult);
 		
 		if(mysqli_num_rows($result) > 0){
 			echo '
@@ -33,33 +44,23 @@ $theUser = $_GET['UserID'];
 				<h2>' . $info["UserFirstName"] . ' "' .  $info["UserName"] . '" ' . $info["UserLastName"] . '</h2>
 				<p>' . $info["ProfileDesc"] . '</p>
 				<div id="stats">
-					<p><b>15</b> Posts</p>
-					<p><b>100</b> Likes</p>
-					<p><b>1</b> Pinned</p>
+					<p><b>' . $sum["SumPostAmount"] . '</b> Posts</p>
+					<p><b>' . $sum["SumPostLikes"] . '</b> Likes</p>
+					<p><b>' . $sum["SumIsPinned"] . '</b> Pinned</p>
 				</div>
 				<button>EDIT PROFILE</button>
-			</div>';
+			</div>
+			</div>
+				<div id="userPosts">';
+				while($img = mysqli_fetch_assoc($imgresult)){
+					echo '
+						<div class="thePost">
+							<img src="../../uploads/posts/' . $img["PostImage"] . '" alt="">
+						</div>';
+				}
+				echo '</div>';
 		}
 		?>
-	</div>
-
-	<div id="userPosts">
-		<?php 
-		$psql = "SELECT p.PostID, p.PostImage, p.UserID
-						 FROM Post p
-						 WHERE p.UserID = '" . $theUser . "'";
-
-		$presult = mysqli_query($conn, $psql);
-		$posts = mysqli_fetch_assoc($presult);
-
-			while($posts = mysqli_fetch_assoc($presult)) {
-				echo '
-					<div class="thePost">
-						<img src="../../uploads/posts/' . $posts["PostImage"] . '" alt="">
-					</div>';
-			}
-		?>
-	</div>
 </section>
 </body>
 </html>

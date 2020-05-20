@@ -1,3 +1,11 @@
+.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
 ::-webkit-scrollbar-track-piece {
   background: transparent;
 }
@@ -97,6 +105,14 @@ nav i {
 .menu-trigger {
   display: none;
   color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -258,6 +274,13 @@ nav i {
   margin-top: .4vw;
 }
 
+#postFrame .postImg {
+  width: 960px;
+  height: 540px;
+  background-color: #2C2F33;
+  border-radius: 10px;
+}
+
 #postFrame .postImg img {
   width: 960px;
   height: 540px;
@@ -269,6 +292,7 @@ nav i {
 #postFrame .postTitle {
   padding: 0;
   margin: 0;
+  word-wrap: break-word;
 }
 
 #postFrame .postTitle h3 {

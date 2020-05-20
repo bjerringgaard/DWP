@@ -1,9 +1,16 @@
+-- CREATE DATABASE 
 DROP DATABASE IF EXISTS ShortCircuit;
 CREATE DATABASE ShortCircuit;
 USE ShortCircuit;
 
+-- CREATE USER WITH PRIVILEGES 
+DROP USER 'DWP'@'localhost';
+CREATE USER 'DWP'@'localhost' IDENTIFIED BY '123456'; 
+GRANT ALL PRIVILEGES ON ShortCircuit.* To 'DWP'@'localhost' IDENTIFIED BY '123456'; FLUSH PRIVILEGES;
+
+-- CREATE TABLES 
 CREATE TABLE user (
-		UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     UserName varchar (20) NOT NULL,
     UserFirstName varchar (50) NOT NULL,
     UserLastName varchar (50) NOT NULL,
@@ -22,9 +29,16 @@ CREATE TABLE post (
     PostImage varchar (255) NOT NULL,
     PostLikes INT NULL,
     PostTime TIMESTAMP NOT NULL,
-    IsPinned boolean NOT NULL,
+    IsPinned boolean NOT NULL DEFAULT 0,
     UserID INT NOT NULL,
-    FOREIGN KEY (UserID) REFERENCES User (UserID)
+    FOREIGN KEY (UserID) REFERENCES user (UserID)
+);
+
+CREATE TABLE textstyling(
+    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    TextStylingName varchar (50) NOT NULL,
+    TextStylingColor varchar (50) NOT NULL,
+    TextStylingFont varchar (50) NOT NULL
 );
 
 CREATE TABLE comment (
@@ -32,20 +46,12 @@ CREATE TABLE comment (
     CmtAttachement varchar (255),
     CommentTimeStamp TIMESTAMP NOT NULL,
     CommentText varchar (255),
-    CommentStyle varchar (255),
     UserID INT NOT NULL,
     PostID INT NOT NULL,
-    FOREIGN KEY (PostID) REFERENCES Post (PostID) ON DELETE CASCADE,
-    FOREIGN KEY (UserID) REFERENCES User (UserID)
-);
-
-CREATE TABLE textstyling(
-    TextStylingID int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    TextStylingName varchar (50) NOT NULL,
-    TextStylingColor varchar (50) NOT NULL,
-    TextStylingFont varchar (50) NOT NULL,
-    CommentID INT NOT NULL,
-    FOREIGN KEY (CommentID) REFERENCES Comment (CommentID)
+    TextStylingID INT,
+    FOREIGN KEY (PostID) REFERENCES post (PostID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES user (UserID),
+    FOREIGN KEY (TextStylingID) REFERENCES textstyling (TextStylingID)
 );
 
 CREATE TABLE aboutpage (
@@ -54,3 +60,97 @@ CREATE TABLE aboutpage (
     PageDesc TEXT NULL,
     PageContact TEXT NULL
 );
+
+-- CREATE DUMMY DATA
+INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
+VALUES (
+    '1',	
+    'user',
+    'user',
+    'lastname',	
+    'user@users.com',
+    '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
+    'Dette er en beskrivelse',
+    'NULL',
+    '0',
+    '0'
+);
+
+INSERT INTO user (UserID, UserName, UserFirstName, UserLastName, UserEmail, UserPassword, ProfileDesc, ProfilePic, IsAdmin, IsBanned)
+VALUES (
+    '2',	
+    'admin',
+    'admin',
+    'admin lastname',		
+    'admin@admin.com',
+    '$2y$05$NpI7PKpa6IeLM7e9DhReb.hLlWLVrg46QRd6YKEX7Kpy12p0w.Kgy',
+    'Dette er en beskrivelse til admin',
+    'NULL',
+    '1',
+    '0'
+);
+
+INSERT INTO post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+VALUES (
+    'My First Intel Build',
+    'Er dette et godt build?',
+    'NULL',
+    '2',
+    '2020-05-10 00:00:00',
+    '0',
+    '1'
+);
+
+INSERT INTO post (PostTitle, PostDesc, PostImage, PostLikes, PostTime, IsPinned, UserID)
+VALUES (
+    'Er Amd eller Intel bedst',
+    'Jeg tror personligt det er AMD.',
+    'https://i.imgur.com/0skJjHK.jpg',
+    '2',
+    '2020-04-10 00:00:00',
+    '0',
+    '1'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '1',	
+   'Regular',
+   'csWhite',
+   'csRegular'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '2',	
+   'Raging',
+   'csRed',
+   'csBold'
+);
+
+INSERT INTO textstyling (TextStylingID, TextStylingName, TextStylingColor, TextStylingFont)
+VALUES (
+   '3',	
+   'Mystic',
+   'csPurple',
+   'csItalic'
+);
+
+INSERT INTO comment (CmtAttachement, CommentTimeStamp, CommentText, UserID, PostID, TextStylingID)
+VALUES (
+    'NULL',
+    '2020-05-24 12:50:14',
+    'Meget Flot',
+    '1',
+    '1',
+    '1'
+);
+
+INSERT INTO aboutpage (PageID, PageRules, PageDesc, PageContact)
+VALUES ( 
+   '1',	 
+   'Dette er Pagerules',
+   'Dette er PageDesc',
+   'Dette er PageKontakt'
+);
+

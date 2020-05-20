@@ -1,5 +1,9 @@
 <?php
 require("../../Includes/connection.php");
+require_once("../../Includes/session.php");
+require_once("../../Includes/functions.php");
+include("userIncludes/isAdmin.php");
+confirm_logged_in();
 ?>
 <!DOCTYPE html>
 <html lang="en">

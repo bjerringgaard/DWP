@@ -1,5 +1,9 @@
 @import 'variables.scss';
 
+.hidden {
+	display: none;
+}
+
 ::-webkit-scrollbar-track-piece{
 	background: transparent;
 }

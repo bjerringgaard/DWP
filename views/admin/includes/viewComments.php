@@ -8,7 +8,7 @@ class ViewComments extends CommentsPage  {
             //echo <p>Navn " . $data['CommentText'] . "</p>;
 
             echo"
-            <p>Forskellige Post: " . $data["CommentText"]. "</p>
+            <p>Comments: " . $data["CommentText"]. "</p>
           ";
             
 
