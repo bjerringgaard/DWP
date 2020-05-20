@@ -12,27 +12,26 @@ if (logged_in()) {
 <html lang="en">
 <head>
 	<?php include '../../views/user/userTemplates/head.php';?>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="styles/css/landing.css">
 	<title>ShortCircuit | Landing</title>
 </head>
 <body>		 
 	<section id="main">
-		
-
-
-
-
-<h2>Please login</h2> 
-<form action="" method="post">
-Username:
-<input type="text" name="user" maxlength="30" value="" />
-Password:
-<input type="password" name="pass" maxlength="30" value="" />
-<input type="submit" name="submit" value="Login" />
-</form>
-<a href="newuser.php">Create User</a>
-<a href="about.php">About Page</a>
-
+		<div id="loginContainer">
+			<h2>Welcome</h2> 
+			<p>Please login</p> 
+				<form action="" method="post">
+				<label for="user">USERNAME</label><br>
+				<input type="text" name="user" maxlength="30" value="" /><br>
+				<label for="pass">PASSWORD</label><br>
+				<input type="password" name="pass" maxlength="30" value="" /><br>
+				<input type="submit" name="submit" value="Login" />
+				</form>
+			<div id="bottomContainer">
+				<p>Need an account? <a href="newuser.php">Register</a></p>
+				<p>Want to know more about us? <a href="about.php">Click here</a></p>
+			</div>
+		</div>
 	</section>
 </body>
 </html>	
