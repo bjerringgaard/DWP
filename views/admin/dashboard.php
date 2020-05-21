@@ -1,15 +1,15 @@
 <?php
-
-include 'includes/dbClass.php';
-include 'includes/dashboardPostPage.php';
-include 'includes/viewdashboardPost.php';
-include 'includes/bannedPage.php';
-include 'includes/viewBanned.php';
-
 require("../../Includes/connection.php");
 require_once("../../Includes/session.php");
 require_once("../../Includes/functions.php");
 confirm_logged_in();
+
+include 'includes/dbClass.php';
+include 'includes/dashboardPostPage.php';
+include 'includes/viewDashboardPost.php';
+include 'includes/bannedPage.php';
+include 'includes/viewBanned.php';
+
 
 if (($_SESSION['admin'] == '0')) {
   header('Location: ../user/feed.php');

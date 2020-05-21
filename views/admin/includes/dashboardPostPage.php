@@ -2,7 +2,7 @@
 class DashboardPostPage extends DbClass  {
 
     protected function getAllDashboardPost(){
-        $sql = "SELECT * FROM dashboard";
+        $sql = "SELECT * FROM Dashboard";
         $result = $this->connect()->query($sql);
         $numRows = $result->num_rows;
         if($numRows > 0){

@@ -39,12 +39,12 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo"
-          <p>ID: " . htmlspecialchars ($row["UserID"]). "</p>
-          <p>Username " . htmlspecialchars ($row["UserFirstName"]). "</p>
-          <p>Navn " . htmlspecialchars ($row["UserFirstName"]). "</p>
-          <p>Efternavn " . htmlspecialchars ($row["UserLastName"]). "</p>
-          <p>Profil: " . htmlspecialchars ($row["ProfileDesc"]). "</p>
-          <p>Profil: " . htmlspecialchars ($row["UserEmail"]). "</p>
+          <p class='maxTextWidth'>ID: " . htmlspecialchars ($row["UserID"]). "</p>
+          <p class='maxTextWidth'>Username " . htmlspecialchars ($row["UserFirstName"]). "</p>
+          <p class='maxTextWidth'>Navn " . htmlspecialchars ($row["UserFirstName"]). "</p>
+          <p class='maxTextWidth'>Efternavn " . htmlspecialchars ($row["UserLastName"]). "</p>
+          <p class='maxTextWidth'>Profil: " . htmlspecialchars ($row["ProfileDesc"]). "</p>
+          <p class='maxTextWidth'>Profil: " . htmlspecialchars ($row["UserEmail"]). "</p>
         ";
         // SLETTER BRUGEREN
         echo'

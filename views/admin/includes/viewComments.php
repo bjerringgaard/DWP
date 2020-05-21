@@ -4,7 +4,7 @@ class ViewComments extends CommentsPage  {
         $datas = $this->getAllComments();
         foreach($datas as $data){
             echo"
-            <p>Comments: " . htmlspecialchars ($data["CommentText"]). "</p>
+            <p class='maxTextWidth'>Comments: " . htmlspecialchars ($data["CommentText"]). "</p>
           ";
         }
     }
