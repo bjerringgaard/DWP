@@ -4,7 +4,6 @@ include("userIncludes/isAdmin.php");
 
 include("userIncludes/commentStyling.php");
 include("userIncludes/date.php");
-include("userIncludes/comment.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +23,7 @@ include("userIncludes/comment.php");
 $sql = "SELECT * 
 		FROM post p, user u
 		WHERE p.UserID = u.UserID
-		ORDER BY p.postTime DESC
+		ORDER BY p.PostID DESC
 		";
 $result = mysqli_query($conn, $sql);
 
@@ -42,8 +41,8 @@ echo '
 				<p id="postTime">' . timeAgo($post["PostTime"]) . '</p>
 			</div>
 			<div class="postAction">
-					<a href="#" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
-					<a href="#"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
+					<a href="userIncludes/postlikePLUS.php?PostID=' . $post["PostID"]. '" id="like"><i class="fas fa-arrow-alt-circle-up"></i></a>
+					<a href="userIncludes/postlikeMINUS.php?PostID=' . $post["PostID"]. '"id="comment"><i class="fas fa-arrow-alt-circle-down"></i></a>
 					<a href="#" id="pin"' . $adminclass . '><i class="fas fa-thumbtack"></i></a>
 			</div>
 		</div>
@@ -51,7 +50,7 @@ echo '
 		<div class="postUser">
 			<div class="profilePic"><img src="' . $post["ProfilePic"] . '" alt=""></div>
 			<div>
-				<h3>' . $post["UserName"]. '</h3>
+				<a href="profile.php?UserID=' . $post["UserName"]. '"><h3>' . $post["UserName"]. '</h3></a>
 				<p>' . $post["PostDesc"] . '</p>
 			</div>
 		</div>
@@ -89,7 +88,7 @@ echo '
 				<div class="theComment">
 					<div class="profilePic"><img src="' . $comment["ProfilePic"] . '" alt=""></div>
 					<div>
-						<h3>' . $comment["UserName"]. '</h3>
+						<a href="profile.php?UserID=' . $comment["UserName"]. '"><h3>' . $comment["UserName"]. '</h3></a>
 						<p class="' . $comment["TextStylingColor"] . ' ' . $comment["TextStylingFont"] . '">' . $comment["CommentText"] . '</p>
 						<div class="commentImg"><img id="theCmtImage" src="../../uploads/comments/' . $comment["CmtAttachement"] . '" alt=""></div>
 				 </div>
@@ -100,35 +99,11 @@ echo '
 				}
 
 		echo'</div>
-		<div id="writeComment">
-			<form action="" method="POST" enctype="multipart/form-data" name="' . $post["PostID"] . '">
-				<div id="commentRowText">
-					<input type="hidden" id="PostID" name="PostID" value="' . $post["PostID"] . '">
-					<input type="text" name="commentText">
-					<input type="file" name="file" id="file"></input>
-					<label for="file"><i class="fas fa-paperclip"></i></label>
-					<input type="submit" name="submit" class="btn fa-input" value="send"></input>
+			<a id="commentlink" href="commentUpload.php?PostID=' . $post["PostID"] . '">
+				<div id="writeComment">
+					<p>Write Comment</p>
 				</div>
-				<div id="commentRowStyle">
-					<input type="radio" name="textStyle" value="1" checked style="display:none; position:absolute;"></input>
-				';
-				
-				$tsql = "SELECT * 
-								 FROM textstyling t";
-				$tresult = mysqli_query($conn, $tsql);
-
-				if (mysqli_num_rows($tresult) > 0) {
-					while($textstyling = mysqli_fetch_assoc($tresult)) { 
-						echo '<input type="radio" name="textStyle" id="' . $textstyling['TextStylingID'] . '" value="' . $textstyling['TextStylingID'] . '"></input>
-									<label for="' . $textstyling['TextStylingID'] . '" >' . $textstyling['TextStylingName'] . '</label>
-						';
-					}
-				}
-
-			echo '
-			</div>
-		</form>
-			</div>
+				</a>
 		</div>
 	</div>
 </div>';
@@ -142,9 +117,6 @@ echo '
 	</div>
 	</section>
 </body>
-<?php
-include("userIncludes/isAdmin.php");
-?>
 </html>
 
 

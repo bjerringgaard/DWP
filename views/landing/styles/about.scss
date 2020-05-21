@@ -11,7 +11,7 @@ body{
 		#loginContainer{
 			margin: 0 auto;
 			box-sizing: border-box;
-			width: 30%;
+			width: 40%;
 			padding: 40px;
 			background-color: $background;
 			display: flex;
@@ -26,12 +26,26 @@ body{
 				font-size: 48px;
 			}
 
+			h3{
+				color: $White;
+				margin: 0;
+				font-size: 24px;
+			}
+
 			p{
 				color: $lgrey;
 				margin: 0;
 				margin-bottom: 40px;
 				margin-top: 10px;
 				font-size: 20px;
+			}
+
+			#information{
+				width: 100%;
+				p{
+					color: rgb(148, 148, 148);
+					font-size: 16px;
+				}
 			}
 
 			#bottomContainer{
@@ -57,59 +71,6 @@ body{
 					}
 				}
 			}
-
-			form{
-				width: 100%;
-
-				label{
-					color: $lgrey;
-					font-size: 14px;
-					margin-bottom: 5px;
-					margin-left: 10px;
-				}
-
-				input[type = text], input[type = password]{
-					height: 50px;
-					width: 100%;
-					margin-bottom: 20px;
-					margin-top: 5px;
-					padding: 0;
-					padding-left: 10px;
-	
-					border-radius: 10px;
-					
-					background-color: $dark;
-					border: none;
-					color: $White;
-					font-size: 16px;
-	
-					&:focus{
-						border-style: solid;
-						border-color: $color;
-						border-width: 2px;
-						border-radius: 10px;
-						outline: none;
-					}
-
-					&:-internal-autofill-selected{
-						background-color: $dark !important;
-					}
-				}
-
-				input[type = submit]{
-					height: 50px;
-					width: 100%;
-					background-color: $color;
-					color: $White;
-					border: none;
-					cursor: pointer;
-					font-size: 16px;
-	
-					transition: all .2s ease-in-out;
-					border-radius: 10px;
-				}
-			}
-			
 		}
 	}
 }

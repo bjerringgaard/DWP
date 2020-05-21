@@ -34,7 +34,7 @@ body #main #loginContainer {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 20px;
-  margin-top: 15vh;
+  margin-top: 20px;
 }
 
 body #main #loginContainer h2 {
@@ -51,11 +51,24 @@ body #main #loginContainer p {
   font-size: 20px;
 }
 
+body #main #loginContainer #realname {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #main #loginContainer #realname div {
+  width: 48%;
+}
+
+body #main #loginContainer #realname #last {
+  margin-left: 4%;
+}
+
 body #main #loginContainer #bottomContainer {
   width: 100%;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  margin-top: 10px;
 }
 
 body #main #loginContainer #bottomContainer p {
@@ -91,7 +104,7 @@ body #main #loginContainer form label {
   margin-left: 10px;
 }
 
-body #main #loginContainer form input[type=text], body #main #loginContainer form input[type=password] {
+body #main #loginContainer form input[type=text], body #main #loginContainer form input[type=password], body #main #loginContainer form textarea {
   height: 50px;
   width: 100%;
   margin-bottom: 20px;
@@ -105,7 +118,7 @@ body #main #loginContainer form input[type=text], body #main #loginContainer for
   font-size: 16px;
 }
 
-body #main #loginContainer form input[type=text]:focus, body #main #loginContainer form input[type=password]:focus {
+body #main #loginContainer form input[type=text]:focus, body #main #loginContainer form input[type=password]:focus, body #main #loginContainer form textarea:focus {
   border-style: solid;
   border-color: #7700FF;
   border-width: 2px;
@@ -113,8 +126,10 @@ body #main #loginContainer form input[type=text]:focus, body #main #loginContain
   outline: none;
 }
 
-body #main #loginContainer form input[type=text]:-internal-autofill-selected, body #main #loginContainer form input[type=password]:-internal-autofill-selected {
-  background-color: #2C2F33 !important;
+body #main #loginContainer form textarea {
+  height: 100px;
+  padding: 10px;
+  resize: none;
 }
 
 body #main #loginContainer form input[type=submit] {

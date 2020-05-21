@@ -5,8 +5,6 @@ if(isset($_POST["submit"])){
         or($_FILES["file"]["type"] == "image/png")
         or($_FILES["file"]["type"] == "image/jpg"))
         && ($_FILES["file"]["size"]<2500000000)){
-					
-
 if($_FILES["file"]["error"]>0){
     echo "Error: ". $_FILES["file"]["error"]."<br>";
 }else{
@@ -21,18 +19,18 @@ if($_FILES["file"]["error"]>0){
 					move_uploaded_file($_FILES["file"]["tmp_name"],
 					"../../uploads/comments/".$_FILES["file"]["name"]);
 		echo "stored in Commentupload: ". $_FILES["file"]["name"];
-		
-		$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID CommentTimeStamp, PostID) 
-						VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+		$sql = "INSERT INTO comment (CommentID, UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
+						VALUES (NULL, '".$_SESSION["user_id"]."', '".$_POST["commentText"]."', '".$_FILES["file"]["name"]."', '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, '".$_POST["PostID"]."')"; 
 							mysqli_query($conn, $sql);
-							mysqli_close($conn);	
-							header("Location: feed.php");
+							mysqli_close($conn);
+							echo '<script>window.location.href = "feed.php";</script>';
 			}
-
 }}else{
-	$sql = "INSERT INTO comment (UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
-					VALUES ('".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
+	$sql = "INSERT INTO comment (CommentID, UserID, CommentText, CmtAttachement, TextStylingID, CommentTimeStamp, PostID) 
+					VALUES (NULL, '".$_SESSION["user_id"]."', '".$_POST["commentText"]."', NULL, '".$_POST["textStyle"]."' , CURRENT_TIMESTAMP, ".$_POST["PostID"].")"; 
 						mysqli_query($conn, $sql);
-						mysqli_close($conn);	
-							header("Location: feed.php");
-    }}
+						mysqli_close($conn);
+						echo '<script>window.location.href = "feed.php";</script>';			
+		}
+}
+?>

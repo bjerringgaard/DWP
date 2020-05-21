@@ -1,55 +1,55 @@
-<?php require_once("../../Includes/session.php"); ?>
-<?php require_once("../../Includes/connection.php"); ?>
-<?php require_once("../../Includes/functions.php"); ?>
+<?php
+require_once("../../Includes/session.php");
+require_once("../../Includes/connection.php");
+require_once("../../Includes/functions.php");
+require("landingIncludes/createuser.php");
+?>
 
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
-</head>
+	<head>
+		<?php include '../../views/user/userTemplates/head.php';?>
+		<link rel="stylesheet" href="styles/css/newuser.css">
+		<title>ShortCircuit | New user</title>
+	</head>
+	<body>
+		<section id="main">
+			<div id="loginContainer">
+				<h2>Create new user</h2> 
+				<p>To get started</p> 
+					<form action="" method="post">
 
-<?php
-// START FORM PROCESSING
-if (isset($_POST['submit'])) { // Form has been submitted.
-	$errors = array();
+						<label for="user">USERNAME</label><br>
+						<input type="text" name="user" maxlength="30" value="" /><br>
 
-	// perform validations on the form data
-	$username = trim(mysqli_real_escape_string($conn, $_POST['user']));
-	$password = trim(mysqli_real_escape_string($conn, $_POST['pass']));
-	$firstname = trim(mysqli_real_escape_string($conn, $_POST['firstname']));
-	$lastname = trim(mysqli_real_escape_string($conn, $_POST['lastname']));
-	$email = trim(mysqli_real_escape_string($conn, $_POST['email']));
-    $iterations = ['cost' => 5];
-    $hashed_password = password_hash($password, PASSWORD_BCRYPT, $iterations);
+						<label for="pass">PASSWORD</label><br>
+						<input type="password" name="pass" maxlength="30" value="" /><br>
 
-	$query = "INSERT INTO `user` (UserName, UserPassword, UserFirstName, UserLastName, UserEmail) VALUES ('{$username}', '{$hashed_password}', '{$firstname}', '{$lastname}', '{$email}')";
-	$result = mysqli_query($conn, $query);
-		if ($result) {
-			$message = "User Created.";
-		} else {
-			$message = "User could not be created.";
-			$message .= "<br />" . mysqli_error($conn);
-		}
-}
+						<label for="email">EMAIL</label><br> 
+						<input type="text" name="email" maxlength="255" value="" /><br>
 
-if (!empty($message)) {echo "<p>" . $message . "</p>";}
-?>
-<h2>Create New User</h2>
+						<div id="realname">
+							<div>
+								<label for="firstname">FIRST NAME</label><br> 
+								<input type="text" name="firstname" maxlength="255" value="" /><br>
+							</div>
+							<div id="last">
+								<label for="lastname">LAST NAME</label><br> 
+								<input type="text" name="lastname" maxlength="255" value="" /><br>
+							</div>
+						</div>
 
-<form action="" method="post">
-Username:
-<input type="text" name="user" maxlength="30" value="" />
-Password:
-<input type="password" name="pass" maxlength="30" value="" />
-First name: 
-<input type="text" name="firstname" maxlength="255" value="" />
-Last name: 
-<input type="text" name="lastname" maxlength="255" value="" />
-Email:
-<input type="text" name="email" maxlength="255" value="" />
-<input type="submit" name="submit" value="Create" />
-</form>
+						<label for="description">PROFILE DESCRIPTION</label><br> 
+						<textarea type="text" name="description" maxlength="255" value=""></textarea><br>
 
-</body>
+						<input type="submit" name="submit" value="Create" />
+					</form>
+				<div id="bottomContainer">
+					<p><a href="landing.php">Already have an account?</a></p>
+					<p>Want to know more about us? <a href="about.php">Click here</a></p>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
 <?php
 if (isset($conn)){mysqli_close($conn);}
