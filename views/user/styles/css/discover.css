@@ -6,6 +6,10 @@
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ::-webkit-scrollbar-track-piece {
   background: transparent;
 }
@@ -200,10 +204,10 @@ a:hover {
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: #F2F3F5;
+    background-color: #FFFFFF;
   }
   header {
-    background: #FFFFFF;
+    background: #F2F3F5;
   }
   nav {
     display: -webkit-box;

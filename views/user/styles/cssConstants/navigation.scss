@@ -89,4 +89,97 @@ header{
 	.menu-trigger {
 		display:none;
 		color:#fff;
-	  }
+		}
+		
+@media (prefers-color-scheme: light) {
+	.hidden {
+		display: none;
+	}
+	
+	::-webkit-scrollbar-track-piece{
+		background: transparent;
+	}
+	
+	body { 
+		margin: 0;
+		height: 100%;
+		width: 100%;
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		background-color: $ldark;
+		
+		}
+	
+		.sideBar{
+			width: 20%;
+		}
+	
+	a{
+		text-decoration: none;
+	
+		transition: all .1s ease-in-out;
+	
+			&:hover{
+				transform: scale(1.1); 
+			}
+		}
+		
+	// Navigation 
+	header{
+		display: flex;
+		flex-direction: row;
+		height: $navheight;
+		background: $lbackground;
+		border-bottom: 1px solid $ldark;
+		line-height: $navheight;
+		 }
+	
+		nav{
+			display: flex;
+			width: 40vw;
+			justify-content: flex-end;
+	
+				a{
+					color: $lWhite;
+					display:block;
+					text-decoration: none;
+					font-size: 14px;
+				}
+	
+				ul {
+					margin: 0;
+					height: $navheight;
+					line-height: $navheight;
+				}
+	
+				ul li {
+					display: inline-block;
+					align-items: center;
+						padding-left:15px;
+						padding-right: 15px;
+				}
+				
+				i{
+					margin: 5px;
+					font-size: 25px;
+				}
+			}
+	
+		#logo{
+			display: flex;
+			justify-content: flex-start;
+			width: 40%;
+			color: $lWhite;
+			font-size: 25px;
+	
+			a{
+				text-decoration: none;
+				color: $lWhite;
+			}
+			}	
+	
+		.menu-trigger {
+			display:none;
+			color:$lWhite;
+			}
+}

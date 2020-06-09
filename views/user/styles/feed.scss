@@ -346,157 +346,351 @@
 	}
 
 @media (prefers-color-scheme: light) {
-	body { 
+
+// Main
+#main {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+// Post
+#post{
+	display: flex;
+	background-color: $lbackground;
+	padding: 20px;
+	margin: 10px;
+	border-radius: 20px;
+	max-width: 1364px;
+}
+
+#postFrame {
+	display: flex;
+	flex-direction: column;
+	width: 50vw;
+	max-width: 960px;
+
+	.postByUser{
+		display: flex;
+		flex-direction: row;
+		color: $lWhite;
+		height: 1.5vw;
+		width: 94.5%;
+		padding: 10px; 
+			margin-left: 10px;
+			margin-top: .4vw;
+	}
+
+	.postImg{
+		width: 960px;
+		height: 540px;
 		background-color: $ldark;
+		border-radius: 10px;
+			img{
+				width: 960px;
+				height: 540px;
+				border-radius: 10px;
+				object-fit: cover;
+			}
+	}
+
+	.postTitle{
+		padding: 0;
+		margin: 0;
+		word-wrap: break-word;
+
+		h3{
+			margin: 0;
+			padding: 0;
+
+			margin-top: 10px;
+
+			font-size: 24px;
+			color: $lWhite;
+		}
+
+	}
+
+
+/*	#Pin {
+		display: none;
+	} */
+
+	.postInfo{
+		width: 100%;
+		max-width: 1364px;
+		height: 20px;
+		display: flex;
+		margin: 0;
+			margin-top: 10px;
+			margin-bottom: 20px;	
+
+		.postStats{
+			width: 50%;
+
+			color: $lWhite;
+			display: flex;
+			align-items: center;
+
+			p{
+				margin: 0;
+				margin-right: 10px;
+			}
+
+			#postTime{
+				opacity: .5;
+			}
+		}
+	
+		.postAction{
+			width: 50%;
+
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			
+
+			a {
+				justify-content: flex-end;
+				color:$lWhite;
+				font-size: 24px;
+				margin-left: 20px;
+
+				transition: all .2s ease-in-out;
+
+				&:hover{
+					transform: scale(1.3); 
+				}
+			}
+		}
+	}
+
+	.postLikes {
+		margin: 0;
+		margin-left: 20px;
+		p {
+			margin: 0;
+			color: $lWhite;
 		}
 		
-	// Navigation 
-	header{
-		background: $lbackground;
-	   }
-	
-		nav{
-				a{
-					color:$lWhite;
-				}
-			}
-	
-		#logo{
+	}
+
+	.postUser {
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		word-wrap: break-word;
+
+		i {
+			margin-right: 10px;
 			color: $lWhite;
-			a{
-				color: $lWhite;
-			}
-			}	
-	
-		.menu-trigger {
-			color:$lWhite;
-		  }
-	
-	// Post
-		#post{
-			background-color: $lbackground;
+			font-size: 30px;
+			align-self: flex-start;
 		}
-	
-		#postFrame {
-	
-			.postByUser{
+
+		div {
+				width: 95%;
+			h3{
+				margin: 0;
+				padding: 0;
+
+				margin-bottom: 5px;
+
 				color: $lWhite;
 			}
-	
-			.postTitle{
-				padding: 0;
+
+			p {
 				margin: 0;
-	
-				h3{
-					color: $lWhite;
-				}
-	
+				padding: 0;
+				color: $lWhite;
 			}
-	
-			.postInfo{
-				.postStats{
-					color: $lWhite;
-					display: flex;
-					align-items: center;
+		}
+
+		.profilePic{
+			width: 60px;
+		}
+	}	
+}
+
+
+
+#postCommentFrame{
+	width: 20vw;
+	margin-left: 20px;
+	background-color: $lbackground;
+	max-width: 384px;
+	background-color: $ldark;
+	border-radius: 10px;
+	height: 470px;
+
+	h3{
+		margin: 0;
+		padding: 20px;
+		height: 20px;
+		color: $lWhite;
+		margin-bottom: 20px;
+		padding-bottom: 0;
+	}
+
+	#commentField{
+		background-color: $ldark;
+		border-radius: 10px;
+		height: 410px;
+		overflow: auto;
+
+		.commentUser {
+			display: flex;
+			flex-direction: column;
+			align-items: left;
+			padding: 20px;
+			padding-top: 0;
+			height: fit-content;
+
+			.theComment {
+				display: flex;
+				flex-direction: row;
+
+				height: fit-content;
+				width: 340px;
+
+				margin-bottom: 10px;
+
+				.profilePic{
+					height: 40px;
 				}
-			
-				.postAction{
-	
-					a {
-						color: $lWhite;
-					}
-				}
-			}
-	
-			.postLikes {
-				p {
-					color: $lWhite;
-				}
-				
-			}
-	
-			.postUser {
-	
+
 				i {
+					margin-right: 10px;
 					color: $lWhite;
+					font-size: 30px;
+					align-self: flex-start;
 				}
 	
 				div {
+					height: fit-content;
 					h3{
+						margin: 0;
+						padding: 0;
+	
+						margin-bottom: 5px;
+	
 						color: $lWhite;
 					}
 	
 					p {
+						margin: 0;
+						margin-bottom: 10px;
+						padding: 0;
+						word-wrap: break-word;
+						width: 300px;
 						color: $lWhite;
 					}
+
+					.csBold{font-weight: bold;}
+					.csItalic{font-style: italic;}
+					.csRegluar{font-weight: normal;}
+
+					.csRed{color: #f03434;}
+					.csGreen{color: #7befb2;}
+					.csCyan{color: #4ecdc4;}
+					.csBlue{color: #19b5fe;}
+					.csYellow{color: #ffff7e;}
+					.csPurple{color:#7700FF;}
+					.csWhite{color: $lWhite;}
 				}
-				
-	
-				
-			}	
-		}
-	
-		#postCommentFrame{
-			background-color: $lbackground;
-	
-			#commentField{
-				background-color: $ldark;
-	
-				h3{
-					color: $lWhite;
-				}
-	
-				.commentUser {
-					.theComment {
-						i {
-							color: $lWhite;
-						}
-			
-						div {
-							h3{
-								color: $lWhite;
-							}
-			
-							p {
-								color: $lWhite;
-							}
-						}
+				.commentImg{
+					height: fit-content;
+					min-height: 0;
+					max-height: 169;
+					img{
+						width: 300px;
+						height: 169px;
+						border-radius: 10px;
+						object-fit: cover;
 					}
-				}	
 			}
+			}
+		}	
+	}
+
 	
+
+		#commentlink{
+			color: $lWhite;
+			font-weight: bold;
+			font-size: 16px;
+			text-decoration: none;
+
+			&:visited{
+				text-decoration: none;
+				color: $lWhite;
+			}
+
 			#writeComment{
-	
-				i {
-					color: $lWhite;
-				}
-	
-				input {
-					background-color: $ldark;
-					color: $lWhite;
-	
-				}
-				button{
-					background-color: $ldark;
-					color: $lWhite;
-				}
-	
-				#paper-plane{
-					background-color: $lcolor;
-					i{
-						color: $White;
+				height: 50px;
+				margin-top: 20px;
+				background-color: $lcolor;
+				border-radius: 10px;
+				display: flex;
+				justify-content: center;
+				p{
+					transition: all .2s ease-in-out;
+					color: $White;
+					&:hover {
+						transform: scale(1.1); 
 					}
 				}
-			}
-	
 		}
+	}
+}
+
+#uploadContent {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
 	
-		#uploadContent {
-			button {
-				color: $White;
-			}
-			
+	button {
+		height: 70px;
+		width: 70px;
+		border-radius: 20%;
+		background-color: $lcolor;
+		border: none;
+		color: $White;
+
+		i {
+			font-size: 35px;
 		}
+	}
+	
+}
+
+
+.profilePic {
+	display: flex;
+
+	img{
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-right: 10px;
+	}
+}
+
+#writing{
+	display: flex;
+	align-items: center;
+	
+	img {
+		width: 30px;
+		height: 30px;
+		align-self: center;
+		padding-left: 5px;
+	}
+}
 }
 
 

@@ -6,6 +6,10 @@
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 ::-webkit-scrollbar-track-piece {
   background: transparent;
 }
@@ -105,6 +109,99 @@ nav i {
 .menu-trigger {
   display: none;
   color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  .hidden {
+    display: none;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
+  }
+  .sideBar {
+    width: 20%;
+  }
+  a {
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+  a:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 70px;
+    background: #F2F3F5;
+    border-bottom: 1px solid #FFFFFF;
+    line-height: 70px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav a {
+    color: #23272A;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav ul {
+    margin: 0;
+    height: 70px;
+    line-height: 70px;
+  }
+  nav ul li {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  nav i {
+    margin: 5px;
+    font-size: 25px;
+  }
+  #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 40%;
+    color: #23272A;
+    font-size: 25px;
+  }
+  #logo a {
+    text-decoration: none;
+    color: #23272A;
+  }
+  .menu-trigger {
+    display: none;
+    color: #23272A;
+  }
 }
 
 #main {
@@ -234,4 +331,124 @@ nav i {
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (prefers-color-scheme: light) {
+  #main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  #main #profileInfo {
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 1364px;
+    width: 80vw;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #F2F3F5;
+    border-radius: 20px;
+  }
+  #main #profileInfo #profilePic {
+    height: 200px;
+    width: 200px;
+  }
+  #main #profileInfo #profilePic img {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #profileInfo #info {
+    margin-left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #23272A;
+  }
+  #main #profileInfo #info h2 {
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    font-size: 48px;
+  }
+  #main #profileInfo #info p {
+    margin: 10px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+  #main #profileInfo #info #stats {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #main #profileInfo #info #stats p {
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+  #main #profileInfo #info button {
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #7700FF;
+    color: #23272A;
+  }
+  #main #userPosts {
+    margin: 0 auto;
+    margin-top: 10px;
+    max-width: 1404px;
+    width: 80vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    border-radius: 20px;
+  }
+  #main #userPosts .thePost img {
+    width: 452px;
+    height: 254.25px;
+    margin: 8px;
+    border-radius: 10px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 }

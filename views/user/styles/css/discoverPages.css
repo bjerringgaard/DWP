@@ -111,6 +111,99 @@ nav i {
   color: #fff;
 }
 
+@media (prefers-color-scheme: light) {
+  .hidden {
+    display: none;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
+  }
+  .sideBar {
+    width: 20%;
+  }
+  a {
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+  a:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 70px;
+    background: #F2F3F5;
+    border-bottom: 1px solid #FFFFFF;
+    line-height: 70px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav a {
+    color: #23272A;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav ul {
+    margin: 0;
+    height: 70px;
+    line-height: 70px;
+  }
+  nav ul li {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  nav i {
+    margin: 5px;
+    font-size: 25px;
+  }
+  #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 40%;
+    color: #23272A;
+    font-size: 25px;
+  }
+  #logo a {
+    text-decoration: none;
+    color: #23272A;
+  }
+  .menu-trigger {
+    display: none;
+    color: #23272A;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -222,6 +315,99 @@ nav i {
 .menu-trigger {
   display: none;
   color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  .hidden {
+    display: none;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
+  }
+  .sideBar {
+    width: 20%;
+  }
+  a {
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+  a:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 70px;
+    background: #F2F3F5;
+    border-bottom: 1px solid #FFFFFF;
+    line-height: 70px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav a {
+    color: #23272A;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav ul {
+    margin: 0;
+    height: 70px;
+    line-height: 70px;
+  }
+  nav ul li {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  nav i {
+    margin: 5px;
+    font-size: 25px;
+  }
+  #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 40%;
+    color: #23272A;
+    font-size: 25px;
+  }
+  #logo a {
+    text-decoration: none;
+    color: #23272A;
+  }
+  .menu-trigger {
+    display: none;
+    color: #23272A;
+  }
 }
 
 #main {
@@ -661,38 +847,98 @@ nav i {
 }
 
 @media (prefers-color-scheme: light) {
-  body {
-    background-color: #F2F3F5;
-  }
-  header {
-    background: #FFFFFF;
-  }
-  nav a {
-    color: #23272A;
-  }
-  #logo {
-    color: #23272A;
-  }
-  #logo a {
-    color: #23272A;
-  }
-  .menu-trigger {
-    color: #23272A;
+  #main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
   }
   #post {
-    background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #F2F3F5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    max-width: 1364px;
+  }
+  #postFrame {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 50vw;
+    max-width: 960px;
+    /*	#Pin {
+		display: none;
+	} */
   }
   #postFrame .postByUser {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     color: #23272A;
+    height: 1.5vw;
+    width: 94.5%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: .4vw;
+  }
+  #postFrame .postImg {
+    width: 960px;
+    height: 540px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+  #postFrame .postImg img {
+    width: 960px;
+    height: 540px;
+    border-radius: 10px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   #postFrame .postTitle {
     padding: 0;
     margin: 0;
+    word-wrap: break-word;
   }
   #postFrame .postTitle h3 {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 24px;
     color: #23272A;
   }
+  #postFrame .postInfo {
+    width: 100%;
+    max-width: 1364px;
+    height: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
   #postFrame .postInfo .postStats {
+    width: 50%;
     color: #23272A;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -701,58 +947,285 @@ nav i {
         -ms-flex-align: center;
             align-items: center;
   }
+  #postFrame .postInfo .postStats p {
+    margin: 0;
+    margin-right: 10px;
+  }
+  #postFrame .postInfo .postStats #postTime {
+    opacity: .5;
+  }
+  #postFrame .postInfo .postAction {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   #postFrame .postInfo .postAction a {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     color: #23272A;
+    font-size: 24px;
+    margin-left: 20px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  #postFrame .postInfo .postAction a:hover {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  #postFrame .postLikes {
+    margin: 0;
+    margin-left: 20px;
   }
   #postFrame .postLikes p {
+    margin: 0;
     color: #23272A;
+  }
+  #postFrame .postUser {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    word-wrap: break-word;
   }
   #postFrame .postUser i {
+    margin-right: 10px;
     color: #23272A;
+    font-size: 30px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  #postFrame .postUser div {
+    width: 95%;
   }
   #postFrame .postUser div h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
     color: #23272A;
   }
   #postFrame .postUser div p {
+    margin: 0;
+    padding: 0;
     color: #23272A;
+  }
+  #postFrame .postUser .profilePic {
+    width: 60px;
   }
   #postCommentFrame {
+    width: 20vw;
+    margin-left: 20px;
+    background-color: #F2F3F5;
+    max-width: 384px;
     background-color: #FFFFFF;
+    border-radius: 10px;
+    height: 470px;
+  }
+  #postCommentFrame h3 {
+    margin: 0;
+    padding: 20px;
+    height: 20px;
+    color: #23272A;
+    margin-bottom: 20px;
+    padding-bottom: 0;
   }
   #postCommentFrame #commentField {
-    background-color: #F2F3F5;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    height: 410px;
+    overflow: auto;
   }
-  #postCommentFrame #commentField h3 {
-    color: #23272A;
+  #postCommentFrame #commentField .commentUser {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    padding: 20px;
+    padding-top: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #postCommentFrame #commentField .commentUser .theComment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 340px;
+    margin-bottom: 10px;
+  }
+  #postCommentFrame #commentField .commentUser .theComment .profilePic {
+    height: 40px;
   }
   #postCommentFrame #commentField .commentUser .theComment i {
+    margin-right: 10px;
     color: #23272A;
+    font-size: 30px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #postCommentFrame #commentField .commentUser .theComment div h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
     color: #23272A;
   }
   #postCommentFrame #commentField .commentUser .theComment div p {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    word-wrap: break-word;
+    width: 300px;
     color: #23272A;
   }
-  #postCommentFrame #writeComment i {
+  #postCommentFrame #commentField .commentUser .theComment div .csBold {
+    font-weight: bold;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csItalic {
+    font-style: italic;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csRegluar {
+    font-weight: normal;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csRed {
+    color: #f03434;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csGreen {
+    color: #7befb2;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csCyan {
+    color: #4ecdc4;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csBlue {
+    color: #19b5fe;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csYellow {
+    color: #ffff7e;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csPurple {
+    color: #7700FF;
+  }
+  #postCommentFrame #commentField .commentUser .theComment div .csWhite {
     color: #23272A;
   }
-  #postCommentFrame #writeComment input {
-    background-color: #F2F3F5;
+  #postCommentFrame #commentField .commentUser .theComment .commentImg {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 0;
+    max-height: 169;
+  }
+  #postCommentFrame #commentField .commentUser .theComment .commentImg img {
+    width: 300px;
+    height: 169px;
+    border-radius: 10px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #postCommentFrame #commentlink {
+    color: #23272A;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  #postCommentFrame #commentlink:visited {
+    text-decoration: none;
     color: #23272A;
   }
-  #postCommentFrame #writeComment button {
-    background-color: #F2F3F5;
-    color: #23272A;
-  }
-  #postCommentFrame #writeComment #paper-plane {
+  #postCommentFrame #commentlink #writeComment {
+    height: 50px;
+    margin-top: 20px;
     background-color: #7700FF;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  #postCommentFrame #writeComment #paper-plane i {
+  #postCommentFrame #commentlink #writeComment p {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
     color: #FFFFFF;
+  }
+  #postCommentFrame #commentlink #writeComment p:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  #uploadContent {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
   }
   #uploadContent button {
-    color: #FFFFFF;
+    height: 70px;
+    width: 70px;
+    border-radius: 20%;
+    background-color: #7700FF;
+    border: none;
+    color: #23272A;
+  }
+  #uploadContent button i {
+    font-size: 35px;
+  }
+  .profilePic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .profilePic img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-right: 10px;
+  }
+  #writing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #writing img {
+    width: 30px;
+    height: 30px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding-left: 5px;
   }
 }
 
@@ -792,25 +1265,4 @@ nav i {
 
 #cardPinned {
   color: #4e1c80;
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #F2F3F5;
-  }
-  header {
-    background: #FFFFFF;
-  }
-  nav a {
-    color: #23272A;
-  }
-  #logo {
-    color: #23272A;
-  }
-  #logo a {
-    color: #23272A;
-  }
-  .menu-trigger {
-    color: #23272A;
-  }
 }

@@ -129,3 +129,117 @@ body #main #loginContainer form input[type=submit] {
   transition: all .2s ease-in-out;
   border-radius: 10px;
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    width: 99%;
+  }
+  body p {
+    color: #23272A;
+  }
+  body #main {
+    width: 100%;
+  }
+  body #main #loginContainer {
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 30%;
+    padding: 40px;
+    background-color: #F2F3F5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 20px;
+    margin-top: 15vh;
+  }
+  body #main #loginContainer h2 {
+    color: #23272A;
+    margin: 0;
+    font-size: 48px;
+  }
+  body #main #loginContainer p {
+    color: #73767D;
+    margin: 0;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  body #main #loginContainer #bottomContainer {
+    width: 100%;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    margin-top: 10px;
+  }
+  body #main #loginContainer #bottomContainer p {
+    color: #73767D;
+    margin: 0;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  body #main #loginContainer #bottomContainer a {
+    text-decoration: none;
+    color: #7700FF;
+  }
+  body #main #loginContainer #bottomContainer a:focus {
+    text-decoration: none;
+  }
+  body #main #loginContainer #bottomContainer a:visited {
+    text-decoration: none;
+    color: #7700FF;
+  }
+  body #main #loginContainer form {
+    width: 100%;
+  }
+  body #main #loginContainer form label {
+    color: #73767D;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+  }
+  body #main #loginContainer form input[type=text], body #main #loginContainer form input[type=password] {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 0;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #23272A;
+    font-size: 16px;
+  }
+  body #main #loginContainer form input[type=text]:focus, body #main #loginContainer form input[type=password]:focus {
+    border-style: solid;
+    border-color: #7700FF;
+    border-width: 2px;
+    border-radius: 10px;
+    outline: none;
+  }
+  body #main #loginContainer form input[type=text]:-internal-autofill-selected, body #main #loginContainer form input[type=password]:-internal-autofill-selected {
+    background-color: #FFFFFF !important;
+  }
+  body #main #loginContainer form input[type=submit] {
+    height: 50px;
+    width: 100%;
+    background-color: #7700FF;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    border-radius: 10px;
+  }
+}
