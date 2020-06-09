@@ -146,3 +146,152 @@
 		}
 	}
 }
+
+@media (prefers-color-scheme: light) {
+	#main{
+		width: 99%;
+		#commentContainer{
+			background-color: $lbackground;
+			height: fit-content;
+			width: fit-content;
+			padding: 20px;
+			margin: 0 auto;
+			margin-top: 20px;
+			border-radius: 20px;
+			margin-top: 10vh;
+	
+			#postPicture{
+				background-color: $ldark;
+				border-radius: 10px;
+				margin-bottom: 20px;
+					img{
+						width: 40vw;
+						height: 22.5vw;
+						border-radius: 10px;
+						object-fit: cover;
+					}
+			}
+	
+			#writeComment{
+				width: 40vw;
+				display: flex;
+	
+				form {
+					#commentRowText{
+					display: flex;
+					width: 40vw;
+					i {
+						margin-right: 10px;
+						color: $lWhite;
+						font-size: 32px;
+						align-self: center;
+						width: 10%;
+						padding-left: 5px;
+					}
+	
+					input[type = text] {
+						width: 75%;
+						height: 50px;
+						padding: 0;
+						padding-left: 10px;
+	
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+						
+						background-color: $ldark;
+						border: none;
+						color: $lWhite;
+						font-size: 16px;
+	
+						&:focus{
+							outline: none;
+						}
+					}
+					
+					input[type = file]{
+						width: 0.1px;
+						height: 0.1px;
+						opacity: 0;
+						overflow: hidden;
+						position: absolute;
+						z-index: -1;
+					}
+	
+					input[type = submit]{
+						height: 50px;
+						width: 18%;
+						background-color: $lcolor;
+						color: $White;
+						border: none;
+						cursor: pointer;
+						font-size: 16px;
+	
+						transition: all .2s ease-in-out;
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+					}
+	
+					label {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						height: 50px;
+						width: 7%;
+						background-color: $ldark;
+						color: $lWhite;
+						border: none;
+						cursor: pointer;
+	
+						i{
+							width: 15%;
+							font-size: 20px;
+							padding-right: 10px;
+	
+							&:hover {
+								transform: scale(1.2); 
+							}
+						}
+					}
+					}
+					#commentRowStyle{
+						margin-top: 20px;
+						background-color: $ldark;
+						color: $lWhite;
+						border-radius: 10px;
+						overflow: auto;
+						text-align: center;
+						display: flex;
+						flex-wrap: wrap;
+						padding: 10px;
+	
+						label{
+							width: 92px;
+							height: 30px;
+							padding: 5px 10px;
+							line-height: 28px;
+							background-color: $lbackground;
+							font-size: 16px;
+							border-radius: 4px;
+							margin: 4px;
+						}
+	
+						input[type="radio"]:checked {
+							background-color: $lcolor;
+							width: 0px;
+					}
+						input[type="radio"]:checked + label {
+							background-color: $lcolor;
+							color: $White;
+					}
+	
+						input[type="radio"]{
+							opacity: 0;
+							width: 0px;
+							position: absolute;
+						}
+					}
+				}
+			}
+		}
+	}
+}

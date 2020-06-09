@@ -111,6 +111,99 @@ nav i {
   color: #fff;
 }
 
+@media (prefers-color-scheme: light) {
+  .hidden {
+    display: none;
+  }
+  ::-webkit-scrollbar-track-piece {
+    background: transparent;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #FFFFFF;
+  }
+  .sideBar {
+    width: 20%;
+  }
+  a {
+    text-decoration: none;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+  a:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 70px;
+    background: #F2F3F5;
+    border-bottom: 1px solid #FFFFFF;
+    line-height: 70px;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 40vw;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav a {
+    color: #23272A;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  nav ul {
+    margin: 0;
+    height: 70px;
+    line-height: 70px;
+  }
+  nav ul li {
+    display: inline-block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  nav i {
+    margin: 5px;
+    font-size: 25px;
+  }
+  #logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 40%;
+    color: #23272A;
+    font-size: 25px;
+  }
+  #logo a {
+    text-decoration: none;
+    color: #23272A;
+  }
+  .menu-trigger {
+    display: none;
+    color: #23272A;
+  }
+}
+
 #main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -219,4 +312,109 @@ nav i {
 
 #upload #uploadFrame #uploadForm input:focus {
   outline: none;
+}
+
+@media (prefers-color-scheme: light) {
+  #main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  #upload {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #F2F3F5;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    width: 50vw;
+    max-width: 1364px;
+  }
+  #upload #uploadFrame {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: #23272A;
+    width: 100%;
+  }
+  #upload #uploadFrame #uploadIMG {
+    border-radius: 10px;
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 200px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #upload #uploadFrame #uploadIMG input {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #upload #uploadFrame #uploadForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 10px;
+  }
+  #upload #uploadFrame #uploadForm #title, #upload #uploadFrame #uploadForm #desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+  }
+  #upload #uploadFrame #uploadForm #title h3, #upload #uploadFrame #uploadForm #desc h3 {
+    padding-left: 10px;
+  }
+  #upload #uploadFrame #uploadForm #submit {
+    margin-top: 10px;
+    background-color: #7700FF;
+  }
+  #upload #uploadFrame #uploadForm input {
+    border-radius: 10px;
+    width: 100%;
+    height: 60px;
+    padding-left: 10px;
+    background-color: #FFFFFF;
+    border: none;
+    color: #23272A;
+    font-size: 16px;
+  }
+  #upload #uploadFrame #uploadForm input:focus {
+    outline: none;
+  }
+  #upload #uploadFrame #uploadForm input[type=submit] {
+    color: #FFFFFF;
+  }
 }
