@@ -1,7 +1,7 @@
 <?php
 require("../../Includes/Includer.php");
 include("userIncludes/isAdmin.php");
-$theUser = $_GET["UserID"];
+$theUser = htmlspecialchars($_GET["UserID"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,15 +54,15 @@ $SumPostLikes = '';
 		if(mysqli_num_rows($resultinfo) > 0){
 			echo '
 			<div id="profilePic">
-				<img src="' . $info["ProfilePic"] . '" alt="">
+				<img src="' . htmlspecialchars($info["ProfilePic"]) . '" alt="">
 			</div>
 			<div id="info">
-				<h2>' . $info["UserFirstName"] . ' "' .  $info["UserName"] . '" ' . $info["UserLastName"] . '</h2>
+				<h2>' . htmlspecialchars($info["UserFirstName"]) . ' "' .  htmlspecialchars($info["UserName"]) . '" ' . htmlspecialchars($info["UserLastName"]) . '</h2>
 				<p>' . $info["ProfileDesc"] . '</p>
 				<div id="stats">
-					<p><b>' . $sum["SumPostAmount"] . '</b> Posts</p>
-					<p><b>' . $SumPostLikes . '</b> Likes</p>
-					<p><b>' . $SumIsPinned . '</b> Pinned</p>
+					<p><b>' . htmlspecialchars($sum["SumPostAmount"]) . '</b> Posts</p>
+					<p><b>' . htmlspecialchars($SumPostLikes) . '</b> Likes</p>
+					<p><b>' . htmlspecialchars($SumIsPinned) . '</b> Pinned</p>
 				</div>
 				<button ' . $adminclass . '>EDIT PROFILE</button>
 			</div>
@@ -71,7 +71,7 @@ $SumPostLikes = '';
 				while($img = mysqli_fetch_assoc($imgresult)){
 					echo '
 						<div class="thePost">
-							<img src="../../uploads/posts/' . $img["PostImage"] . '" alt="">
+							<img src="../../uploads/posts/' . htmlspecialchars($img["PostImage"]) . '" alt="">
 						</div>';
 				}
 				echo '</div>';
