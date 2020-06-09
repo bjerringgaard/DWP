@@ -26,6 +26,7 @@ if(isset($_POST["submit"])){
 			VALUES (NULL, '{$postTitle}', '{$postDesc}', '{$postFile}', 0, CURRENT_TIMESTAMP, 0, '{$postUserID}')"; 
 			mysqli_query($conn, $sql);
 			mysqli_close($conn);
+			echo '<script>window.location.href = "feed.php";</script>';			
 			}
 		}
 	}
